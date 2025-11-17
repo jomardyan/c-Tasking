@@ -1,3 +1,5 @@
+using System.Threading;
+
 namespace c_Tasking.Core;
 
 /// <summary>
@@ -35,8 +37,13 @@ public class SimpleThread
             throw new InvalidOperationException("Thread is already running. Create a new instance or call Stop first.");
 
         _isRunning = true;
+
+        var startedEvent = new ManualResetEventSlim(false);
+
         _thread = new Thread(() =>
         {
+            // Signal that the thread has begun execution before invoking the action
+            startedEvent.Set();
             try
             {
                 action();
@@ -51,6 +58,10 @@ public class SimpleThread
         };
 
         _thread.Start();
+
+        // Wait briefly for the thread to begin executing so callers relying on immediate start observe started state
+        // Do not block indefinitely; give a reasonable timeout
+        startedEvent.Wait(1000);
     }
 
     /// <summary>
@@ -69,8 +80,12 @@ public class SimpleThread
             _cancellationTokenSource = new CancellationTokenSource();
         }
 
+        var startedEvent = new ManualResetEventSlim(false);
+
         _thread = new Thread(() =>
         {
+            // Signal that the thread has begun execution before invoking the action
+            startedEvent.Set();
             try
             {
                 action(_cancellationTokenSource.Token);
@@ -85,6 +100,10 @@ public class SimpleThread
         };
 
         _thread.Start();
+
+        // Wait briefly for the thread to begin executing so callers relying on immediate start observe started state
+        // Do not block indefinitely; give a reasonable timeout
+        startedEvent.Wait(1000);
     }
 
     /// <summary>

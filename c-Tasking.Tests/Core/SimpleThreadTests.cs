@@ -1,5 +1,7 @@
 using c_Tasking.Core;
 using Xunit;
+using System.Threading;
+using System.Diagnostics;
 
 namespace c_Tasking.Tests.Core;
 
@@ -28,6 +30,14 @@ public class SimpleThreadTests
                 Thread.Sleep(10);
             }
         });
+
+        // Wait for the started flag to be set by the thread, with a timeout to avoid flakiness
+        var sw = Stopwatch.StartNew();
+        while (!started && sw.ElapsedMilliseconds < 1000)
+        {
+            Thread.Sleep(1);
+        }
+
         Assert.True(started);
         t.Stop(200);
         Assert.False(t.IsRunning);
