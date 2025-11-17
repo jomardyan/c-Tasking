@@ -93,6 +93,7 @@ public class SimpleThread
             finally
             {
                 _isRunning = false;
+                ErrorHandler.Instance.LogMessage("Thread exited", "SimpleThread.ThreadExit");
             }
         })
         {
@@ -122,11 +123,14 @@ public class SimpleThread
         if (!_isRunning)
             return;
 
+        ErrorHandler.Instance.LogMessage("Stop invoked", "SimpleThread.Stop");
         _cancellationTokenSource.Cancel();
         if (_thread != null)
         {
             // Wait for thread to respect cancellation and exit
-            _thread.Join(timeoutMilliseconds);
+            var joined = _thread.Join(timeoutMilliseconds);
+            if (!joined)
+                ErrorHandler.Instance.LogMessage("Stop timeout waiting for thread to exit", "SimpleThread.Stop");
         }
 
         // Thread.Abort() is not supported in modern .NET
