@@ -7,11 +7,20 @@ public class SimpleThread
 {
     private Thread? _thread;
     private bool _isRunning;
-    private readonly CancellationTokenSource _cancellationTokenSource;
+    private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
 
+    /// <summary>
+    /// Indicates whether the thread is currently running.
+    /// </summary>
     public bool IsRunning => _isRunning;
+    /// <summary>
+    /// Indicates whether the underlying Thread instance is alive.
+    /// </summary>
     public bool IsAlive => _thread?.IsAlive ?? false;
 
+    /// <summary>
+    /// Creates a new <see cref="SimpleThread"/> instance.
+    /// </summary>
     public SimpleThread()
     {
         _cancellationTokenSource = new CancellationTokenSource();
@@ -53,7 +62,12 @@ public class SimpleThread
             throw new InvalidOperationException("Thread is already running. Create a new instance or call Stop first.");
 
         _isRunning = true;
-        _cancellationTokenSource.TryReset();
+        // Reset cancellation token source for this start
+        if (_cancellationTokenSource.IsCancellationRequested)
+        {
+            _cancellationTokenSource.Dispose();
+            _cancellationTokenSource = new CancellationTokenSource();
+        }
 
         _thread = new Thread(() =>
         {
@@ -90,7 +104,11 @@ public class SimpleThread
             return;
 
         _cancellationTokenSource.Cancel();
-        Join(timeoutMilliseconds);
+        var sw = System.Diagnostics.Stopwatch.StartNew();
+        while (_isRunning && sw.ElapsedMilliseconds < timeoutMilliseconds)
+        {
+            Thread.Sleep(5);
+        }
 
         // Thread.Abort() is not supported in modern .NET
         // Graceful timeout is the best approach

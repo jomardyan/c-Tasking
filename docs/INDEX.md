@@ -11,6 +11,7 @@ Welcome to c-Tasking documentation! Here you'll find everything you need to use 
 ### Detailed Guides
 - **[LIBRARY_GUIDE.md](LIBRARY_GUIDE.md)** - Comprehensive library guide with all components
 - **[RELEASE_NOTES.md](RELEASE_NOTES.md)** - What's included in v1.0.0
+- **[API_REFERENCE.md](API_REFERENCE.md)** - Consolidated Application API reference (automatically generated)
 
 ### Development
 - **[PROJECT_SETUP.md](PROJECT_SETUP.md)** - Development setup and project structure
@@ -130,6 +131,7 @@ See [PROJECT_SETUP.md](PROJECT_SETUP.md) for more commands.
 | `TaskExtensions` | LINQ-style task operations |
 
 See [QUICK_REFERENCE.md](QUICK_REFERENCE.md) for detailed API reference.
+For a consolidated master API reference, see [API_REFERENCE.md](API_REFERENCE.md).
 
 ---
 

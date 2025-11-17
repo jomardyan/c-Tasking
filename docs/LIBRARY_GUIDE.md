@@ -2,6 +2,8 @@
 
 A lightweight C# library that simplifies threading and multitasking by wrapping .NET's native APIs in easy-to-use classes and methods.
 
+**Master API Reference:** [API_REFERENCE.md](API_REFERENCE.md)
+
 ## Table of Contents
 
 - [Installation](#installation)

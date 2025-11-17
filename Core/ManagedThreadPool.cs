@@ -11,9 +11,18 @@ public class ManagedThreadPool : IDisposable
     private readonly object _lockObject = new();
     private bool _isDisposed;
 
+    /// <summary>
+    /// Number of currently active (running) threads in the pool.
+    /// </summary>
     public int ActiveThreadCount => _threads.Count(t => t.IsRunning);
+    /// <summary>
+    /// Number of tasks currently queued and waiting to be executed.
+    /// </summary>
     public int QueuedTaskCount => _taskQueue.Count;
 
+    /// <summary>
+    /// Creates a new managed thread pool with an optional maximum number of threads.
+    /// </summary>
     public ManagedThreadPool(int? maxThreads = null)
     {
         _maxThreads = Math.Max(1, maxThreads ?? Environment.ProcessorCount);
@@ -24,6 +33,7 @@ public class ManagedThreadPool : IDisposable
     /// <summary>
     /// Enqueues a task to be executed by an available thread.
     /// </summary>
+    /// <param name="task">The synchronous task to execute.</param>
     public void EnqueueTask(Action task)
     {
         ThrowIfDisposed();
@@ -44,6 +54,7 @@ public class ManagedThreadPool : IDisposable
     /// <summary>
     /// Enqueues an async task.
     /// </summary>
+    /// <param name="asyncTask">An async function to execute on the pool.</param>
     public void EnqueueAsync(Func<Task> asyncTask)
     {
         EnqueueTask(() => asyncTask().Wait());
@@ -52,6 +63,7 @@ public class ManagedThreadPool : IDisposable
     /// <summary>
     /// Waits for all threads to complete their current tasks.
     /// </summary>
+    /// <param name="timeoutMilliseconds">Timeout in milliseconds to wait, default is infinite.</param>
     public void WaitAll(int timeoutMilliseconds = Timeout.Infinite)
     {
         ThrowIfDisposed();
@@ -70,6 +82,7 @@ public class ManagedThreadPool : IDisposable
     /// <summary>
     /// Stops all threads gracefully.
     /// </summary>
+    /// <param name="timeoutMilliseconds">Time in milliseconds to wait for each thread to gracefully stop.</param>
     public void StopAll(int timeoutMilliseconds = 5000)
     {
         ThrowIfDisposed();
@@ -137,6 +150,9 @@ public class ManagedThreadPool : IDisposable
             throw new ObjectDisposedException(nameof(ManagedThreadPool));
     }
 
+    /// <summary>
+    /// Disposes the managed thread pool and stops all threads.
+    /// </summary>
     public void Dispose()
     {
         if (_isDisposed)
@@ -147,6 +163,9 @@ public class ManagedThreadPool : IDisposable
         GC.SuppressFinalize(this);
     }
 
+    /// <summary>
+    /// Finalizer ensures resources are cleaned up if Dispose was not called.
+    /// </summary>
     ~ManagedThreadPool()
     {
         Dispose();
@@ -158,11 +177,26 @@ public class ManagedThreadPool : IDisposable
 /// </summary>
 public class ThreadPoolStats
 {
+    /// <summary>
+    /// Maximum configured threads for the pool.
+    /// </summary>
     public int MaxThreads { get; set; }
+    /// <summary>
+    /// Number of active threads at the time the stats were captured.
+    /// </summary>
     public int ActiveThreads { get; set; }
+    /// <summary>
+    /// Number of tasks queued waiting execution in the pool.
+    /// </summary>
     public int QueuedTasks { get; set; }
+    /// <summary>
+    /// Total number of threads that have been created by the pool.
+    /// </summary>
     public int TotalThreads { get; set; }
 
+    /// <summary>
+    /// Returns a string representation of the thread pool stats.
+    /// </summary>
     public override string ToString()
     {
         return $"Max: {MaxThreads}, Active: {ActiveThreads}, Queued: {QueuedTasks}, Total: {TotalThreads}";

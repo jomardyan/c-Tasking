@@ -18,6 +18,10 @@
 /// </summary>
 public class Library
 {
+    /// <summary>
+    /// Main entry used for library examples and quick local testing.
+    /// Not intended for production use when used as a library package.
+    /// </summary>
     public static void Main()
     {
         Console.WriteLine("c-Tasking Library - Multi-threading and Tasking Made Simple");

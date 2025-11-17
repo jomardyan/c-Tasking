@@ -11,6 +11,7 @@ A lightweight, intuitive C# library that simplifies threading, async operations,
 For detailed documentation, visit the [docs](docs/) folder:
 
 - **[Quick Start & API Reference](docs/QUICK_REFERENCE.md)** - Get started quickly
+- **[API Reference](docs/API_REFERENCE.md)** - Consolidated Application API reference
 - **[Comprehensive Guide](docs/LIBRARY_GUIDE.md)** - Detailed component documentation
 - **[Getting Started Guide](docs/PROJECT_SETUP.md)** - Development setup
 - **[Contributing Guide](docs/CONTRIBUTING.md)** - How to contribute

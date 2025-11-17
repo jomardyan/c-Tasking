@@ -1,5 +1,7 @@
 # API Quick Reference
 
+For a consolidated, master reference of the public API, see [API_REFERENCE.md](API_REFERENCE.md).
+
 ## Quick Start
 
 ```csharp

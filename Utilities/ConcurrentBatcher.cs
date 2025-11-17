@@ -8,6 +8,9 @@ public class ConcurrentBatcher<T>
     private readonly int _batchSize;
     private readonly int _maxConcurrentBatches;
 
+    /// <summary>
+    /// Creates a new concurrent batcher with specified batch size and maximum concurrent batches.
+    /// </summary>
     public ConcurrentBatcher(int batchSize = 10, int maxConcurrentBatches = 4)
     {
         _batchSize = Math.Max(1, batchSize);
@@ -17,6 +20,9 @@ public class ConcurrentBatcher<T>
     /// <summary>
     /// Processes items in batches concurrently.
     /// </summary>
+    /// <param name="items">Items to process in batches.</param>
+    /// <param name="processor">Processor that transforms each item to the result.</param>
+    /// <param name="onBatchComplete">Optional callback executed after each batch completes with results.</param>
     public async Task ProcessBatches<TResult>(
         IEnumerable<T> items,
         Func<T, Task<TResult>> processor,
@@ -60,6 +66,9 @@ public class ConcurrentBatcher<T>
     /// <summary>
     /// Processes items in batches concurrently without returning results.
     /// </summary>
+    /// <param name="items">Items to process in batches.</param>
+    /// <param name="processor">Processor that processes each item without result.</param>
+    /// <param name="onBatchComplete">Optional callback executed after each batch completes.</param>
     public async Task ProcessBatches(
         IEnumerable<T> items,
         Func<T, Task> processor,

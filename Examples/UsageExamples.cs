@@ -11,6 +11,9 @@ public class UsageExamples
 {
     // ============ TaskWrapper Examples ============
 
+    /// <summary>
+    /// Demonstrates using the TaskWrapper helper for synchronous and asynchronous tasks.
+    /// </summary>
     public static void ExampleTaskWrapper()
     {
         Console.WriteLine("=== TaskWrapper Examples ===\n");
@@ -58,6 +61,9 @@ public class UsageExamples
 
     // ============ SimpleThread Examples ============
 
+    /// <summary>
+    /// Demonstrates SimpleThread usage including cancellation and priority.
+    /// </summary>
     public static void ExampleSimpleThread()
     {
         Console.WriteLine("=== SimpleThread Examples ===\n");
@@ -107,6 +113,9 @@ public class UsageExamples
 
     // ============ AsyncOperation Examples ============
 
+    /// <summary>
+    /// Demonstrates AsyncOperation usage and manual completion patterns.
+    /// </summary>
     public static async Task ExampleAsyncOperation()
     {
         Console.WriteLine("=== AsyncOperation Examples ===\n");
@@ -145,6 +154,9 @@ public class UsageExamples
 
     // ============ ManagedThreadPool Examples ============
 
+    /// <summary>
+    /// Demonstrates a managed thread pool enqueuing and tracking tasks.
+    /// </summary>
     public static void ExampleManagedThreadPool()
     {
         Console.WriteLine("=== ManagedThreadPool Examples ===\n");
@@ -172,6 +184,9 @@ public class UsageExamples
 
     // ============ TaskScheduler Examples ============
 
+    /// <summary>
+    /// Demonstrates task scheduling with one-time and repeating tasks.
+    /// </summary>
     public static void ExampleTaskScheduler()
     {
         Console.WriteLine("=== TaskScheduler Examples ===\n");
@@ -200,6 +215,9 @@ public class UsageExamples
 
     // ============ TaskRetry Examples ============
 
+    /// <summary>
+    /// Demonstrates retrying operations with exponential backoff.
+    /// </summary>
     public static async Task ExampleTaskRetry()
     {
         Console.WriteLine("=== TaskRetry Examples ===\n");
@@ -228,6 +246,9 @@ public class UsageExamples
 
     // ============ ConcurrentBatcher Examples ============
 
+    /// <summary>
+    /// Demonstrates concurrent batch processing with result callbacks.
+    /// </summary>
     public static async Task ExampleConcurrentBatcher()
     {
         Console.WriteLine("=== ConcurrentBatcher Examples ===\n");
@@ -255,6 +276,9 @@ public class UsageExamples
 
     // ============ TaskExtensions Examples ============
 
+    /// <summary>
+    /// Demonstrates various task extension methods (Map, Chain, OnSuccess, etc.).
+    /// </summary>
     public static async Task ExampleTaskExtensions()
     {
         Console.WriteLine("=== TaskExtensions Examples ===\n");
@@ -284,6 +308,9 @@ public class UsageExamples
 
     // ============ Complete Example ============
 
+    /// <summary>
+    /// Runs a complete real-world example combining thread pool, scheduler, batcher and retry logic.
+    /// </summary>
     public static async Task CompleteExample()
     {
         Console.WriteLine("=== Complete Real-World Example ===\n");
