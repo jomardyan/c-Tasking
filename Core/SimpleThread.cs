@@ -123,10 +123,10 @@ public class SimpleThread
             return;
 
         _cancellationTokenSource.Cancel();
-        var sw = System.Diagnostics.Stopwatch.StartNew();
-        while (_isRunning && sw.ElapsedMilliseconds < timeoutMilliseconds)
+        if (_thread != null)
         {
-            Thread.Sleep(5);
+            // Wait for thread to respect cancellation and exit
+            _thread.Join(timeoutMilliseconds);
         }
 
         // Thread.Abort() is not supported in modern .NET
