@@ -53,7 +53,7 @@ public class AsyncOperation
     {
         if (_tcs == null)
             throw new InvalidOperationException("Operation is not initialized");
-        
+
         await _tcs.Task;
     }
 
@@ -121,10 +121,10 @@ public class AsyncOperation
 /// <summary>
 /// Generic wrapper for async operations with result tracking and callbacks.
 /// </summary>
-    /// <summary>
-    /// Generic async operation wrapper exposing a result and completion state.
-    /// </summary>
-    public class AsyncOperation<T>
+/// <summary>
+/// Generic async operation wrapper exposing a result and completion state.
+/// </summary>
+public class AsyncOperation<T>
 {
     private TaskCompletionSource<T>? _tcs;
     private bool _isCompleted;
