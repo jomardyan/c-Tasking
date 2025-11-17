@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>c_Tasking</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    
+    <!-- NuGet Package Metadata -->
+    <PackageId>c-Tasking</PackageId>
+    <Version>1.0.0</Version>
+    <Title>c-Tasking</Title>
+    <Authors>Jomar Dyan</Authors>
+    <Description>A lightweight C# library that simplifies threading, async operations, and multitasking by wrapping .NET's native APIs in easy-to-use classes and methods.</Description>
+    <PackageProjectUrl>https://github.com/jomardyan/c-Tasking</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/jomardyan/c-Tasking</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>threading;async;tasks;multitasking;concurrency;task-scheduler;thread-pool;retry</PackageTags>
+    <Summary>Simplified C# threading and multitasking library</Summary>
+    <RepositoryBranch>main</RepositoryBranch>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\"/>
+    <None Include="LICENSE" Pack="true" PackagePath="\"/>
+    <None Include="icon.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
+</Project>
