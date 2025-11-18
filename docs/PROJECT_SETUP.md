@@ -66,6 +66,19 @@ dotnet test
 dotnet pack -c Release -o ./nupkg
 ```
 
+### VS Code: Integrated Terminal Font
+
+If you use VS Code, configure the integrated terminal to use a Nerd Font for proper glyphs and icons. You can change this via the settings UI (Ctrl+, -> Features -> Terminal -> Integrated: Font Family) or by adding the following to your user/workspace `settings.json`:
+
+```json
+{
+  "terminal.integrated.fontFamily": "MesloLGM Nerd Font"
+}
+```
+
+This repository includes a workspace setting at `.vscode/settings.json` that sets the Terminal font family to `MesloLGM Nerd Font` as an example — update as needed to match your installed Nerd Font.
+
+
 ## 📦 Package Information
 
 ### NuGet Package Details
