@@ -2,11 +2,15 @@ namespace c_Tasking.Core;
 
 /// <summary>
 /// Simple wrapper for async operations with result tracking and callbacks.
+/// Supports fluent chaining and lifecycle callbacks.
 /// </summary>
 public class AsyncOperation
 {
     private TaskCompletionSource<object?>? _tcs;
     private bool _isCompleted;
+    private Action? _onSuccess;
+    private Action<Exception>? _onException;
+    private Action? _onCancelled;
 
     /// <summary>
     /// Indicates whether the operation has completed (success, failure or cancellation).
@@ -72,12 +76,40 @@ public class AsyncOperation
     }
 
     /// <summary>
+    /// Registers a callback to execute when the operation completes successfully.
+    /// </summary>
+    public AsyncOperation OnSuccess(Action callback)
+    {
+        _onSuccess = callback;
+        return this;
+    }
+
+    /// <summary>
+    /// Registers a callback to execute if the operation fails with an exception.
+    /// </summary>
+    public AsyncOperation OnException(Action<Exception> callback)
+    {
+        _onException = callback;
+        return this;
+    }
+
+    /// <summary>
+    /// Registers a callback to execute if the operation is cancelled.
+    /// </summary>
+    public AsyncOperation OnCancelled(Action callback)
+    {
+        _onCancelled = callback;
+        return this;
+    }
+
+    /// <summary>
     /// Marks the operation as completed successfully.
     /// </summary>
     public void SetResult()
     {
         _tcs?.TrySetResult(null);
         _isCompleted = true;
+        _onSuccess?.Invoke();
     }
 
     /// <summary>
@@ -89,6 +121,7 @@ public class AsyncOperation
         _tcs?.TrySetException(ex);
         ErrorHandler.Instance.Log(ex, "AsyncOperation.SetException");
         _isCompleted = true;
+        _onException?.Invoke(ex);
     }
 
     /// <summary>
@@ -98,6 +131,7 @@ public class AsyncOperation
     {
         _tcs?.TrySetCanceled();
         _isCompleted = true;
+        _onCancelled?.Invoke();
     }
 
     /// <summary>
@@ -121,15 +155,16 @@ public class AsyncOperation
 
 /// <summary>
 /// Generic wrapper for async operations with result tracking and callbacks.
-/// </summary>
-/// <summary>
-/// Generic async operation wrapper exposing a result and completion state.
+/// Supports fluent chaining and lifecycle callbacks with typed results.
 /// </summary>
 public class AsyncOperation<T>
 {
     private TaskCompletionSource<T>? _tcs;
     private bool _isCompleted;
     private T? _result;
+    private Action<T?>? _onSuccess;
+    private Action<Exception>? _onException;
+    private Action? _onCancelled;
 
     /// <summary>
     /// Indicates whether the operation has completed (success, failure or cancellation).
@@ -189,6 +224,33 @@ public class AsyncOperation<T>
     }
 
     /// <summary>
+    /// Registers a callback to execute when the operation completes successfully with the result.
+    /// </summary>
+    public AsyncOperation<T> OnSuccess(Action<T?> callback)
+    {
+        _onSuccess = callback;
+        return this;
+    }
+
+    /// <summary>
+    /// Registers a callback to execute if the operation fails with an exception.
+    /// </summary>
+    public AsyncOperation<T> OnException(Action<Exception> callback)
+    {
+        _onException = callback;
+        return this;
+    }
+
+    /// <summary>
+    /// Registers a callback to execute if the operation is cancelled.
+    /// </summary>
+    public AsyncOperation<T> OnCancelled(Action callback)
+    {
+        _onCancelled = callback;
+        return this;
+    }
+
+    /// <summary>
     /// Marks the operation as completed with a result.
     /// </summary>
     /// <param name="result">The result to set on the operation.</param>
@@ -197,6 +259,7 @@ public class AsyncOperation<T>
         _result = result;
         _tcs?.TrySetResult(result!);
         _isCompleted = true;
+        _onSuccess?.Invoke(result);
     }
 
     /// <summary>
@@ -208,6 +271,7 @@ public class AsyncOperation<T>
         _tcs?.TrySetException(ex);
         ErrorHandler.Instance.Log(ex, "AsyncOperation<T>.SetException");
         _isCompleted = true;
+        _onException?.Invoke(ex);
     }
 
     /// <summary>
@@ -217,6 +281,7 @@ public class AsyncOperation<T>
     {
         _tcs?.TrySetCanceled();
         _isCompleted = true;
+        _onCancelled?.Invoke();
     }
 
     /// <summary>

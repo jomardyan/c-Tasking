@@ -27,7 +27,7 @@ For detailed documentation, visit the [docs](docs/) folder:
 - **Retry Logic** - Automatic retry with exponential backoff for resilient operations
 - **Batch Processing** - Concurrent batch processing with configurable concurrency
 - **Task Extensions** - LINQ-like extensions for cleaner async code
-- **Full .NET 8.0+ Support** - Modern C# with nullable reference types
+- **Full .NET 10.0+ Support** - Modern C# with nullable reference types
 - **Zero Dependencies** - No external NuGet dependencies required
 
 ## 📦 Installation
