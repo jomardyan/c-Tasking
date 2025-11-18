@@ -349,8 +349,10 @@ public class UsageExamples
         scheduler.ScheduleOnce(() =>
         {
             Console.WriteLine("\nProcessing complete!");
-        }, delayMilliseconds: 500);
+        }, delayMilliseconds: 500);     
 
-        Thread.Sleep(1000);
+
+
+        Thread.Sleep(1001); // Wait for scheduled tasks to complete
     }
 }
