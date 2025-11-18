@@ -1,5 +1,7 @@
 namespace c_Tasking.Utilities;
 
+using c_Tasking.Core;
+
 /// <summary>
 /// Utility for retrying tasks with configurable retry policies.
 /// </summary>
@@ -44,6 +46,7 @@ public static class TaskRetry
             }
             catch (Exception ex) when (attempt < maxAttempts && shouldRetry(ex))
             {
+                ErrorHandler.Instance.Log(ex, "TaskRetry.ExecuteWithRetry<T>");
                 var delayMilliseconds = initialDelayMilliseconds * (int)Math.Pow(2, attempt - 1);
                 await Task.Delay(delayMilliseconds);
             }
@@ -91,6 +94,7 @@ public static class TaskRetry
             }
             catch (Exception ex) when (attempt < maxAttempts && shouldRetry(ex))
             {
+                ErrorHandler.Instance.Log(ex, "TaskRetry.ExecuteWithRetry (non-generic)");
                 var delayMilliseconds = initialDelayMilliseconds * (int)Math.Pow(2, attempt - 1);
                 await Task.Delay(delayMilliseconds);
             }
@@ -139,6 +143,7 @@ public static class TaskRetry
             }
             catch (Exception ex) when (attempt < maxAttempts && shouldRetry(ex))
             {
+                ErrorHandler.Instance.Log(ex, "TaskRetry.Execute<T>");
                 var delayMilliseconds = initialDelayMilliseconds * (int)Math.Pow(2, attempt - 1);
                 Thread.Sleep(delayMilliseconds);
             }

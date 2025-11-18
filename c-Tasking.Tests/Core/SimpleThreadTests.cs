@@ -39,7 +39,9 @@ public class SimpleThreadTests
         }
 
         Assert.True(started);
+        Console.WriteLine($"Before stop: IsRunning={t.IsRunning}, IsAlive={t.IsAlive}");
         t.Stop(200);
+        Console.WriteLine($"After stop: IsRunning={t.IsRunning}, IsAlive={t.IsAlive}");
         Assert.False(t.IsRunning);
     }
 

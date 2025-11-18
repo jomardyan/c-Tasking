@@ -1,5 +1,7 @@
 namespace c_Tasking.Utilities;
 
+using c_Tasking.Core;
+
 /// <summary>
 /// Simple task scheduler for executing tasks at specific times or intervals.
 /// </summary>
@@ -31,8 +33,18 @@ public class TaskScheduler : IDisposable
         var id = _nextId++;
         var timer = new Timer(_ =>
         {
-            task();
-            RemoveTimer(id);
+            try
+            {
+                task();
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.Instance.Log(ex, "TaskScheduler.ScheduleOnce");
+            }
+            finally
+            {
+                RemoveTimer(id);
+            }
         }, null, delayMilliseconds, Timeout.Infinite);
 
         _timers[id] = timer;
@@ -50,7 +62,17 @@ public class TaskScheduler : IDisposable
         ThrowIfDisposed();
 
         var id = _nextId++;
-        var timer = new Timer(_ => task(), null, intervalMilliseconds, intervalMilliseconds);
+        var timer = new Timer(_ =>
+        {
+            try
+            {
+                task();
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.Instance.Log(ex, "TaskScheduler.ScheduleRepeating");
+            }
+        }, null, intervalMilliseconds, intervalMilliseconds);
 
         _timers[id] = timer;
         return id;
@@ -68,7 +90,17 @@ public class TaskScheduler : IDisposable
         ThrowIfDisposed();
 
         var id = _nextId++;
-        var timer = new Timer(_ => task(), null, delayMilliseconds, intervalMilliseconds);
+        var timer = new Timer(_ =>
+        {
+            try
+            {
+                task();
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.Instance.Log(ex, "TaskScheduler.ScheduleWithDelay");
+            }
+        }, null, delayMilliseconds, intervalMilliseconds);
 
         _timers[id] = timer;
         return id;
@@ -82,7 +114,18 @@ public class TaskScheduler : IDisposable
     /// <returns>The scheduled task identifier.</returns>
     public int ScheduleOnceAsync(Func<Task> task, int delayMilliseconds)
     {
-        return ScheduleOnce(() => task().Wait(), delayMilliseconds);
+        return ScheduleOnce(() =>
+        {
+            try
+            {
+                task().Wait();
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.Instance.Log(ex, "TaskScheduler.ScheduleOnceAsync");
+                throw;
+            }
+        }, delayMilliseconds);
     }
 
     /// <summary>
@@ -93,7 +136,18 @@ public class TaskScheduler : IDisposable
     /// <returns>The scheduled task identifier.</returns>
     public int ScheduleRepeatingAsync(Func<Task> task, int intervalMilliseconds)
     {
-        return ScheduleRepeating(() => task().Wait(), intervalMilliseconds);
+        return ScheduleRepeating(() =>
+        {
+            try
+            {
+                task().Wait();
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.Instance.Log(ex, "TaskScheduler.ScheduleRepeatingAsync");
+                throw;
+            }
+        }, intervalMilliseconds);
     }
 
     /// <summary>

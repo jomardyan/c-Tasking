@@ -1,5 +1,7 @@
 namespace c_Tasking.Utilities;
 
+using c_Tasking.Core;
+
 /// <summary>
 /// Batches items and processes them concurrently in chunks.
 /// </summary>
@@ -40,24 +42,40 @@ public class ConcurrentBatcher<T>
         var tasks = batches.Select(async batch =>
         {
             await semaphore.WaitAsync();
-            try
-            {
-                var results = new List<TResult>();
-                foreach (var item in batch)
+                try
                 {
-                    var result = await processor(item);
-                    results.Add(result);
-                }
+                    var results = new List<TResult>();
+                    foreach (var item in batch)
+                    {
+                        try
+                        {
+                            var result = await processor(item);
+                            results.Add(result);
+                        }
+                        catch (Exception ex)
+                        {
+                            ErrorHandler.Instance.Log(ex, "ConcurrentBatcher.ProcessBatches(item)");
+                            throw;
+                        }
+                    }
 
-                if (onBatchComplete != null)
-                {
-                    await onBatchComplete(results);
+                    if (onBatchComplete != null)
+                    {
+                        try
+                        {
+                            await onBatchComplete(results);
+                        }
+                        catch (Exception ex)
+                        {
+                            ErrorHandler.Instance.Log(ex, "ConcurrentBatcher.onBatchComplete");
+                            throw;
+                        }
+                    }
                 }
-            }
-            finally
-            {
-                semaphore.Release();
-            }
+                finally
+                {
+                    semaphore.Release();
+                }
         });
 
         await Task.WhenAll(tasks);

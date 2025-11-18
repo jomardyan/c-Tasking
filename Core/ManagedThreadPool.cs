@@ -14,7 +14,7 @@ public class ManagedThreadPool : IDisposable
     /// <summary>
     /// Number of currently active (running) threads in the pool.
     /// </summary>
-    public int ActiveThreadCount => _threads.Count(t => t.IsRunning);
+    public int ActiveThreadCount => _threads.Count(t => t.IsAlive);
     /// <summary>
     /// Number of tasks currently queued and waiting to be executed.
     /// </summary>
@@ -124,6 +124,11 @@ public class ManagedThreadPool : IDisposable
             try
             {
                 task();
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.Instance.Log(ex, "ManagedThreadPool.ExecuteTask");
+                throw;
             }
             finally
             {

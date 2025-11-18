@@ -87,6 +87,7 @@ public class AsyncOperation
     public void SetException(Exception ex)
     {
         _tcs?.TrySetException(ex);
+        ErrorHandler.Instance.Log(ex, "AsyncOperation.SetException");
         _isCompleted = true;
     }
 
@@ -205,6 +206,7 @@ public class AsyncOperation<T>
     public void SetException(Exception ex)
     {
         _tcs?.TrySetException(ex);
+        ErrorHandler.Instance.Log(ex, "AsyncOperation<T>.SetException");
         _isCompleted = true;
     }
 

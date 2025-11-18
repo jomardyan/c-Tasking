@@ -1,5 +1,7 @@
 namespace c_Tasking.Extensions;
 
+using c_Tasking.Core;
+
 /// <summary>
 /// Extension methods for Task operations to simplify common patterns.
 /// </summary>
@@ -66,7 +68,16 @@ public static class TaskExtensions
         {
             if (task.IsFaulted && task.Exception != null)
             {
-                callback(task.Exception.InnerException ?? task.Exception);
+                var ex = task.Exception.InnerException ?? task.Exception;
+                try
+                {
+                    callback(ex);
+                }
+                catch (Exception cbEx)
+                {
+                    ErrorHandler.Instance.Log(cbEx, "TaskExtensions.OnException.callback");
+                    throw;
+                }
             }
         });
     }

@@ -12,6 +12,7 @@ Welcome to c-Tasking documentation! Here you'll find everything you need to use 
 - **[LIBRARY_GUIDE.md](LIBRARY_GUIDE.md)** - Comprehensive library guide with all components
 - **[RELEASE_NOTES.md](RELEASE_NOTES.md)** - What's included in v1.0.0
 - **[API_REFERENCE.md](API_REFERENCE.md)** - Consolidated Application API reference (automatically generated)
+- **[USAGE_AND_COMPARISON.md](USAGE_AND_COMPARISON.md)** - Usage cases and comparison with native .NET APIs
 
 ### Development
 - **[PROJECT_SETUP.md](PROJECT_SETUP.md)** - Development setup and project structure

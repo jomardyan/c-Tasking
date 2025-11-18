@@ -19,6 +19,12 @@ jobs:
     
     - name: Restore dependencies
       run: dotnet restore
+
+    - name: Install dotnet-format
+      run: dotnet tool install -g dotnet-format
+
+    - name: Verify code formatting
+      run: dotnet format --verify-no-changes
     
     - name: Build
       run: dotnet build --configuration Release --no-restore
@@ -38,3 +44,6 @@ jobs:
         release_name: Release ${{ github.ref }}
         draft: false
         prerelease: false
+
+    - name: Verify package contains XML documentation
+      run: unzip -l ./nupkg/*.nupkg | grep -E "\.xml$"

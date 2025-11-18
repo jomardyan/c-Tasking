@@ -12,7 +12,9 @@ public class TaskWrapper
     /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
     public static Task Run(Action action)
     {
-        return Task.Run(action);
+        var task = Task.Run(action);
+        _ = task.ContinueWith(t => ErrorHandler.Instance.Log(t.Exception, "TaskWrapper.Run"), TaskContinuationOptions.OnlyOnFaulted);
+        return task;
     }
 
     /// <summary>
@@ -22,7 +24,9 @@ public class TaskWrapper
     /// <returns>A <see cref="Task{T}"/> representing the result of the asynchronous operation.</returns>
     public static Task<T> Run<T>(Func<T> function)
     {
-        return Task.Run(function);
+        var task = Task.Run(function);
+        _ = task.ContinueWith(t => ErrorHandler.Instance.Log(t.Exception, "TaskWrapper.Run<T>"), TaskContinuationOptions.OnlyOnFaulted);
+        return task;
     }
 
     /// <summary>
@@ -32,7 +36,9 @@ public class TaskWrapper
     /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
     public static Task RunAsync(Func<Task> asyncAction)
     {
-        return Task.Run(asyncAction);
+        var task = Task.Run(asyncAction);
+        _ = task.ContinueWith(t => ErrorHandler.Instance.Log(t.Exception, "TaskWrapper.RunAsync"), TaskContinuationOptions.OnlyOnFaulted);
+        return task;
     }
 
     /// <summary>
@@ -42,7 +48,9 @@ public class TaskWrapper
     /// <returns>A <see cref="Task{T}"/> that completes when the function completes.</returns>
     public static async Task<T> RunAsync<T>(Func<Task<T>> asyncFunction)
     {
-        return await asyncFunction();
+        var task = asyncFunction();
+        _ = task.ContinueWith(t => ErrorHandler.Instance.Log(t.Exception, "TaskWrapper.RunAsync<T>"), TaskContinuationOptions.OnlyOnFaulted);
+        return await task;
     }
 
     /// <summary>
