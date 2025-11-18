@@ -193,6 +193,52 @@ await task1
 await riskyOperation.IgnoreException();
 ```
 
+
+## Usage & Comparison
+
+This section provides a concise mapping and guidance comparing common patterns using native .NET primitives and the c-Tasking helpers. For full details and examples, see `docs/USAGE_AND_COMPARISON.md`.
+
+-### Component Mapping
+
+- TaskWrapper ⇄ Task / Task.Run / Task.WhenAll / Task.WhenAny
+- SimpleThread ⇄ Thread (System.Threading) / long-running background threads
+- AsyncOperation ⇄ TaskCompletionSource / manual Task-based coordination
+- ManagedThreadPool ⇄ ThreadPool / TPL (Task Parallel Library)
+- TaskScheduler ⇄ System.Threading.Timer / Task.Delay / external schedulers (Quartz.NET, Hangfire)
+- TaskRetry ⇄ Manual try/catch + Task.Delay or resilience libs like Polly
+- ConcurrentBatcher ⇄ Parallel.ForEach / SemaphoreSlim / Dataflow
+- TaskExtensions ⇄ Common Task chaining and continuation patterns
+
+
+-### c-Tasking specifics & notes
+
+- Exception handling: Most helpers log exceptions via `ErrorHandler` by default — be explicit if you need exceptions propagated.
+- Disposable resources: `TaskScheduler` and `ManagedThreadPool` implement `IDisposable` — use `using var` or call `Dispose()`.
+- Threads: `SimpleThread` defaults to `IsBackground = false` — call `SetAsBackgroundThread(true)` if desired.
+- Both sync and async overloads exist across utilities — prefer the overload matching your code path.
+
+
+-### When to use .NET primitives
+
+- When you need max performance, low-level control, or tighter resource management.
+- When you rely on TPL Dataflow, Parallel constructs, or enterprise schedulers.
+
+
+-### When to use c-Tasking
+
+- When you prefer intention-revealing, small helpers to reduce boilerplate.
+- When you want built-in features like retries, scheduling, and bounded concurrency without adding dependencies.
+
+
+-### Migration tips
+
+- Replace ad-hoc `Thread` usage with `SimpleThread` for lifecycle and cancellation.
+- Use `TaskWrapper` for concise fire-and-forget and basic parallel operations.
+- Keep Polly or other libraries if you need advanced resilience policies; `TaskRetry` is handy for small projects.
+
+For a full comparison and runnable samples, see `docs/USAGE_AND_COMPARISON.md` and `Examples/UsageExamples.cs`.
+
+
 ## 🏗️ Project Structure
 
 ```

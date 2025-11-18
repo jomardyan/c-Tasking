@@ -1,6 +1,6 @@
 # c-Tasking — Usage Cases & Comparison with .NET Built-in APIs
-
-This document compares common usage scenarios using the native .NET primitives versus the c-Tasking library wrappers. It highlights how c-Tasking simplifies certain patterns and when it's appropriate to prefer the library or built-in APIs.
+ 
+This document compares common usage scenarios using the native .NET primitives versus the c-Tasking library wrappers. It highlights how c-Tasking simplifies certain patterns and when to prefer the library or built-in APIs. The examples target .NET 10 (net10.0) and c-Tasking v1.x.
 
 ## Goals
 - Show simple examples for common patterns: background work, scheduled tasks, retries, batching, and thread management.
@@ -19,6 +19,15 @@ This document compares common usage scenarios using the native .NET primitives v
 - TaskRetry ⇄ Manual try/catch with Task.Delay or libraries like Polly
 - ConcurrentBatcher ⇄ Parallel.ForEach / custom batching using SemaphoreSlim / Dataflow library
 - TaskExtensions ⇄ Common Task chaining and continuation patterns
+
+---
+
+## c-Tasking specifics and notes
+
+- **Exception handling:** c-Tasking helpers generally use the `ErrorHandler` singleton to log exceptions rather than throwing by default. Check the specific APIs when you need to propagate errors.
+- **IDisposable & lifecycle:** `TaskScheduler` and `ManagedThreadPool` are `IDisposable` and should be used with `using var` or manually disposed for graceful cleanup.
+- **Default thread behavior:** `SimpleThread` defaults to `IsBackground = false`; set as background if you want the process to exit without waiting for it.
+- **Sync/Async overloads:** Many utilities have both synchronous and async overloads (e.g., `TaskRetry.Execute` and `ExecuteWithRetry`), choose the one matching your code path.
 
 ---
 
@@ -41,6 +50,8 @@ c-Tasking:
 ```csharp
 // Slightly more concise with TaskWrapper
 _ = TaskWrapper.RunAsync(async () => await DoWorkAsync());
+// Or for synchronous action
+_ = TaskWrapper.Run(() => DoWork());
 ```
 
 Why use c-Tasking?
@@ -67,11 +78,14 @@ c-Tasking:
 
 ```csharp
 var thread = new SimpleThread();
+// CancellationToken support
 thread.Start(ct => {
     while (!ct.IsCancellationRequested) {
         DoWork();
     }
 });
+// Or start without token
+// thread.Start(() => { while(true) { DoWork(); } });
 // Stop gracefully
 thread.Stop(5000);
 ```
@@ -92,8 +106,11 @@ c-Tasking:
 
 ```csharp
 using var pool = new ManagedThreadPool(maxThreads: 4);
+// Enqueue a synchronous task
 pool.EnqueueTask(() => ProcessItem(item));
-pool.WaitAll();
+// Enqueue an async task (helper overload)
+pool.EnqueueAsync(async () => await ProcessItemAsync(item));
+pool.WaitAll(5000);
 ```
 
 Why use c-Tasking?
@@ -112,6 +129,9 @@ c-Tasking:
 ```csharp
 using var scheduler = new TaskScheduler();
 int id = scheduler.ScheduleRepeating(() => DoPeriodicWork(), intervalMilliseconds: 10000);
+// Schedule an async operation
+int asyncTaskId = scheduler.ScheduleRepeatingAsync(async () => await DoPeriodicWorkAsync(), 10000);
+// Cancel scheduled tasks or use Dispose
 scheduler.Cancel(id);
 ```
 
@@ -146,7 +166,10 @@ await policy.ExecuteAsync(() => Operation());
 c-Tasking:
 
 ```csharp
+// Async retry with optional filter predicate
 var result = await TaskRetry.ExecuteWithRetry(async () => await Operation(), maxAttempts: 3, initialDelayMilliseconds: 100);
+// Sync retry
+var syncResult = TaskRetry.Execute(() => OperationSync(), maxAttempts: 3);
 ```
 
 Why use c-Tasking?
@@ -184,7 +207,7 @@ Why use c-Tasking?
 
 ## Reliability, Cancellation & Disposal
 
-- c-Tasking includes `Dispose` and `Stop` patterns to help with graceful shutdown, and uses `CancellationToken` across APIs by default where it makes sense.
+ - c-Tasking includes `Dispose` and `Stop` patterns to help with graceful shutdown, and uses `CancellationToken` across APIs where it makes sense. For disposable objects (`TaskScheduler`, `ManagedThreadPool`) prefer `using var` to ensure cleanup.
 - Native APIs provide more low-level control — you must manage `CancellationTokenSource` and joining threads yourself, and ensure `Dispose()` patterns are enforced for resources.
 
 ---
@@ -204,20 +227,30 @@ Why use c-Tasking?
 
 ---
 
+ 
 ## Migration tips
+
 - Replace early ad-hoc `Thread` usage with `SimpleThread` when you need cancellation and lifecycle features.
 - For modules with `Task.Run` usage, `TaskWrapper` gives simple helper methods — keep `Task.Run` if you need more advanced control.
 - If you already use Polly or other libraries for retry and resilience, it is fine to keep them; `TaskRetry` is handy for small projects.
 
+### Tip: Use examples
+
+- See `Examples/UsageExamples.cs` for runnable samples that mirror the examples in this document.
+
 ---
 
+ 
 ## Summary
+
 - c-Tasking is a small, focused set of helpers aimed at making developer intent clearer and code cleaner for common concurrency needs.
 - Use it where productivity and simplicity matter. For heavy workloads or enterprise-level control, prefer the underlying .NET primitives or ecosystem tools.
 
 ---
 
+ 
 ## Additional Resources
+
 - `docs/QUICK_REFERENCE.md` — quick examples
 - `docs/API_REFERENCE.md` — the consolidated API reference
 - `Examples/UsageExamples.cs` — runnable examples from the repo
