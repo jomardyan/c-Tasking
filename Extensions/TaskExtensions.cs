@@ -24,7 +24,7 @@ public static class TaskExtensions
             {
                 onException?.Invoke(t.Exception.InnerException ?? t.Exception);
             }
-        }, TaskScheduler.Default);
+        }, global::System.Threading.Tasks.TaskScheduler.Default);
     }
 
     /// <summary>
@@ -41,7 +41,7 @@ public static class TaskExtensions
             {
                 onException?.Invoke(t.Exception.InnerException ?? t.Exception);
             }
-        }, TaskScheduler.Default);
+        }, global::System.Threading.Tasks.TaskScheduler.Default);
     }
 
     // ===== Lifecycle Callbacks =====
