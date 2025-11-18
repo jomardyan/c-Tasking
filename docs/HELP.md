@@ -1,7 +1,7 @@
 # c-Tasking Library - Complete Documentation
 
 **Version:** 1.0.0  
-**Last Updated:** November 17, 2025  
+**Last Updated:** November 18, 2025  
 **Status:** Release Ready  
 **License:** MIT
 
@@ -40,7 +40,7 @@ c-Tasking is a lightweight, zero-dependency C# library that simplifies threading
 ? **LINQ Extensions** - Fluent async operation chaining  
 ? **Production Ready** - Full resource management and timeout handling  
 ? **Well Documented** - Comprehensive guides and examples  
-? **Zero Dependencies** - Pure .NET 8.0 implementation
+**Zero Dependencies** - Pure .NET 10.0 implementation
 
 ### Quick Start (5 Minutes)
 
@@ -132,7 +132,7 @@ dotnet add package c-Tasking --source ./nupkg
 
 ### Required Dependencies
 
-- **.NET 8.0+** (no other external dependencies)
+- **.NET 10.0+** (no other external dependencies)
 - C# 12.0+ compatible compiler
 
 ---
@@ -545,9 +545,9 @@ await TaskRetry.ExecuteWithRetry(
 
 - Attempt 1: fails immediately
 - Attempt 2: waits 100ms (initialDelay)
-- Attempt 3: waits 200ms (initialDelay × 2)
-- Attempt 4: waits 400ms (initialDelay × 4)
-- Attempt 5: waits 800ms (initialDelay × 8)
+- Attempt 3: waits 200ms (initialDelay ï¿½ 2)
+- Attempt 4: waits 400ms (initialDelay ï¿½ 4)
+- Attempt 5: waits 800ms (initialDelay ï¿½ 8)
 - (continues doubling until maxAttempts reached)
 
 #### Methods

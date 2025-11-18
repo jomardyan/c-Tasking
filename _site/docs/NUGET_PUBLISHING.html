@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>NuGet Publishing Guide | c-Tasking Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="NuGet Publishing Guide | c-Tasking Documentation ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jomardyan/c-Tasking/blob/main/docs/NUGET_PUBLISHING.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="c-Tasking">
+            c-Tasking
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="nuget-publishing-guide">NuGet Publishing Guide</h1>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>.NET 10.0 SDK or later</li>
+<li>NuGet account at <a href="https://www.nuget.org/">https://www.nuget.org/</a></li>
+<li>NuGet API key from your account settings</li>
+</ul>
+<h2 id="publishing-steps">Publishing Steps</h2>
+<h3 id="1-local-testing">1. Local Testing</h3>
+<p>Build and test the package locally:</p>
+<pre><code class="lang-bash"># Build the project
+dotnet build -c Release
+
+# Create the NuGet package
+dotnet pack -c Release -o ./nupkg
+
+# Test the package locally (optional)
+# You can test by creating a temporary project and adding the package from the local path
+</code></pre>
+<h3 id="2-get-your-api-key">2. Get Your API Key</h3>
+<ol>
+<li>Sign in to <a href="https://www.nuget.org/">https://www.nuget.org/</a></li>
+<li>Go to your profile settings</li>
+<li>Click &quot;Edit Profile&quot;</li>
+<li>Go to &quot;API Keys&quot;</li>
+<li>Create a new key with &quot;Push&quot; permissions</li>
+<li>Copy the key</li>
+</ol>
+<h3 id="3-configure-api-key">3. Configure API Key</h3>
+<p>Store your NuGet API key (choose one method):</p>
+<p><strong>Method 1: Global Configuration</strong></p>
+<pre><code class="lang-bash">dotnet nuget add source https://api.nuget.org/v3/index.json --name nuget.org
+dotnet nuget update source nuget.org --username __USERNAME__ --password YOUR_API_KEY --store-password-in-clear-text
+</code></pre>
+<p><strong>Method 2: GitHub Secrets (Recommended for CI/CD)</strong></p>
+<ol>
+<li>Go to your repository settings</li>
+<li>Click &quot;Secrets and variables&quot; → &quot;Actions&quot;</li>
+<li>Create a new secret named <code>NUGET_API_KEY</code></li>
+<li>Paste your API key value</li>
+</ol>
+<h3 id="4-publish-to-nuget">4. Publish to NuGet</h3>
+<p><strong>Option A: Manual Publishing</strong></p>
+<pre><code class="lang-bash"># Create package
+dotnet pack -c Release
+
+# Push to NuGet
+dotnet nuget push &quot;./bin/Release/c-Tasking.1.0.0.nupkg&quot; --api-key YOUR_API_KEY --source https://api.nuget.org/v3/index.json
+</code></pre>
+<p><strong>Option B: Using GitHub Actions (Recommended)</strong></p>
+<ol>
+<li>The project includes GitHub Actions workflows in <code>.github/workflows/</code></li>
+<li>Create a release with tag format <code>v1.0.0</code></li>
+<li>The <code>publish.yml</code> workflow will automatically:
+<ul>
+<li>Build the project</li>
+<li>Create the NuGet package</li>
+<li>Push to NuGet</li>
+<li>Create a GitHub release</li>
+</ul>
+</li>
+</ol>
+<pre><code class="lang-bash"># Create and push a tag
+git tag v1.0.0
+git push origin v1.0.0
+
+# GitHub Actions will automatically publish to NuGet
+</code></pre>
+<h3 id="5-verify-publication">5. Verify Publication</h3>
+<p>After publishing, verify the package:</p>
+<pre><code class="lang-bash"># Wait a few minutes for indexing, then search
+dotnet package search c-Tasking
+
+# Or visit: https://www.nuget.org/packages/c-Tasking/
+</code></pre>
+<h2 id="version-management">Version Management</h2>
+<h3 id="updating-version">Updating Version</h3>
+<ol>
+<li><p>Update the version in <code>c-Tasking.csproj</code>:</p>
+<pre><code class="lang-xml">&lt;Version&gt;1.1.0&lt;/Version&gt;
+</code></pre>
+</li>
+<li><p>Update <code>CHANGELOG.md</code> with changes</p>
+</li>
+<li><p>Commit and create a tag:</p>
+<pre><code class="lang-bash">git add c-Tasking.csproj CHANGELOG.md
+git commit -m &quot;Version 1.1.0&quot;
+git tag v1.1.0
+git push origin v1.1.0
+</code></pre>
+</li>
+</ol>
+<h2 id="semantic-versioning">Semantic Versioning</h2>
+<p>Follow <a href="https://semver.org/">Semantic Versioning</a>:</p>
+<ul>
+<li><strong>MAJOR</strong> (X.0.0): Breaking changes</li>
+<li><strong>MINOR</strong> (1.X.0): New features, backward compatible</li>
+<li><strong>PATCH</strong> (1.0.X): Bug fixes, backward compatible</li>
+</ul>
+<h2 id="pre-release-versions">Pre-release Versions</h2>
+<p>For pre-release versions, use:</p>
+<pre><code class="lang-xml">&lt;Version&gt;1.0.0-beta.1&lt;/Version&gt;
+&lt;Version&gt;1.0.0-rc.1&lt;/Version&gt;
+</code></pre>
+<h2 id="package-contents-verification">Package Contents Verification</h2>
+<p>The NuGet package includes:</p>
+<ul>
+<li>All compiled assemblies</li>
+<li>XML documentation files</li>
+<li>README.md</li>
+<li>LICENSE</li>
+<li>Icon (icon.png)</li>
+<li>Source link support</li>
+</ul>
+<p>Verify in <code>c-Tasking.csproj</code>:</p>
+<pre><code class="lang-xml">&lt;ItemGroup&gt;
+    &lt;None Include=&quot;README.md&quot; Pack=&quot;true&quot; PackagePath=&quot;\&quot;/&gt;
+    &lt;None Include=&quot;LICENSE&quot; Pack=&quot;true&quot; PackagePath=&quot;\&quot;/&gt;
+    &lt;None Include=&quot;icon.png&quot; Pack=&quot;true&quot; PackagePath=&quot;\&quot;/&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="package-already-exists">Package Already Exists</h3>
+<p>If you get &quot;Package with this version already exists&quot;:</p>
+<ul>
+<li>This is normal - NuGet doesn't allow republishing the same version</li>
+<li>Update the version number and try again</li>
+</ul>
+<h3 id="api-key-invalid">API Key Invalid</h3>
+<pre><code class="lang-bash"># Verify your API key is correct
+dotnet nuget list source
+
+# Update the key
+dotnet nuget update source nuget.org --username __USERNAME__ --password YOUR_NEW_KEY
+</code></pre>
+<h3 id="symbol-packages">Symbol Packages</h3>
+<p>To publish symbols for debugging:</p>
+<pre><code class="lang-xml">&lt;PropertyGroup&gt;
+    &lt;GenerateDocumentationFile&gt;true&lt;/GenerateDocumentationFile&gt;
+    &lt;PublishRepositoryUrl&gt;true&lt;/PublishRepositoryUrl&gt;
+    &lt;EmbedUntrackedSources&gt;true&lt;/EmbedUntrackedSources&gt;
+    &lt;DebugType&gt;embedded&lt;/DebugType&gt;
+&lt;/PropertyGroup&gt;
+</code></pre>
+<h2 id="package-icons">Package Icons</h2>
+<p>Add an icon to your package:</p>
+<ol>
+<li>Create a 128x128 PNG file named <code>icon.png</code></li>
+<li>Place it in the project root</li>
+<li>It will be included in the NuGet package</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/nuget/">NuGet Documentation</a></li>
+<li><a href="https://docs.microsoft.com/en-us/nuget/reference/nuget-exe-cli-reference">NuGet CLI Reference</a></li>
+<li><a href="https://semver.org/">Semantic Versioning</a></li>
+<li><a href="https://keepachangelog.com/">Keep a Changelog</a></li>
+</ul>
+<h2 id="support">Support</h2>
+<p>For issues with NuGet publishing, refer to:</p>
+<ul>
+<li>NuGet official documentation</li>
+<li>GitHub Actions logs in your repository</li>
+<li>NuGet support community</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jomardyan/c-Tasking/blob/main/docs/NUGET_PUBLISHING.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

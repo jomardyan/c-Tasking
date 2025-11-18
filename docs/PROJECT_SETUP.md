@@ -27,8 +27,8 @@ c-Tasking/
 │   └── publish.yml              # NuGet publishing workflow
 │
 ├── README.md                    # Main documentation
-├── QUICK_REFERENCE.md           # Quick API reference
-├── LIBRARY_GUIDE.md             # Comprehensive library guide
+├── HELP.md                      # Comprehensive library overview
+├── USAGE_AND_COMPARISON.md      # Usage comparisons and patterns
 ├── CONTRIBUTING.md              # Contributing guidelines
 ├── CHANGELOG.md                 # Version history
 ├── NUGET_PUBLISHING.md          # NuGet publishing guide
@@ -87,7 +87,7 @@ This repository includes a workspace setting at `.vscode/settings.json` that set
 |----------|-------|
 | Package ID | c-Tasking |
 | Current Version | 1.0.0 |
-| Framework | .NET 8.0+ |
+| Framework | .NET 10.0+ |
 | License | MIT |
 | Author | Jomar Dyan |
 | Repository | github.com/jomardyan/c-Tasking |
@@ -151,8 +151,8 @@ git clone https://github.com/jomardyan/c-Tasking.git
 | File | Purpose |
 |------|---------|
 | `README.md` | Main introduction, features, quick start, API reference |
-| `QUICK_REFERENCE.md` | Quick API lookup guide |
-| `LIBRARY_GUIDE.md` | Comprehensive usage guide with examples |
+| `HELP.md` | Comprehensive guide and examples |
+| `USAGE_AND_COMPARISON.md` | Usage patterns and comparisons |
 | `CHANGELOG.md` | Version history and changes |
 | `CONTRIBUTING.md` | Contribution guidelines |
 | `LICENSE` | MIT License terms |
@@ -171,7 +171,7 @@ git clone https://github.com/jomardyan/c-Tasking.git
 **1. Build Workflow** (`.github/workflows/build.yml`)
 - Triggers on: push to main/develop, pull requests
 - Steps:
-  - Setup .NET 8.0
+  - Setup .NET 10.0
   - Restore dependencies
   - Build in Release mode
   - Run tests

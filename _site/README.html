@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>c-Tasking | c-Tasking Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="c-Tasking | c-Tasking Documentation ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jomardyan/c-Tasking/blob/main/README.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="c-Tasking">
+            c-Tasking
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="c-tasking">c-Tasking</h1>
+
+<p>A lightweight C# library that simplifies threading and multitasking for modern .NET projects.</p>
+<h2 id="highlights">Highlights</h2>
+<ul>
+<li>Task wrappers and helpers for common concurrency patterns</li>
+<li>Simple thread lifecycle management and cancellation support</li>
+<li>Bounded managed thread pool with auto-queuing</li>
+<li>Scheduling utilities for periodic and one-time tasks</li>
+<li>Retry logic with exponential backoff</li>
+<li>Batch processing with controlled concurrency</li>
+<li>LINQ-style task extensions for fluent async code</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<p>See the <code>docs/</code> folder for full documentation:</p>
+<ul>
+<li><code>docs/HELP.md</code> — Comprehensive guide and API reference</li>
+<li><code>docs/USAGE_AND_COMPARISON.md</code> — Patterns and comparisons with .NET primitives</li>
+<li><code>docs/PROJECT_SETUP.md</code> — Developer setup and CI/CD</li>
+<li><code>docs/NUGET_PUBLISHING.md</code> — Publishing guide</li>
+<li><code>docs/CONTRIBUTING.md</code> — Contribution guidelines</li>
+<li><code>docs/CHANGELOG.md</code> — Release notes</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code class="lang-bash">dotnet add package c-Tasking
+</code></pre>
+<h2 id="quick-examples">Quick Examples</h2>
+<p>Run a simple async task:</p>
+<pre><code class="lang-csharp">using c_Tasking.Core;
+var result = await TaskWrapper.RunAsync(async () =&gt;
+{
+    await Task.Delay(100);
+    return 42;
+});
+</code></pre>
+<p>Use a bounded thread pool:</p>
+<pre><code class="lang-csharp">using c_Tasking.Core;
+using var pool = new ManagedThreadPool(maxThreads: 4);
+pool.EnqueueTask(() =&gt; Console.WriteLine(&quot;Work&quot;));
+pool.WaitAll();
+</code></pre>
+<p>Schedule periodic work:</p>
+<pre><code class="lang-csharp">using c_Tasking.Utilities;
+using var scheduler = new TaskScheduler();
+scheduler.ScheduleRepeating(() =&gt; 
+    Console.WriteLine(&quot;Every 10 seconds&quot;), 
+    intervalMilliseconds: 10000);
+</code></pre>
+<p>For more examples, see <code>Examples/UsageExamples.cs</code>.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Target framework</strong>: .NET 10.0</li>
+<li><strong>Zero dependencies</strong>: Pure .NET implementation</li>
+<li><strong>Minimal overhead</strong>: Thin wrappers around .NET APIs</li>
+<li><strong>Production-ready</strong>: Full resource management and error handling</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>See <code>docs/CONTRIBUTING.md</code> for contribution guidelines.</p>
+<h2 id="license">License</h2>
+<p>MIT License – see <code>LICENSE</code> for details.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jomardyan/c-Tasking/blob/main/README.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

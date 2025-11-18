@@ -1,0 +1,125 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Core
+  commentId: N:c_Tasking.Core
+  id: c_Tasking.Core
+  children:
+  - c_Tasking.Core.AsyncOperation
+  - c_Tasking.Core.AsyncOperation`1
+  - c_Tasking.Core.ConsoleErrorHandler
+  - c_Tasking.Core.ErrorHandler
+  - c_Tasking.Core.IErrorHandler
+  - c_Tasking.Core.ManagedThreadPool
+  - c_Tasking.Core.SimpleThread
+  - c_Tasking.Core.TaskWrapper
+  - c_Tasking.Core.ThreadPoolStats
+  langs:
+  - csharp
+  - vb
+  name: c_Tasking.Core
+  nameWithType: c_Tasking.Core
+  fullName: c_Tasking.Core
+  type: Namespace
+  assemblies:
+  - c-Tasking
+references:
+- uid: c_Tasking.Core.AsyncOperation
+  commentId: T:c_Tasking.Core.AsyncOperation
+  parent: c_Tasking.Core
+  href: c_Tasking.Core.AsyncOperation.html
+  name: AsyncOperation
+  nameWithType: AsyncOperation
+  fullName: c_Tasking.Core.AsyncOperation
+- uid: c_Tasking.Core.AsyncOperation`1
+  commentId: T:c_Tasking.Core.AsyncOperation`1
+  parent: c_Tasking.Core
+  href: c_Tasking.Core.AsyncOperation-1.html
+  name: AsyncOperation<T>
+  nameWithType: AsyncOperation<T>
+  fullName: c_Tasking.Core.AsyncOperation<T>
+  nameWithType.vb: AsyncOperation(Of T)
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T)
+  name.vb: AsyncOperation(Of T)
+  spec.csharp:
+  - uid: c_Tasking.Core.AsyncOperation`1
+    name: AsyncOperation
+    href: c_Tasking.Core.AsyncOperation-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: c_Tasking.Core.AsyncOperation`1
+    name: AsyncOperation
+    href: c_Tasking.Core.AsyncOperation-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: c_Tasking.Core.IErrorHandler
+  commentId: T:c_Tasking.Core.IErrorHandler
+  parent: c_Tasking.Core
+  href: c_Tasking.Core.IErrorHandler.html
+  name: IErrorHandler
+  nameWithType: IErrorHandler
+  fullName: c_Tasking.Core.IErrorHandler
+- uid: c_Tasking.Core.ErrorHandler
+  commentId: T:c_Tasking.Core.ErrorHandler
+  href: c_Tasking.Core.ErrorHandler.html
+  name: ErrorHandler
+  nameWithType: ErrorHandler
+  fullName: c_Tasking.Core.ErrorHandler
+- uid: c_Tasking.Core.ConsoleErrorHandler
+  commentId: T:c_Tasking.Core.ConsoleErrorHandler
+  href: c_Tasking.Core.ConsoleErrorHandler.html
+  name: ConsoleErrorHandler
+  nameWithType: ConsoleErrorHandler
+  fullName: c_Tasking.Core.ConsoleErrorHandler
+- uid: c_Tasking.Core.ManagedThreadPool
+  commentId: T:c_Tasking.Core.ManagedThreadPool
+  href: c_Tasking.Core.ManagedThreadPool.html
+  name: ManagedThreadPool
+  nameWithType: ManagedThreadPool
+  fullName: c_Tasking.Core.ManagedThreadPool
+- uid: c_Tasking.Core.ThreadPoolStats
+  commentId: T:c_Tasking.Core.ThreadPoolStats
+  parent: c_Tasking.Core
+  href: c_Tasking.Core.ThreadPoolStats.html
+  name: ThreadPoolStats
+  nameWithType: ThreadPoolStats
+  fullName: c_Tasking.Core.ThreadPoolStats
+- uid: c_Tasking.Core.SimpleThread
+  commentId: T:c_Tasking.Core.SimpleThread
+  parent: c_Tasking.Core
+  href: c_Tasking.Core.SimpleThread.html
+  name: SimpleThread
+  nameWithType: SimpleThread
+  fullName: c_Tasking.Core.SimpleThread
+- uid: c_Tasking.Core.TaskWrapper
+  commentId: T:c_Tasking.Core.TaskWrapper
+  href: c_Tasking.Core.TaskWrapper.html
+  name: TaskWrapper
+  nameWithType: TaskWrapper
+  fullName: c_Tasking.Core.TaskWrapper
+- uid: c_Tasking.Core
+  commentId: N:c_Tasking.Core
+  href: c_Tasking.html
+  name: c_Tasking.Core
+  nameWithType: c_Tasking.Core
+  fullName: c_Tasking.Core
+  spec.csharp:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html
+  spec.vb:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html

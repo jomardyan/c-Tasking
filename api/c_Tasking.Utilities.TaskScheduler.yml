@@ -1,0 +1,875 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Utilities.TaskScheduler
+  commentId: T:c_Tasking.Utilities.TaskScheduler
+  id: TaskScheduler
+  parent: c_Tasking.Utilities
+  children:
+  - c_Tasking.Utilities.TaskScheduler.#ctor
+  - c_Tasking.Utilities.TaskScheduler.Cancel(System.Int32)
+  - c_Tasking.Utilities.TaskScheduler.CancelAll
+  - c_Tasking.Utilities.TaskScheduler.Dispose
+  - c_Tasking.Utilities.TaskScheduler.Finalize
+  - c_Tasking.Utilities.TaskScheduler.ScheduleOnce(System.Action,System.Int32)
+  - c_Tasking.Utilities.TaskScheduler.ScheduleOnceAsync(System.Func{System.Threading.Tasks.Task},System.Int32)
+  - c_Tasking.Utilities.TaskScheduler.ScheduleRepeating(System.Action,System.Int32)
+  - c_Tasking.Utilities.TaskScheduler.ScheduleRepeatingAsync(System.Func{System.Threading.Tasks.Task},System.Int32)
+  - c_Tasking.Utilities.TaskScheduler.ScheduleWithDelay(System.Action,System.Int32,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: TaskScheduler
+  nameWithType: TaskScheduler
+  fullName: c_Tasking.Utilities.TaskScheduler
+  type: Class
+  source:
+    remote:
+      path: Utilities/TaskScheduler.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: TaskScheduler
+    path: Utilities/TaskScheduler.cs
+    startLine: 7
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Simple task scheduler for executing tasks at specific times or intervals.
+  example: []
+  syntax:
+    content: 'public class TaskScheduler : IDisposable'
+    content.vb: Public Class TaskScheduler Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: c_Tasking.Utilities.TaskScheduler.#ctor
+  commentId: M:c_Tasking.Utilities.TaskScheduler.#ctor
+  id: '#ctor'
+  parent: c_Tasking.Utilities.TaskScheduler
+  langs:
+  - csharp
+  - vb
+  name: TaskScheduler()
+  nameWithType: TaskScheduler.TaskScheduler()
+  fullName: c_Tasking.Utilities.TaskScheduler.TaskScheduler()
+  type: Constructor
+  source:
+    remote:
+      path: Utilities/TaskScheduler.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: .ctor
+    path: Utilities/TaskScheduler.cs
+    startLine: 16
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Creates a new <xref href="c_Tasking.Utilities.TaskScheduler" data-throw-if-not-resolved="false"></xref> instance used to schedule recurring and one-time tasks.
+  example: []
+  syntax:
+    content: public TaskScheduler()
+    content.vb: Public Sub New()
+  overload: c_Tasking.Utilities.TaskScheduler.#ctor*
+  nameWithType.vb: TaskScheduler.New()
+  fullName.vb: c_Tasking.Utilities.TaskScheduler.New()
+  name.vb: New()
+- uid: c_Tasking.Utilities.TaskScheduler.ScheduleOnce(System.Action,System.Int32)
+  commentId: M:c_Tasking.Utilities.TaskScheduler.ScheduleOnce(System.Action,System.Int32)
+  id: ScheduleOnce(System.Action,System.Int32)
+  parent: c_Tasking.Utilities.TaskScheduler
+  langs:
+  - csharp
+  - vb
+  name: ScheduleOnce(Action, int)
+  nameWithType: TaskScheduler.ScheduleOnce(Action, int)
+  fullName: c_Tasking.Utilities.TaskScheduler.ScheduleOnce(System.Action, int)
+  type: Method
+  source:
+    remote:
+      path: Utilities/TaskScheduler.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ScheduleOnce
+    path: Utilities/TaskScheduler.cs
+    startLine: 28
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Schedules a task to run once after a delay.
+  example: []
+  syntax:
+    content: public int ScheduleOnce(Action task, int delayMilliseconds)
+    parameters:
+    - id: task
+      type: System.Action
+      description: The action to run.
+    - id: delayMilliseconds
+      type: System.Int32
+      description: Delay in milliseconds before running the action.
+    return:
+      type: System.Int32
+      description: The scheduled task identifier.
+    content.vb: Public Function ScheduleOnce(task As Action, delayMilliseconds As Integer) As Integer
+  overload: c_Tasking.Utilities.TaskScheduler.ScheduleOnce*
+  nameWithType.vb: TaskScheduler.ScheduleOnce(Action, Integer)
+  fullName.vb: c_Tasking.Utilities.TaskScheduler.ScheduleOnce(System.Action, Integer)
+  name.vb: ScheduleOnce(Action, Integer)
+- uid: c_Tasking.Utilities.TaskScheduler.ScheduleRepeating(System.Action,System.Int32)
+  commentId: M:c_Tasking.Utilities.TaskScheduler.ScheduleRepeating(System.Action,System.Int32)
+  id: ScheduleRepeating(System.Action,System.Int32)
+  parent: c_Tasking.Utilities.TaskScheduler
+  langs:
+  - csharp
+  - vb
+  name: ScheduleRepeating(Action, int)
+  nameWithType: TaskScheduler.ScheduleRepeating(Action, int)
+  fullName: c_Tasking.Utilities.TaskScheduler.ScheduleRepeating(System.Action, int)
+  type: Method
+  source:
+    remote:
+      path: Utilities/TaskScheduler.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ScheduleRepeating
+    path: Utilities/TaskScheduler.cs
+    startLine: 59
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Schedules a task to run repeatedly at a fixed interval.
+  example: []
+  syntax:
+    content: public int ScheduleRepeating(Action task, int intervalMilliseconds)
+    parameters:
+    - id: task
+      type: System.Action
+      description: The action to run.
+    - id: intervalMilliseconds
+      type: System.Int32
+      description: The repeat interval in milliseconds.
+    return:
+      type: System.Int32
+      description: The scheduled task identifier.
+    content.vb: Public Function ScheduleRepeating(task As Action, intervalMilliseconds As Integer) As Integer
+  overload: c_Tasking.Utilities.TaskScheduler.ScheduleRepeating*
+  nameWithType.vb: TaskScheduler.ScheduleRepeating(Action, Integer)
+  fullName.vb: c_Tasking.Utilities.TaskScheduler.ScheduleRepeating(System.Action, Integer)
+  name.vb: ScheduleRepeating(Action, Integer)
+- uid: c_Tasking.Utilities.TaskScheduler.ScheduleWithDelay(System.Action,System.Int32,System.Int32)
+  commentId: M:c_Tasking.Utilities.TaskScheduler.ScheduleWithDelay(System.Action,System.Int32,System.Int32)
+  id: ScheduleWithDelay(System.Action,System.Int32,System.Int32)
+  parent: c_Tasking.Utilities.TaskScheduler
+  langs:
+  - csharp
+  - vb
+  name: ScheduleWithDelay(Action, int, int)
+  nameWithType: TaskScheduler.ScheduleWithDelay(Action, int, int)
+  fullName: c_Tasking.Utilities.TaskScheduler.ScheduleWithDelay(System.Action, int, int)
+  type: Method
+  source:
+    remote:
+      path: Utilities/TaskScheduler.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ScheduleWithDelay
+    path: Utilities/TaskScheduler.cs
+    startLine: 87
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Schedules a task to run with an initial delay and then repeatedly at an interval.
+  example: []
+  syntax:
+    content: public int ScheduleWithDelay(Action task, int delayMilliseconds, int intervalMilliseconds)
+    parameters:
+    - id: task
+      type: System.Action
+      description: The action to run.
+    - id: delayMilliseconds
+      type: System.Int32
+      description: Initial delay in milliseconds before first run.
+    - id: intervalMilliseconds
+      type: System.Int32
+      description: Interval in milliseconds for recurring runs.
+    return:
+      type: System.Int32
+      description: The scheduled task identifier.
+    content.vb: Public Function ScheduleWithDelay(task As Action, delayMilliseconds As Integer, intervalMilliseconds As Integer) As Integer
+  overload: c_Tasking.Utilities.TaskScheduler.ScheduleWithDelay*
+  nameWithType.vb: TaskScheduler.ScheduleWithDelay(Action, Integer, Integer)
+  fullName.vb: c_Tasking.Utilities.TaskScheduler.ScheduleWithDelay(System.Action, Integer, Integer)
+  name.vb: ScheduleWithDelay(Action, Integer, Integer)
+- uid: c_Tasking.Utilities.TaskScheduler.ScheduleOnceAsync(System.Func{System.Threading.Tasks.Task},System.Int32)
+  commentId: M:c_Tasking.Utilities.TaskScheduler.ScheduleOnceAsync(System.Func{System.Threading.Tasks.Task},System.Int32)
+  id: ScheduleOnceAsync(System.Func{System.Threading.Tasks.Task},System.Int32)
+  parent: c_Tasking.Utilities.TaskScheduler
+  langs:
+  - csharp
+  - vb
+  name: ScheduleOnceAsync(Func<Task>, int)
+  nameWithType: TaskScheduler.ScheduleOnceAsync(Func<Task>, int)
+  fullName: c_Tasking.Utilities.TaskScheduler.ScheduleOnceAsync(System.Func<System.Threading.Tasks.Task>, int)
+  type: Method
+  source:
+    remote:
+      path: Utilities/TaskScheduler.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ScheduleOnceAsync
+    path: Utilities/TaskScheduler.cs
+    startLine: 114
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Schedules an async task to run once after a delay.
+  example: []
+  syntax:
+    content: public int ScheduleOnceAsync(Func<Task> task, int delayMilliseconds)
+    parameters:
+    - id: task
+      type: System.Func{System.Threading.Tasks.Task}
+      description: Async function to schedule.
+    - id: delayMilliseconds
+      type: System.Int32
+      description: Delay in milliseconds before the scheduled execution.
+    return:
+      type: System.Int32
+      description: The scheduled task identifier.
+    content.vb: Public Function ScheduleOnceAsync(task As Func(Of Task), delayMilliseconds As Integer) As Integer
+  overload: c_Tasking.Utilities.TaskScheduler.ScheduleOnceAsync*
+  nameWithType.vb: TaskScheduler.ScheduleOnceAsync(Func(Of Task), Integer)
+  fullName.vb: c_Tasking.Utilities.TaskScheduler.ScheduleOnceAsync(System.Func(Of System.Threading.Tasks.Task), Integer)
+  name.vb: ScheduleOnceAsync(Func(Of Task), Integer)
+- uid: c_Tasking.Utilities.TaskScheduler.ScheduleRepeatingAsync(System.Func{System.Threading.Tasks.Task},System.Int32)
+  commentId: M:c_Tasking.Utilities.TaskScheduler.ScheduleRepeatingAsync(System.Func{System.Threading.Tasks.Task},System.Int32)
+  id: ScheduleRepeatingAsync(System.Func{System.Threading.Tasks.Task},System.Int32)
+  parent: c_Tasking.Utilities.TaskScheduler
+  langs:
+  - csharp
+  - vb
+  name: ScheduleRepeatingAsync(Func<Task>, int)
+  nameWithType: TaskScheduler.ScheduleRepeatingAsync(Func<Task>, int)
+  fullName: c_Tasking.Utilities.TaskScheduler.ScheduleRepeatingAsync(System.Func<System.Threading.Tasks.Task>, int)
+  type: Method
+  source:
+    remote:
+      path: Utilities/TaskScheduler.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ScheduleRepeatingAsync
+    path: Utilities/TaskScheduler.cs
+    startLine: 136
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Schedules an async task to run repeatedly at a fixed interval.
+  example: []
+  syntax:
+    content: public int ScheduleRepeatingAsync(Func<Task> task, int intervalMilliseconds)
+    parameters:
+    - id: task
+      type: System.Func{System.Threading.Tasks.Task}
+      description: Async function to schedule repeatedly.
+    - id: intervalMilliseconds
+      type: System.Int32
+      description: Repeat interval in milliseconds.
+    return:
+      type: System.Int32
+      description: The scheduled task identifier.
+    content.vb: Public Function ScheduleRepeatingAsync(task As Func(Of Task), intervalMilliseconds As Integer) As Integer
+  overload: c_Tasking.Utilities.TaskScheduler.ScheduleRepeatingAsync*
+  nameWithType.vb: TaskScheduler.ScheduleRepeatingAsync(Func(Of Task), Integer)
+  fullName.vb: c_Tasking.Utilities.TaskScheduler.ScheduleRepeatingAsync(System.Func(Of System.Threading.Tasks.Task), Integer)
+  name.vb: ScheduleRepeatingAsync(Func(Of Task), Integer)
+- uid: c_Tasking.Utilities.TaskScheduler.Cancel(System.Int32)
+  commentId: M:c_Tasking.Utilities.TaskScheduler.Cancel(System.Int32)
+  id: Cancel(System.Int32)
+  parent: c_Tasking.Utilities.TaskScheduler
+  langs:
+  - csharp
+  - vb
+  name: Cancel(int)
+  nameWithType: TaskScheduler.Cancel(int)
+  fullName: c_Tasking.Utilities.TaskScheduler.Cancel(int)
+  type: Method
+  source:
+    remote:
+      path: Utilities/TaskScheduler.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Cancel
+    path: Utilities/TaskScheduler.cs
+    startLine: 157
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Cancels a scheduled task using its task id.
+  example: []
+  syntax:
+    content: public bool Cancel(int taskId)
+    parameters:
+    - id: taskId
+      type: System.Int32
+      description: The id returned when the task was scheduled.
+    return:
+      type: System.Boolean
+      description: True if the task was found and cancelled, otherwise false.
+    content.vb: Public Function Cancel(taskId As Integer) As Boolean
+  overload: c_Tasking.Utilities.TaskScheduler.Cancel*
+  nameWithType.vb: TaskScheduler.Cancel(Integer)
+  fullName.vb: c_Tasking.Utilities.TaskScheduler.Cancel(Integer)
+  name.vb: Cancel(Integer)
+- uid: c_Tasking.Utilities.TaskScheduler.CancelAll
+  commentId: M:c_Tasking.Utilities.TaskScheduler.CancelAll
+  id: CancelAll
+  parent: c_Tasking.Utilities.TaskScheduler
+  langs:
+  - csharp
+  - vb
+  name: CancelAll()
+  nameWithType: TaskScheduler.CancelAll()
+  fullName: c_Tasking.Utilities.TaskScheduler.CancelAll()
+  type: Method
+  source:
+    remote:
+      path: Utilities/TaskScheduler.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: CancelAll
+    path: Utilities/TaskScheduler.cs
+    startLine: 166
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Cancels all scheduled tasks.
+  example: []
+  syntax:
+    content: public void CancelAll()
+    content.vb: Public Sub CancelAll()
+  overload: c_Tasking.Utilities.TaskScheduler.CancelAll*
+- uid: c_Tasking.Utilities.TaskScheduler.Dispose
+  commentId: M:c_Tasking.Utilities.TaskScheduler.Dispose
+  id: Dispose
+  parent: c_Tasking.Utilities.TaskScheduler
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: TaskScheduler.Dispose()
+  fullName: c_Tasking.Utilities.TaskScheduler.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Utilities/TaskScheduler.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Dispose
+    path: Utilities/TaskScheduler.cs
+    startLine: 196
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Disposes the scheduler and cancels any scheduled tasks.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: c_Tasking.Utilities.TaskScheduler.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+- uid: c_Tasking.Utilities.TaskScheduler.Finalize
+  commentId: M:c_Tasking.Utilities.TaskScheduler.Finalize
+  id: Finalize
+  parent: c_Tasking.Utilities.TaskScheduler
+  langs:
+  - csharp
+  - vb
+  name: ~TaskScheduler()
+  nameWithType: TaskScheduler.~TaskScheduler()
+  fullName: c_Tasking.Utilities.TaskScheduler.~TaskScheduler()
+  type: Method
+  source:
+    remote:
+      path: Utilities/TaskScheduler.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Finalize
+    path: Utilities/TaskScheduler.cs
+    startLine: 209
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Finalizer ensures the scheduler is disposed if Dispose is not called.
+  example: []
+  syntax:
+    content: protected ~TaskScheduler()
+    content.vb: 'Protected '
+  overload: c_Tasking.Utilities.TaskScheduler.Finalize*
+  nameWithType.vb: ''
+  fullName.vb: ''
+  name.vb: ''
+references:
+- uid: c_Tasking.Utilities
+  commentId: N:c_Tasking.Utilities
+  href: c_Tasking.html
+  name: c_Tasking.Utilities
+  nameWithType: c_Tasking.Utilities
+  fullName: c_Tasking.Utilities
+  spec.csharp:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Utilities
+    name: Utilities
+    href: c_Tasking.Utilities.html
+  spec.vb:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Utilities
+    name: Utilities
+    href: c_Tasking.Utilities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: c_Tasking.Utilities.TaskScheduler
+  commentId: T:c_Tasking.Utilities.TaskScheduler
+  href: c_Tasking.Utilities.TaskScheduler.html
+  name: TaskScheduler
+  nameWithType: TaskScheduler
+  fullName: c_Tasking.Utilities.TaskScheduler
+- uid: c_Tasking.Utilities.TaskScheduler.#ctor*
+  commentId: Overload:c_Tasking.Utilities.TaskScheduler.#ctor
+  href: c_Tasking.Utilities.TaskScheduler.html#c_Tasking_Utilities_TaskScheduler__ctor
+  name: TaskScheduler
+  nameWithType: TaskScheduler.TaskScheduler
+  fullName: c_Tasking.Utilities.TaskScheduler.TaskScheduler
+  nameWithType.vb: TaskScheduler.New
+  fullName.vb: c_Tasking.Utilities.TaskScheduler.New
+  name.vb: New
+- uid: c_Tasking.Utilities.TaskScheduler.ScheduleOnce*
+  commentId: Overload:c_Tasking.Utilities.TaskScheduler.ScheduleOnce
+  href: c_Tasking.Utilities.TaskScheduler.html#c_Tasking_Utilities_TaskScheduler_ScheduleOnce_System_Action_System_Int32_
+  name: ScheduleOnce
+  nameWithType: TaskScheduler.ScheduleOnce
+  fullName: c_Tasking.Utilities.TaskScheduler.ScheduleOnce
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: c_Tasking.Utilities.TaskScheduler.ScheduleRepeating*
+  commentId: Overload:c_Tasking.Utilities.TaskScheduler.ScheduleRepeating
+  href: c_Tasking.Utilities.TaskScheduler.html#c_Tasking_Utilities_TaskScheduler_ScheduleRepeating_System_Action_System_Int32_
+  name: ScheduleRepeating
+  nameWithType: TaskScheduler.ScheduleRepeating
+  fullName: c_Tasking.Utilities.TaskScheduler.ScheduleRepeating
+- uid: c_Tasking.Utilities.TaskScheduler.ScheduleWithDelay*
+  commentId: Overload:c_Tasking.Utilities.TaskScheduler.ScheduleWithDelay
+  href: c_Tasking.Utilities.TaskScheduler.html#c_Tasking_Utilities_TaskScheduler_ScheduleWithDelay_System_Action_System_Int32_System_Int32_
+  name: ScheduleWithDelay
+  nameWithType: TaskScheduler.ScheduleWithDelay
+  fullName: c_Tasking.Utilities.TaskScheduler.ScheduleWithDelay
+- uid: c_Tasking.Utilities.TaskScheduler.ScheduleOnceAsync*
+  commentId: Overload:c_Tasking.Utilities.TaskScheduler.ScheduleOnceAsync
+  href: c_Tasking.Utilities.TaskScheduler.html#c_Tasking_Utilities_TaskScheduler_ScheduleOnceAsync_System_Func_System_Threading_Tasks_Task__System_Int32_
+  name: ScheduleOnceAsync
+  nameWithType: TaskScheduler.ScheduleOnceAsync
+  fullName: c_Tasking.Utilities.TaskScheduler.ScheduleOnceAsync
+- uid: System.Func{System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task>
+  nameWithType: Func<Task>
+  fullName: System.Func<System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Task)
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task)
+  name.vb: Func(Of Task)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: c_Tasking.Utilities.TaskScheduler.ScheduleRepeatingAsync*
+  commentId: Overload:c_Tasking.Utilities.TaskScheduler.ScheduleRepeatingAsync
+  href: c_Tasking.Utilities.TaskScheduler.html#c_Tasking_Utilities_TaskScheduler_ScheduleRepeatingAsync_System_Func_System_Threading_Tasks_Task__System_Int32_
+  name: ScheduleRepeatingAsync
+  nameWithType: TaskScheduler.ScheduleRepeatingAsync
+  fullName: c_Tasking.Utilities.TaskScheduler.ScheduleRepeatingAsync
+- uid: c_Tasking.Utilities.TaskScheduler.Cancel*
+  commentId: Overload:c_Tasking.Utilities.TaskScheduler.Cancel
+  href: c_Tasking.Utilities.TaskScheduler.html#c_Tasking_Utilities_TaskScheduler_Cancel_System_Int32_
+  name: Cancel
+  nameWithType: TaskScheduler.Cancel
+  fullName: c_Tasking.Utilities.TaskScheduler.Cancel
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: c_Tasking.Utilities.TaskScheduler.CancelAll*
+  commentId: Overload:c_Tasking.Utilities.TaskScheduler.CancelAll
+  href: c_Tasking.Utilities.TaskScheduler.html#c_Tasking_Utilities_TaskScheduler_CancelAll
+  name: CancelAll
+  nameWithType: TaskScheduler.CancelAll
+  fullName: c_Tasking.Utilities.TaskScheduler.CancelAll
+- uid: c_Tasking.Utilities.TaskScheduler.Dispose*
+  commentId: Overload:c_Tasking.Utilities.TaskScheduler.Dispose
+  href: c_Tasking.Utilities.TaskScheduler.html#c_Tasking_Utilities_TaskScheduler_Dispose
+  name: Dispose
+  nameWithType: TaskScheduler.Dispose
+  fullName: c_Tasking.Utilities.TaskScheduler.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+- uid: c_Tasking.Utilities.TaskScheduler.Finalize*
+  commentId: Overload:c_Tasking.Utilities.TaskScheduler.Finalize
+  href: c_Tasking.Utilities.TaskScheduler.html#c_Tasking_Utilities_TaskScheduler_Finalize
+  name: ~TaskScheduler
+  nameWithType: TaskScheduler.~TaskScheduler
+  fullName: c_Tasking.Utilities.TaskScheduler.~TaskScheduler
+  spec.csharp:
+  - name: "~"
+  - uid: c_Tasking.Utilities.TaskScheduler.Finalize*
+    name: TaskScheduler
+    href: c_Tasking.Utilities.TaskScheduler.html#c_Tasking_Utilities_TaskScheduler_Finalize

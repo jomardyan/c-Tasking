@@ -1,0 +1,670 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Examples.UsageExamples
+  commentId: T:c_Tasking.Examples.UsageExamples
+  id: UsageExamples
+  parent: c_Tasking.Examples
+  children:
+  - c_Tasking.Examples.UsageExamples.CompleteExample
+  - c_Tasking.Examples.UsageExamples.ExampleAsyncOperation
+  - c_Tasking.Examples.UsageExamples.ExampleConcurrentBatcher
+  - c_Tasking.Examples.UsageExamples.ExampleManagedThreadPool
+  - c_Tasking.Examples.UsageExamples.ExampleSimpleThread
+  - c_Tasking.Examples.UsageExamples.ExampleTaskExtensions
+  - c_Tasking.Examples.UsageExamples.ExampleTaskRetry
+  - c_Tasking.Examples.UsageExamples.ExampleTaskScheduler
+  - c_Tasking.Examples.UsageExamples.ExampleTaskWrapper
+  langs:
+  - csharp
+  - vb
+  name: UsageExamples
+  nameWithType: UsageExamples
+  fullName: c_Tasking.Examples.UsageExamples
+  type: Class
+  source:
+    remote:
+      path: Examples/UsageExamples.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: UsageExamples
+    path: Examples/UsageExamples.cs
+    startLine: 9
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Examples
+  summary: Examples showing how to use the c-Tasking library.
+  example: []
+  syntax:
+    content: public class UsageExamples
+    content.vb: Public Class UsageExamples
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: c_Tasking.Examples.UsageExamples.ExampleTaskWrapper
+  commentId: M:c_Tasking.Examples.UsageExamples.ExampleTaskWrapper
+  id: ExampleTaskWrapper
+  parent: c_Tasking.Examples.UsageExamples
+  langs:
+  - csharp
+  - vb
+  name: ExampleTaskWrapper()
+  nameWithType: UsageExamples.ExampleTaskWrapper()
+  fullName: c_Tasking.Examples.UsageExamples.ExampleTaskWrapper()
+  type: Method
+  source:
+    remote:
+      path: Examples/UsageExamples.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ExampleTaskWrapper
+    path: Examples/UsageExamples.cs
+    startLine: 16
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Examples
+  summary: Demonstrates using the TaskWrapper helper for synchronous and asynchronous tasks.
+  example: []
+  syntax:
+    content: public static void ExampleTaskWrapper()
+    content.vb: Public Shared Sub ExampleTaskWrapper()
+  overload: c_Tasking.Examples.UsageExamples.ExampleTaskWrapper*
+- uid: c_Tasking.Examples.UsageExamples.ExampleSimpleThread
+  commentId: M:c_Tasking.Examples.UsageExamples.ExampleSimpleThread
+  id: ExampleSimpleThread
+  parent: c_Tasking.Examples.UsageExamples
+  langs:
+  - csharp
+  - vb
+  name: ExampleSimpleThread()
+  nameWithType: UsageExamples.ExampleSimpleThread()
+  fullName: c_Tasking.Examples.UsageExamples.ExampleSimpleThread()
+  type: Method
+  source:
+    remote:
+      path: Examples/UsageExamples.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ExampleSimpleThread
+    path: Examples/UsageExamples.cs
+    startLine: 66
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Examples
+  summary: Demonstrates SimpleThread usage including cancellation and priority.
+  example: []
+  syntax:
+    content: public static void ExampleSimpleThread()
+    content.vb: Public Shared Sub ExampleSimpleThread()
+  overload: c_Tasking.Examples.UsageExamples.ExampleSimpleThread*
+- uid: c_Tasking.Examples.UsageExamples.ExampleAsyncOperation
+  commentId: M:c_Tasking.Examples.UsageExamples.ExampleAsyncOperation
+  id: ExampleAsyncOperation
+  parent: c_Tasking.Examples.UsageExamples
+  langs:
+  - csharp
+  - vb
+  name: ExampleAsyncOperation()
+  nameWithType: UsageExamples.ExampleAsyncOperation()
+  fullName: c_Tasking.Examples.UsageExamples.ExampleAsyncOperation()
+  type: Method
+  source:
+    remote:
+      path: Examples/UsageExamples.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ExampleAsyncOperation
+    path: Examples/UsageExamples.cs
+    startLine: 118
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Examples
+  summary: Demonstrates AsyncOperation usage and manual completion patterns.
+  example: []
+  syntax:
+    content: public static Task ExampleAsyncOperation()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Shared Function ExampleAsyncOperation() As Task
+  overload: c_Tasking.Examples.UsageExamples.ExampleAsyncOperation*
+- uid: c_Tasking.Examples.UsageExamples.ExampleManagedThreadPool
+  commentId: M:c_Tasking.Examples.UsageExamples.ExampleManagedThreadPool
+  id: ExampleManagedThreadPool
+  parent: c_Tasking.Examples.UsageExamples
+  langs:
+  - csharp
+  - vb
+  name: ExampleManagedThreadPool()
+  nameWithType: UsageExamples.ExampleManagedThreadPool()
+  fullName: c_Tasking.Examples.UsageExamples.ExampleManagedThreadPool()
+  type: Method
+  source:
+    remote:
+      path: Examples/UsageExamples.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ExampleManagedThreadPool
+    path: Examples/UsageExamples.cs
+    startLine: 159
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Examples
+  summary: Demonstrates a managed thread pool enqueuing and tracking tasks.
+  example: []
+  syntax:
+    content: public static void ExampleManagedThreadPool()
+    content.vb: Public Shared Sub ExampleManagedThreadPool()
+  overload: c_Tasking.Examples.UsageExamples.ExampleManagedThreadPool*
+- uid: c_Tasking.Examples.UsageExamples.ExampleTaskScheduler
+  commentId: M:c_Tasking.Examples.UsageExamples.ExampleTaskScheduler
+  id: ExampleTaskScheduler
+  parent: c_Tasking.Examples.UsageExamples
+  langs:
+  - csharp
+  - vb
+  name: ExampleTaskScheduler()
+  nameWithType: UsageExamples.ExampleTaskScheduler()
+  fullName: c_Tasking.Examples.UsageExamples.ExampleTaskScheduler()
+  type: Method
+  source:
+    remote:
+      path: Examples/UsageExamples.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ExampleTaskScheduler
+    path: Examples/UsageExamples.cs
+    startLine: 189
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Examples
+  summary: Demonstrates task scheduling with one-time and repeating tasks.
+  example: []
+  syntax:
+    content: public static void ExampleTaskScheduler()
+    content.vb: Public Shared Sub ExampleTaskScheduler()
+  overload: c_Tasking.Examples.UsageExamples.ExampleTaskScheduler*
+- uid: c_Tasking.Examples.UsageExamples.ExampleTaskRetry
+  commentId: M:c_Tasking.Examples.UsageExamples.ExampleTaskRetry
+  id: ExampleTaskRetry
+  parent: c_Tasking.Examples.UsageExamples
+  langs:
+  - csharp
+  - vb
+  name: ExampleTaskRetry()
+  nameWithType: UsageExamples.ExampleTaskRetry()
+  fullName: c_Tasking.Examples.UsageExamples.ExampleTaskRetry()
+  type: Method
+  source:
+    remote:
+      path: Examples/UsageExamples.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ExampleTaskRetry
+    path: Examples/UsageExamples.cs
+    startLine: 220
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Examples
+  summary: Demonstrates retrying operations with exponential backoff.
+  example: []
+  syntax:
+    content: public static Task ExampleTaskRetry()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Shared Function ExampleTaskRetry() As Task
+  overload: c_Tasking.Examples.UsageExamples.ExampleTaskRetry*
+- uid: c_Tasking.Examples.UsageExamples.ExampleConcurrentBatcher
+  commentId: M:c_Tasking.Examples.UsageExamples.ExampleConcurrentBatcher
+  id: ExampleConcurrentBatcher
+  parent: c_Tasking.Examples.UsageExamples
+  langs:
+  - csharp
+  - vb
+  name: ExampleConcurrentBatcher()
+  nameWithType: UsageExamples.ExampleConcurrentBatcher()
+  fullName: c_Tasking.Examples.UsageExamples.ExampleConcurrentBatcher()
+  type: Method
+  source:
+    remote:
+      path: Examples/UsageExamples.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ExampleConcurrentBatcher
+    path: Examples/UsageExamples.cs
+    startLine: 251
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Examples
+  summary: Demonstrates concurrent batch processing with result callbacks.
+  example: []
+  syntax:
+    content: public static Task ExampleConcurrentBatcher()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Shared Function ExampleConcurrentBatcher() As Task
+  overload: c_Tasking.Examples.UsageExamples.ExampleConcurrentBatcher*
+- uid: c_Tasking.Examples.UsageExamples.ExampleTaskExtensions
+  commentId: M:c_Tasking.Examples.UsageExamples.ExampleTaskExtensions
+  id: ExampleTaskExtensions
+  parent: c_Tasking.Examples.UsageExamples
+  langs:
+  - csharp
+  - vb
+  name: ExampleTaskExtensions()
+  nameWithType: UsageExamples.ExampleTaskExtensions()
+  fullName: c_Tasking.Examples.UsageExamples.ExampleTaskExtensions()
+  type: Method
+  source:
+    remote:
+      path: Examples/UsageExamples.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ExampleTaskExtensions
+    path: Examples/UsageExamples.cs
+    startLine: 281
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Examples
+  summary: Demonstrates various task extension methods (Map, Chain, OnSuccess, etc.).
+  example: []
+  syntax:
+    content: public static Task ExampleTaskExtensions()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Shared Function ExampleTaskExtensions() As Task
+  overload: c_Tasking.Examples.UsageExamples.ExampleTaskExtensions*
+- uid: c_Tasking.Examples.UsageExamples.CompleteExample
+  commentId: M:c_Tasking.Examples.UsageExamples.CompleteExample
+  id: CompleteExample
+  parent: c_Tasking.Examples.UsageExamples
+  langs:
+  - csharp
+  - vb
+  name: CompleteExample()
+  nameWithType: UsageExamples.CompleteExample()
+  fullName: c_Tasking.Examples.UsageExamples.CompleteExample()
+  type: Method
+  source:
+    remote:
+      path: Examples/UsageExamples.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: CompleteExample
+    path: Examples/UsageExamples.cs
+    startLine: 313
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Examples
+  summary: Runs a complete real-world example combining thread pool, scheduler, batcher and retry logic.
+  example: []
+  syntax:
+    content: public static Task CompleteExample()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Shared Function CompleteExample() As Task
+  overload: c_Tasking.Examples.UsageExamples.CompleteExample*
+references:
+- uid: c_Tasking.Examples
+  commentId: N:c_Tasking.Examples
+  href: c_Tasking.html
+  name: c_Tasking.Examples
+  nameWithType: c_Tasking.Examples
+  fullName: c_Tasking.Examples
+  spec.csharp:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Examples
+    name: Examples
+    href: c_Tasking.Examples.html
+  spec.vb:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Examples
+    name: Examples
+    href: c_Tasking.Examples.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: c_Tasking.Examples.UsageExamples.ExampleTaskWrapper*
+  commentId: Overload:c_Tasking.Examples.UsageExamples.ExampleTaskWrapper
+  href: c_Tasking.Examples.UsageExamples.html#c_Tasking_Examples_UsageExamples_ExampleTaskWrapper
+  name: ExampleTaskWrapper
+  nameWithType: UsageExamples.ExampleTaskWrapper
+  fullName: c_Tasking.Examples.UsageExamples.ExampleTaskWrapper
+- uid: c_Tasking.Examples.UsageExamples.ExampleSimpleThread*
+  commentId: Overload:c_Tasking.Examples.UsageExamples.ExampleSimpleThread
+  href: c_Tasking.Examples.UsageExamples.html#c_Tasking_Examples_UsageExamples_ExampleSimpleThread
+  name: ExampleSimpleThread
+  nameWithType: UsageExamples.ExampleSimpleThread
+  fullName: c_Tasking.Examples.UsageExamples.ExampleSimpleThread
+- uid: c_Tasking.Examples.UsageExamples.ExampleAsyncOperation*
+  commentId: Overload:c_Tasking.Examples.UsageExamples.ExampleAsyncOperation
+  href: c_Tasking.Examples.UsageExamples.html#c_Tasking_Examples_UsageExamples_ExampleAsyncOperation
+  name: ExampleAsyncOperation
+  nameWithType: UsageExamples.ExampleAsyncOperation
+  fullName: c_Tasking.Examples.UsageExamples.ExampleAsyncOperation
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: c_Tasking.Examples.UsageExamples.ExampleManagedThreadPool*
+  commentId: Overload:c_Tasking.Examples.UsageExamples.ExampleManagedThreadPool
+  href: c_Tasking.Examples.UsageExamples.html#c_Tasking_Examples_UsageExamples_ExampleManagedThreadPool
+  name: ExampleManagedThreadPool
+  nameWithType: UsageExamples.ExampleManagedThreadPool
+  fullName: c_Tasking.Examples.UsageExamples.ExampleManagedThreadPool
+- uid: c_Tasking.Examples.UsageExamples.ExampleTaskScheduler*
+  commentId: Overload:c_Tasking.Examples.UsageExamples.ExampleTaskScheduler
+  href: c_Tasking.Examples.UsageExamples.html#c_Tasking_Examples_UsageExamples_ExampleTaskScheduler
+  name: ExampleTaskScheduler
+  nameWithType: UsageExamples.ExampleTaskScheduler
+  fullName: c_Tasking.Examples.UsageExamples.ExampleTaskScheduler
+- uid: c_Tasking.Examples.UsageExamples.ExampleTaskRetry*
+  commentId: Overload:c_Tasking.Examples.UsageExamples.ExampleTaskRetry
+  href: c_Tasking.Examples.UsageExamples.html#c_Tasking_Examples_UsageExamples_ExampleTaskRetry
+  name: ExampleTaskRetry
+  nameWithType: UsageExamples.ExampleTaskRetry
+  fullName: c_Tasking.Examples.UsageExamples.ExampleTaskRetry
+- uid: c_Tasking.Examples.UsageExamples.ExampleConcurrentBatcher*
+  commentId: Overload:c_Tasking.Examples.UsageExamples.ExampleConcurrentBatcher
+  href: c_Tasking.Examples.UsageExamples.html#c_Tasking_Examples_UsageExamples_ExampleConcurrentBatcher
+  name: ExampleConcurrentBatcher
+  nameWithType: UsageExamples.ExampleConcurrentBatcher
+  fullName: c_Tasking.Examples.UsageExamples.ExampleConcurrentBatcher
+- uid: c_Tasking.Examples.UsageExamples.ExampleTaskExtensions*
+  commentId: Overload:c_Tasking.Examples.UsageExamples.ExampleTaskExtensions
+  href: c_Tasking.Examples.UsageExamples.html#c_Tasking_Examples_UsageExamples_ExampleTaskExtensions
+  name: ExampleTaskExtensions
+  nameWithType: UsageExamples.ExampleTaskExtensions
+  fullName: c_Tasking.Examples.UsageExamples.ExampleTaskExtensions
+- uid: c_Tasking.Examples.UsageExamples.CompleteExample*
+  commentId: Overload:c_Tasking.Examples.UsageExamples.CompleteExample
+  href: c_Tasking.Examples.UsageExamples.html#c_Tasking_Examples_UsageExamples_CompleteExample
+  name: CompleteExample
+  nameWithType: UsageExamples.CompleteExample
+  fullName: c_Tasking.Examples.UsageExamples.CompleteExample

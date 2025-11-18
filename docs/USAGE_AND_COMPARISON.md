@@ -251,8 +251,8 @@ Why use c-Tasking?
  
 ## Additional Resources
 
-- `docs/QUICK_REFERENCE.md` — quick examples
-- `docs/API_REFERENCE.md` — the consolidated API reference
+- `docs/HELP.md` — comprehensive guide and examples
+- `docs/PROJECT_SETUP.md` — project setup and packaging guide
 - `Examples/UsageExamples.cs` — runnable examples from the repo
 
 ---

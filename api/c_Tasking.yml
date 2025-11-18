@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking
+  commentId: N:c_Tasking
+  id: c_Tasking
+  children:
+  - c_Tasking.Library
+  - c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: c_Tasking
+  nameWithType: c_Tasking
+  fullName: c_Tasking
+  type: Namespace
+  assemblies:
+  - c-Tasking
+references:
+- uid: c_Tasking.Library
+  commentId: T:c_Tasking.Library
+  href: c_Tasking.Library.html
+  name: Library
+  nameWithType: Library
+  fullName: c_Tasking.Library
+- uid: c_Tasking.TaskHelpers
+  commentId: T:c_Tasking.TaskHelpers
+  href: c_Tasking.TaskHelpers.html
+  name: TaskHelpers
+  nameWithType: TaskHelpers
+  fullName: c_Tasking.TaskHelpers

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>c-Tasking — Usage Cases &amp; Comparison with .NET Built-in APIs | c-Tasking Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="c-Tasking — Usage Cases &amp; Comparison with .NET Built-in APIs | c-Tasking Documentation ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jomardyan/c-Tasking/blob/main/docs/USAGE_AND_COMPARISON.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="c-Tasking">
+            c-Tasking
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="c-tasking--usage-cases--comparison-with-net-built-in-apis">c-Tasking — Usage Cases &amp; Comparison with .NET Built-in APIs</h1>
+
+<p>This document compares common usage scenarios using the native .NET primitives versus the c-Tasking library wrappers. It highlights how c-Tasking simplifies certain patterns and when to prefer the library or built-in APIs. The examples target .NET 10 (net10.0) and c-Tasking v1.x.</p>
+<h2 id="goals">Goals</h2>
+<ul>
+<li>Show simple examples for common patterns: background work, scheduled tasks, retries, batching, and thread management.</li>
+<li>Explain when to use the standard .NET approach versus the c-Tasking helper classes.</li>
+<li>Provide trade-offs on clarity, performance, and control.</li>
+</ul>
+<hr>
+<h2 id="component-mapping">Component Mapping</h2>
+<ul>
+<li>TaskWrapper ⇄ Task / Task.Run / Task.WhenAll / Task.WhenAny</li>
+<li>SimpleThread ⇄ Thread (System.Threading) / long-running background threads</li>
+<li>AsyncOperation ⇄ TaskCompletionSource / manual Task-based coordination</li>
+<li>ManagedThreadPool ⇄ ThreadPool / TPL (Task Parallel Library)</li>
+<li>TaskScheduler ⇄ System.Threading.Timer / Task.Delay / scheduled jobs (Quartz.NET, Hangfire)</li>
+<li>TaskRetry ⇄ Manual try/catch with Task.Delay or libraries like Polly</li>
+<li>ConcurrentBatcher ⇄ Parallel.ForEach / custom batching using SemaphoreSlim / Dataflow library</li>
+<li>TaskExtensions ⇄ Common Task chaining and continuation patterns</li>
+</ul>
+<hr>
+<h2 id="c-tasking-specifics-and-notes">c-Tasking specifics and notes</h2>
+<ul>
+<li><strong>Exception handling:</strong> c-Tasking helpers generally use the <code>ErrorHandler</code> singleton to log exceptions rather than throwing by default. Check the specific APIs when you need to propagate errors.</li>
+<li><strong>IDisposable &amp; lifecycle:</strong> <code>TaskScheduler</code> and <code>ManagedThreadPool</code> are <code>IDisposable</code> and should be used with <code>using var</code> or manually disposed for graceful cleanup.</li>
+<li><strong>Default thread behavior:</strong> <code>SimpleThread</code> defaults to <code>IsBackground = false</code>; set as background if you want the process to exit without waiting for it.</li>
+<li><strong>Sync/Async overloads:</strong> Many utilities have both synchronous and async overloads (e.g., <code>TaskRetry.Execute</code> and <code>ExecuteWithRetry</code>), choose the one matching your code path.</li>
+</ul>
+<hr>
+<h2 id="usage-examples--comparison">Usage Examples &amp; Comparison</h2>
+<h3 id="1-simple-asynchronous-task--fire-and-forget">1) Simple Asynchronous Task / Fire-and-Forget</h3>
+<p>.NET (built-in):</p>
+<pre><code class="lang-csharp">// Fire-and-forget (use sparingly; exceptions must be handled manually)
+_ = Task.Run(async () =&gt; {
+    try { await DoWorkAsync(); }
+    catch (Exception ex) { Log(ex); }
+});
+</code></pre>
+<p>c-Tasking:</p>
+<pre><code class="lang-csharp">// Slightly more concise with TaskWrapper
+_ = TaskWrapper.RunAsync(async () =&gt; await DoWorkAsync());
+// Or for synchronous action
+_ = TaskWrapper.Run(() =&gt; DoWork());
+</code></pre>
+<p>Why use c-Tasking?</p>
+<ul>
+<li>Cleaner, more intention-revealing syntax for simple one-off tasks.</li>
+<li>For advanced needs or fine-grained control, prefer Task.Run or direct Tasks.</li>
+</ul>
+<hr>
+<h3 id="2-long-runningbackground-thread">2) Long-Running/Background Thread</h3>
+<p>.NET (built-in):</p>
+<pre><code class="lang-csharp">var t = new Thread(() =&gt; {
+    while (!cancellationToken.IsCancellationRequested) {
+        DoWork();
+    }
+});
+t.IsBackground = true;
+t.Start();
+</code></pre>
+<p>c-Tasking:</p>
+<pre><code class="lang-csharp">var thread = new SimpleThread();
+// CancellationToken support
+thread.Start(ct =&gt; {
+    while (!ct.IsCancellationRequested) {
+        DoWork();
+    }
+});
+// Or start without token
+// thread.Start(() =&gt; { while(true) { DoWork(); } });
+// Stop gracefully
+thread.Stop(5000);
+</code></pre>
+<p>Why use c-Tasking?</p>
+<ul>
+<li><code>SimpleThread</code> combines cancellation and lifecycle management, avoiding repeated setup boilerplate.</li>
+<li>Use raw <code>Thread</code> for specialized OS thread-configurations or extreme performance tuning.</li>
+</ul>
+<hr>
+<h3 id="3-managed-thread-pool--worker-pool">3) Managed Thread Pool / Worker Pool</h3>
+<p>.NET (built-in):</p>
+<ul>
+<li><code>ThreadPool</code> (QueueUserWorkItem) for lightweight tasks.</li>
+<li>TPL for tasks via <code>Task.Run</code>, <code>Parallel.ForEach</code>, <code>Dataflow</code> for pipelines.</li>
+</ul>
+<p>c-Tasking:</p>
+<pre><code class="lang-csharp">using var pool = new ManagedThreadPool(maxThreads: 4);
+// Enqueue a synchronous task
+pool.EnqueueTask(() =&gt; ProcessItem(item));
+// Enqueue an async task (helper overload)
+pool.EnqueueAsync(async () =&gt; await ProcessItemAsync(item));
+pool.WaitAll(5000);
+</code></pre>
+<p>Why use c-Tasking?</p>
+<ul>
+<li>Simpler interface for queuing tasks where you prefer a bounded worker pool.</li>
+<li>When using higher-level TPL constructs or Dataflow, those may be more appropriate for high scalability or built-in scheduling.</li>
+</ul>
+<hr>
+<h3 id="4-scheduled-work">4) Scheduled Work</h3>
+<p>.NET (built-in):</p>
+<ul>
+<li><code>System.Threading.Timer</code> or <code>Task.Delay</code> loops; for production, Quartz.NET or Hangfire.</li>
+</ul>
+<p>c-Tasking:</p>
+<pre><code class="lang-csharp">using var scheduler = new TaskScheduler();
+int id = scheduler.ScheduleRepeating(() =&gt; DoPeriodicWork(), intervalMilliseconds: 10000);
+// Schedule an async operation
+int asyncTaskId = scheduler.ScheduleRepeatingAsync(async () =&gt; await DoPeriodicWorkAsync(), 10000);
+// Cancel scheduled tasks or use Dispose
+scheduler.Cancel(id);
+</code></pre>
+<p>Why use c-Tasking?</p>
+<ul>
+<li>Simplifies repeating + once-off scheduling with built-in cancellation support.</li>
+<li>For enterprise schedulers with persistence or distributed job handling, use third-party libraries.</li>
+</ul>
+<hr>
+<h3 id="5-retry-logic--exponential-backoff">5) Retry Logic / Exponential Backoff</h3>
+<p>.NET (built-in):</p>
+<pre><code class="lang-csharp">// Manual approach
+for (int i = 0; i &lt; maxAttempts; i++) {
+    try {
+        return await Operation();
+    } catch (Exception ex) {
+        if (i == maxAttempts - 1) throw;
+        await Task.Delay(100 * (1 &lt;&lt; i));
+    }
+}
+</code></pre>
+<p>Polly (recommended in many apps):</p>
+<pre><code class="lang-csharp">var policy = Policy.Handle&lt;Exception&gt;().WaitAndRetryAsync(3, i =&gt; TimeSpan.FromMilliseconds(100 * Math.Pow(2, i)));
+await policy.ExecuteAsync(() =&gt; Operation());
+</code></pre>
+<p>c-Tasking:</p>
+<pre><code class="lang-csharp">// Async retry with optional filter predicate
+var result = await TaskRetry.ExecuteWithRetry(async () =&gt; await Operation(), maxAttempts: 3, initialDelayMilliseconds: 100);
+// Sync retry
+var syncResult = TaskRetry.Execute(() =&gt; OperationSync(), maxAttempts: 3);
+</code></pre>
+<p>Why use c-Tasking?</p>
+<ul>
+<li><code>TaskRetry</code> is a lightweight, library-specific retry helper. For more complex policies (circuit-breaker, fallback), prefer Polly.</li>
+</ul>
+<hr>
+<h3 id="6-batch-processing">6) Batch Processing</h3>
+<p>.NET (built-in):</p>
+<ul>
+<li><code>Parallel.ForEach</code> or custom batching using <code>SemaphoreSlim</code> to limit concurrency.</li>
+<li><code>Dataflow</code> Block pattern for pipeline parallelism.</li>
+</ul>
+<p>c-Tasking:</p>
+<pre><code class="lang-csharp">var batcher = new ConcurrentBatcher&lt;int&gt;(batchSize: 50, maxConcurrentBatches: 3);
+await batcher.ProcessBatches(items, async item =&gt; await Process(item), async results =&gt; await SaveBatch(results));
+</code></pre>
+<p>Why use c-Tasking?</p>
+<ul>
+<li><code>ConcurrentBatcher</code> is built-in and simple to configure for many typical batching needs.</li>
+<li>For more advanced backpressure and memory efficiency, TPL Dataflow or custom streaming design provides more control.</li>
+</ul>
+<hr>
+<h2 id="performance--behavior-considerations">Performance &amp; Behavior Considerations</h2>
+<ul>
+<li>c-Tasking intentionally reduces ceremony and boilerplate for common patterns. That usually improves readability and reduces bugs.</li>
+<li>Where performance matters (high-throughput scenarios), prefer native TPL constructs (<code>Task.Run</code>, <code>Parallel</code>, <code>ThreadPool</code>, Dataflow) which are tuned in .NET.</li>
+<li>c-Tasking's thread-pool is useful for bounded concurrency and simpler lifecycle; for high concurrency, prefer <code>ThreadPool</code> or <code>Task</code> based concurrency.</li>
+<li>Always measure for critical paths: <code>Stopwatch</code>, logging counters and load testing to confirm whether the abstraction suits your workload.</li>
+</ul>
+<hr>
+<h2 id="reliability-cancellation--disposal">Reliability, Cancellation &amp; Disposal</h2>
+<ul>
+<li>c-Tasking includes <code>Dispose</code> and <code>Stop</code> patterns to help with graceful shutdown, and uses <code>CancellationToken</code> across APIs where it makes sense. For disposable objects (<code>TaskScheduler</code>, <code>ManagedThreadPool</code>) prefer <code>using var</code> to ensure cleanup.</li>
+<li>Native APIs provide more low-level control — you must manage <code>CancellationTokenSource</code> and joining threads yourself, and ensure <code>Dispose()</code> patterns are enforced for resources.</li>
+</ul>
+<hr>
+<h2 id="when-to-use-net-primitives">When to use .NET primitives</h2>
+<ul>
+<li>Need the highest performance or scalability.</li>
+<li>Want minimal runtime footprint and direct control.</li>
+<li>Using advanced parallelism patterns requiring TPL Dataflow or <code>Parallel</code> constructs.</li>
+<li>Integrating with enterprise scheduler or persistent job systems.</li>
+</ul>
+<h2 id="when-to-use-c-tasking">When to use c-Tasking</h2>
+<ul>
+<li>You want simpler, intention-focused APIs for common concurrency scenarios.</li>
+<li>Your codebase can benefit from small, lightweight wrappers making common patterns clearer.</li>
+<li>You prefer a built-in solution that includes retries, scheduling, and throttling helpers without additional dependencies.</li>
+</ul>
+<hr>
+<h2 id="migration-tips">Migration tips</h2>
+<ul>
+<li>Replace early ad-hoc <code>Thread</code> usage with <code>SimpleThread</code> when you need cancellation and lifecycle features.</li>
+<li>For modules with <code>Task.Run</code> usage, <code>TaskWrapper</code> gives simple helper methods — keep <code>Task.Run</code> if you need more advanced control.</li>
+<li>If you already use Polly or other libraries for retry and resilience, it is fine to keep them; <code>TaskRetry</code> is handy for small projects.</li>
+</ul>
+<h3 id="tip-use-examples">Tip: Use examples</h3>
+<ul>
+<li>See <code>Examples/UsageExamples.cs</code> for runnable samples that mirror the examples in this document.</li>
+</ul>
+<hr>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>c-Tasking is a small, focused set of helpers aimed at making developer intent clearer and code cleaner for common concurrency needs.</li>
+<li>Use it where productivity and simplicity matter. For heavy workloads or enterprise-level control, prefer the underlying .NET primitives or ecosystem tools.</li>
+</ul>
+<hr>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><code>docs/HELP.md</code> — comprehensive guide and examples</li>
+<li><code>docs/PROJECT_SETUP.md</code> — project setup and packaging guide</li>
+<li><code>Examples/UsageExamples.cs</code> — runnable examples from the repo</li>
+</ul>
+<hr>
+<p><em>This document was generated from code and design patterns in the c-Tasking repository.</em></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jomardyan/c-Tasking/blob/main/docs/USAGE_AND_COMPARISON.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

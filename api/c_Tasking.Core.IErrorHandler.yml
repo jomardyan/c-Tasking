@@ -1,0 +1,169 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Core.IErrorHandler
+  commentId: T:c_Tasking.Core.IErrorHandler
+  id: IErrorHandler
+  parent: c_Tasking.Core
+  children:
+  - c_Tasking.Core.IErrorHandler.Log(System.Exception,System.String)
+  - c_Tasking.Core.IErrorHandler.LogMessage(System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: IErrorHandler
+  nameWithType: IErrorHandler
+  fullName: c_Tasking.Core.IErrorHandler
+  type: Interface
+  source:
+    remote:
+      path: Core/ErrorHandling.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: IErrorHandler
+    path: Core/ErrorHandling.cs
+    startLine: 5
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Pluggable logging/error handling interface for the library.
+  example: []
+  syntax:
+    content: public interface IErrorHandler
+    content.vb: Public Interface IErrorHandler
+- uid: c_Tasking.Core.IErrorHandler.Log(System.Exception,System.String)
+  commentId: M:c_Tasking.Core.IErrorHandler.Log(System.Exception,System.String)
+  id: Log(System.Exception,System.String)
+  parent: c_Tasking.Core.IErrorHandler
+  langs:
+  - csharp
+  - vb
+  name: Log(Exception?, string?)
+  nameWithType: IErrorHandler.Log(Exception?, string?)
+  fullName: c_Tasking.Core.IErrorHandler.Log(System.Exception?, string?)
+  type: Method
+  source:
+    remote:
+      path: Core/ErrorHandling.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Log
+    path: Core/ErrorHandling.cs
+    startLine: 12
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Logs an exception with an optional context message.
+  example: []
+  syntax:
+    content: void Log(Exception? exception, string? context = null)
+    parameters:
+    - id: exception
+      type: System.Exception
+      description: Exception to log (may be null for unspecified errors).
+    - id: context
+      type: System.String
+      description: Optional contextual tag about where the error originated.
+    content.vb: Sub Log(exception As Exception, context As String = Nothing)
+  overload: c_Tasking.Core.IErrorHandler.Log*
+  nameWithType.vb: IErrorHandler.Log(Exception, String)
+  fullName.vb: c_Tasking.Core.IErrorHandler.Log(System.Exception, String)
+  name.vb: Log(Exception, String)
+- uid: c_Tasking.Core.IErrorHandler.LogMessage(System.String,System.String)
+  commentId: M:c_Tasking.Core.IErrorHandler.LogMessage(System.String,System.String)
+  id: LogMessage(System.String,System.String)
+  parent: c_Tasking.Core.IErrorHandler
+  langs:
+  - csharp
+  - vb
+  name: LogMessage(string?, string?)
+  nameWithType: IErrorHandler.LogMessage(string?, string?)
+  fullName: c_Tasking.Core.IErrorHandler.LogMessage(string?, string?)
+  type: Method
+  source:
+    remote:
+      path: Core/ErrorHandling.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: LogMessage
+    path: Core/ErrorHandling.cs
+    startLine: 19
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Log a general informational message. Useful for lifecycle events that are not exceptions.
+  example: []
+  syntax:
+    content: void LogMessage(string? message, string? context = null)
+    parameters:
+    - id: message
+      type: System.String
+      description: The message to log.
+    - id: context
+      type: System.String
+      description: Optional contextual tag.
+    content.vb: Sub LogMessage(message As String, context As String = Nothing)
+  overload: c_Tasking.Core.IErrorHandler.LogMessage*
+  nameWithType.vb: IErrorHandler.LogMessage(String, String)
+  fullName.vb: c_Tasking.Core.IErrorHandler.LogMessage(String, String)
+  name.vb: LogMessage(String, String)
+references:
+- uid: c_Tasking.Core
+  commentId: N:c_Tasking.Core
+  href: c_Tasking.html
+  name: c_Tasking.Core
+  nameWithType: c_Tasking.Core
+  fullName: c_Tasking.Core
+  spec.csharp:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html
+  spec.vb:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html
+- uid: c_Tasking.Core.IErrorHandler.Log*
+  commentId: Overload:c_Tasking.Core.IErrorHandler.Log
+  href: c_Tasking.Core.IErrorHandler.html#c_Tasking_Core_IErrorHandler_Log_System_Exception_System_String_
+  name: Log
+  nameWithType: IErrorHandler.Log
+  fullName: c_Tasking.Core.IErrorHandler.Log
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: c_Tasking.Core.IErrorHandler.LogMessage*
+  commentId: Overload:c_Tasking.Core.IErrorHandler.LogMessage
+  href: c_Tasking.Core.IErrorHandler.html#c_Tasking_Core_IErrorHandler_LogMessage_System_String_System_String_
+  name: LogMessage
+  nameWithType: IErrorHandler.LogMessage
+  fullName: c_Tasking.Core.IErrorHandler.LogMessage

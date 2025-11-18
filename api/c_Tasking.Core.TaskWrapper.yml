@@ -1,0 +1,1113 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Core.TaskWrapper
+  commentId: T:c_Tasking.Core.TaskWrapper
+  id: TaskWrapper
+  parent: c_Tasking.Core
+  children:
+  - c_Tasking.Core.TaskWrapper.Run(System.Action)
+  - c_Tasking.Core.TaskWrapper.RunAsync(System.Func{System.Threading.Tasks.Task})
+  - c_Tasking.Core.TaskWrapper.RunAsync``1(System.Func{System.Threading.Tasks.Task{``0}})
+  - c_Tasking.Core.TaskWrapper.RunParallel(System.Threading.Tasks.Task[])
+  - c_Tasking.Core.TaskWrapper.RunParallel``1(System.Threading.Tasks.Task{``0}[])
+  - c_Tasking.Core.TaskWrapper.Run``1(System.Func{``0})
+  - c_Tasking.Core.TaskWrapper.WaitAny(System.Threading.Tasks.Task[])
+  - c_Tasking.Core.TaskWrapper.WaitAny``1(System.Threading.Tasks.Task{``0}[])
+  - c_Tasking.Core.TaskWrapper.WaitWithTimeout(System.Threading.Tasks.Task,System.Int32)
+  - c_Tasking.Core.TaskWrapper.WaitWithTimeout``1(System.Threading.Tasks.Task{``0},System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: TaskWrapper
+  nameWithType: TaskWrapper
+  fullName: c_Tasking.Core.TaskWrapper
+  type: Class
+  source:
+    remote:
+      path: Core/TaskWrapper.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: TaskWrapper
+    path: Core/TaskWrapper.cs
+    startLine: 5
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Simple wrapper for executing actions in tasks with minimal configuration.
+  example: []
+  syntax:
+    content: public class TaskWrapper
+    content.vb: Public Class TaskWrapper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: c_Tasking.Core.TaskWrapper.Run(System.Action)
+  commentId: M:c_Tasking.Core.TaskWrapper.Run(System.Action)
+  id: Run(System.Action)
+  parent: c_Tasking.Core.TaskWrapper
+  langs:
+  - csharp
+  - vb
+  name: Run(Action)
+  nameWithType: TaskWrapper.Run(Action)
+  fullName: c_Tasking.Core.TaskWrapper.Run(System.Action)
+  type: Method
+  source:
+    remote:
+      path: Core/TaskWrapper.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Run
+    path: Core/TaskWrapper.cs
+    startLine: 12
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Runs an action asynchronously.
+  example: []
+  syntax:
+    content: public static Task Run(Action action)
+    parameters:
+    - id: action
+      type: System.Action
+      description: The synchronous action to run on a background thread.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation.
+    content.vb: Public Shared Function Run(action As Action) As Task
+  overload: c_Tasking.Core.TaskWrapper.Run*
+- uid: c_Tasking.Core.TaskWrapper.Run``1(System.Func{``0})
+  commentId: M:c_Tasking.Core.TaskWrapper.Run``1(System.Func{``0})
+  id: Run``1(System.Func{``0})
+  parent: c_Tasking.Core.TaskWrapper
+  langs:
+  - csharp
+  - vb
+  name: Run<T>(Func<T>)
+  nameWithType: TaskWrapper.Run<T>(Func<T>)
+  fullName: c_Tasking.Core.TaskWrapper.Run<T>(System.Func<T>)
+  type: Method
+  source:
+    remote:
+      path: Core/TaskWrapper.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Run
+    path: Core/TaskWrapper.cs
+    startLine: 24
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Runs a function asynchronously and returns its result.
+  example: []
+  syntax:
+    content: public static Task<T> Run<T>(Func<T> function)
+    parameters:
+    - id: function
+      type: System.Func{{T}}
+      description: The function that returns a value to be executed asynchronously.
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+      description: A <xref href="System.Threading.Tasks.Task%601" data-throw-if-not-resolved="false"></xref> representing the result of the asynchronous operation.
+    content.vb: Public Shared Function Run(Of T)([function] As Func(Of T)) As Task(Of T)
+  overload: c_Tasking.Core.TaskWrapper.Run*
+  nameWithType.vb: TaskWrapper.Run(Of T)(Func(Of T))
+  fullName.vb: c_Tasking.Core.TaskWrapper.Run(Of T)(System.Func(Of T))
+  name.vb: Run(Of T)(Func(Of T))
+- uid: c_Tasking.Core.TaskWrapper.RunAsync(System.Func{System.Threading.Tasks.Task})
+  commentId: M:c_Tasking.Core.TaskWrapper.RunAsync(System.Func{System.Threading.Tasks.Task})
+  id: RunAsync(System.Func{System.Threading.Tasks.Task})
+  parent: c_Tasking.Core.TaskWrapper
+  langs:
+  - csharp
+  - vb
+  name: RunAsync(Func<Task>)
+  nameWithType: TaskWrapper.RunAsync(Func<Task>)
+  fullName: c_Tasking.Core.TaskWrapper.RunAsync(System.Func<System.Threading.Tasks.Task>)
+  type: Method
+  source:
+    remote:
+      path: Core/TaskWrapper.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunAsync
+    path: Core/TaskWrapper.cs
+    startLine: 36
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Runs an async function asynchronously.
+  example: []
+  syntax:
+    content: public static Task RunAsync(Func<Task> asyncAction)
+    parameters:
+    - id: asyncAction
+      type: System.Func{System.Threading.Tasks.Task}
+      description: The asynchronous function to run.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation.
+    content.vb: Public Shared Function RunAsync(asyncAction As Func(Of Task)) As Task
+  overload: c_Tasking.Core.TaskWrapper.RunAsync*
+  nameWithType.vb: TaskWrapper.RunAsync(Func(Of Task))
+  fullName.vb: c_Tasking.Core.TaskWrapper.RunAsync(System.Func(Of System.Threading.Tasks.Task))
+  name.vb: RunAsync(Func(Of Task))
+- uid: c_Tasking.Core.TaskWrapper.RunAsync``1(System.Func{System.Threading.Tasks.Task{``0}})
+  commentId: M:c_Tasking.Core.TaskWrapper.RunAsync``1(System.Func{System.Threading.Tasks.Task{``0}})
+  id: RunAsync``1(System.Func{System.Threading.Tasks.Task{``0}})
+  parent: c_Tasking.Core.TaskWrapper
+  langs:
+  - csharp
+  - vb
+  name: RunAsync<T>(Func<Task<T>>)
+  nameWithType: TaskWrapper.RunAsync<T>(Func<Task<T>>)
+  fullName: c_Tasking.Core.TaskWrapper.RunAsync<T>(System.Func<System.Threading.Tasks.Task<T>>)
+  type: Method
+  source:
+    remote:
+      path: Core/TaskWrapper.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunAsync
+    path: Core/TaskWrapper.cs
+    startLine: 48
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Runs an async function asynchronously and returns its result.
+  example: []
+  syntax:
+    content: public static Task<T> RunAsync<T>(Func<Task<T>> asyncFunction)
+    parameters:
+    - id: asyncFunction
+      type: System.Func{System.Threading.Tasks.Task{{T}}}
+      description: The asynchronous function that produces a value.
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+      description: A <xref href="System.Threading.Tasks.Task%601" data-throw-if-not-resolved="false"></xref> that completes when the function completes.
+    content.vb: Public Shared Function RunAsync(Of T)(asyncFunction As Func(Of Task(Of T))) As Task(Of T)
+  overload: c_Tasking.Core.TaskWrapper.RunAsync*
+  nameWithType.vb: TaskWrapper.RunAsync(Of T)(Func(Of Task(Of T)))
+  fullName.vb: c_Tasking.Core.TaskWrapper.RunAsync(Of T)(System.Func(Of System.Threading.Tasks.Task(Of T)))
+  name.vb: RunAsync(Of T)(Func(Of Task(Of T)))
+- uid: c_Tasking.Core.TaskWrapper.WaitWithTimeout(System.Threading.Tasks.Task,System.Int32)
+  commentId: M:c_Tasking.Core.TaskWrapper.WaitWithTimeout(System.Threading.Tasks.Task,System.Int32)
+  id: WaitWithTimeout(System.Threading.Tasks.Task,System.Int32)
+  parent: c_Tasking.Core.TaskWrapper
+  langs:
+  - csharp
+  - vb
+  name: WaitWithTimeout(Task, int)
+  nameWithType: TaskWrapper.WaitWithTimeout(Task, int)
+  fullName: c_Tasking.Core.TaskWrapper.WaitWithTimeout(System.Threading.Tasks.Task, int)
+  type: Method
+  source:
+    remote:
+      path: Core/TaskWrapper.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: WaitWithTimeout
+    path: Core/TaskWrapper.cs
+    startLine: 60
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Waits for a task to complete with a timeout. Throws <xref href="System.TimeoutException" data-throw-if-not-resolved="false"></xref> if timeout is exceeded.
+  example: []
+  syntax:
+    content: public static void WaitWithTimeout(Task task, int timeoutMilliseconds)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task
+      description: The task to wait on.
+    - id: timeoutMilliseconds
+      type: System.Int32
+      description: Timeout in milliseconds.
+    content.vb: Public Shared Sub WaitWithTimeout(task As Task, timeoutMilliseconds As Integer)
+  overload: c_Tasking.Core.TaskWrapper.WaitWithTimeout*
+  nameWithType.vb: TaskWrapper.WaitWithTimeout(Task, Integer)
+  fullName.vb: c_Tasking.Core.TaskWrapper.WaitWithTimeout(System.Threading.Tasks.Task, Integer)
+  name.vb: WaitWithTimeout(Task, Integer)
+- uid: c_Tasking.Core.TaskWrapper.WaitWithTimeout``1(System.Threading.Tasks.Task{``0},System.Int32)
+  commentId: M:c_Tasking.Core.TaskWrapper.WaitWithTimeout``1(System.Threading.Tasks.Task{``0},System.Int32)
+  id: WaitWithTimeout``1(System.Threading.Tasks.Task{``0},System.Int32)
+  parent: c_Tasking.Core.TaskWrapper
+  langs:
+  - csharp
+  - vb
+  name: WaitWithTimeout<T>(Task<T>, int)
+  nameWithType: TaskWrapper.WaitWithTimeout<T>(Task<T>, int)
+  fullName: c_Tasking.Core.TaskWrapper.WaitWithTimeout<T>(System.Threading.Tasks.Task<T>, int)
+  type: Method
+  source:
+    remote:
+      path: Core/TaskWrapper.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: WaitWithTimeout
+    path: Core/TaskWrapper.cs
+    startLine: 74
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Waits for a task to complete with a timeout and returns the result.
+  example: []
+  syntax:
+    content: public static T WaitWithTimeout<T>(Task<T> task, int timeoutMilliseconds)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task{{T}}
+      description: The task to wait on.
+    - id: timeoutMilliseconds
+      type: System.Int32
+      description: Timeout in milliseconds.
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+      description: The task result.
+    content.vb: Public Shared Function WaitWithTimeout(Of T)(task As Task(Of T), timeoutMilliseconds As Integer) As T
+  overload: c_Tasking.Core.TaskWrapper.WaitWithTimeout*
+  nameWithType.vb: TaskWrapper.WaitWithTimeout(Of T)(Task(Of T), Integer)
+  fullName.vb: c_Tasking.Core.TaskWrapper.WaitWithTimeout(Of T)(System.Threading.Tasks.Task(Of T), Integer)
+  name.vb: WaitWithTimeout(Of T)(Task(Of T), Integer)
+- uid: c_Tasking.Core.TaskWrapper.RunParallel(System.Threading.Tasks.Task[])
+  commentId: M:c_Tasking.Core.TaskWrapper.RunParallel(System.Threading.Tasks.Task[])
+  id: RunParallel(System.Threading.Tasks.Task[])
+  parent: c_Tasking.Core.TaskWrapper
+  langs:
+  - csharp
+  - vb
+  name: RunParallel(params Task[])
+  nameWithType: TaskWrapper.RunParallel(params Task[])
+  fullName: c_Tasking.Core.TaskWrapper.RunParallel(params System.Threading.Tasks.Task[])
+  type: Method
+  source:
+    remote:
+      path: Core/TaskWrapper.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunParallel
+    path: Core/TaskWrapper.cs
+    startLine: 87
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Runs multiple tasks in parallel and waits for all to complete.
+  example: []
+  syntax:
+    content: public static void RunParallel(params Task[] tasks)
+    parameters:
+    - id: tasks
+      type: System.Threading.Tasks.Task[]
+      description: Tasks to run in parallel.
+    content.vb: Public Shared Sub RunParallel(ParamArray tasks As Task())
+  overload: c_Tasking.Core.TaskWrapper.RunParallel*
+  nameWithType.vb: TaskWrapper.RunParallel(ParamArray Task())
+  fullName.vb: c_Tasking.Core.TaskWrapper.RunParallel(ParamArray System.Threading.Tasks.Task())
+  name.vb: RunParallel(ParamArray Task())
+- uid: c_Tasking.Core.TaskWrapper.RunParallel``1(System.Threading.Tasks.Task{``0}[])
+  commentId: M:c_Tasking.Core.TaskWrapper.RunParallel``1(System.Threading.Tasks.Task{``0}[])
+  id: RunParallel``1(System.Threading.Tasks.Task{``0}[])
+  parent: c_Tasking.Core.TaskWrapper
+  langs:
+  - csharp
+  - vb
+  name: RunParallel<T>(params Task<T>[])
+  nameWithType: TaskWrapper.RunParallel<T>(params Task<T>[])
+  fullName: c_Tasking.Core.TaskWrapper.RunParallel<T>(params System.Threading.Tasks.Task<T>[])
+  type: Method
+  source:
+    remote:
+      path: Core/TaskWrapper.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunParallel
+    path: Core/TaskWrapper.cs
+    startLine: 97
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Runs multiple tasks in parallel and returns their results.
+  example: []
+  syntax:
+    content: public static T[] RunParallel<T>(params Task<T>[] tasks)
+    parameters:
+    - id: tasks
+      type: System.Threading.Tasks.Task{{T}}[]
+      description: Tasks returning values to run in parallel.
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}[]'
+      description: Array of results in the same order as the tasks.
+    content.vb: Public Shared Function RunParallel(Of T)(ParamArray tasks As Task(Of T)()) As T()
+  overload: c_Tasking.Core.TaskWrapper.RunParallel*
+  nameWithType.vb: TaskWrapper.RunParallel(Of T)(ParamArray Task(Of T)())
+  fullName.vb: c_Tasking.Core.TaskWrapper.RunParallel(Of T)(ParamArray System.Threading.Tasks.Task(Of T)())
+  name.vb: RunParallel(Of T)(ParamArray Task(Of T)())
+- uid: c_Tasking.Core.TaskWrapper.WaitAny(System.Threading.Tasks.Task[])
+  commentId: M:c_Tasking.Core.TaskWrapper.WaitAny(System.Threading.Tasks.Task[])
+  id: WaitAny(System.Threading.Tasks.Task[])
+  parent: c_Tasking.Core.TaskWrapper
+  langs:
+  - csharp
+  - vb
+  name: WaitAny(params Task[])
+  nameWithType: TaskWrapper.WaitAny(params Task[])
+  fullName: c_Tasking.Core.TaskWrapper.WaitAny(params System.Threading.Tasks.Task[])
+  type: Method
+  source:
+    remote:
+      path: Core/TaskWrapper.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: WaitAny
+    path: Core/TaskWrapper.cs
+    startLine: 108
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Waits for the first task to complete among many.
+  example: []
+  syntax:
+    content: public static Task WaitAny(params Task[] tasks)
+    parameters:
+    - id: tasks
+      type: System.Threading.Tasks.Task[]
+      description: Tasks to wait on.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> that completes when any task completes.
+    content.vb: Public Shared Function WaitAny(ParamArray tasks As Task()) As Task
+  overload: c_Tasking.Core.TaskWrapper.WaitAny*
+  nameWithType.vb: TaskWrapper.WaitAny(ParamArray Task())
+  fullName.vb: c_Tasking.Core.TaskWrapper.WaitAny(ParamArray System.Threading.Tasks.Task())
+  name.vb: WaitAny(ParamArray Task())
+- uid: c_Tasking.Core.TaskWrapper.WaitAny``1(System.Threading.Tasks.Task{``0}[])
+  commentId: M:c_Tasking.Core.TaskWrapper.WaitAny``1(System.Threading.Tasks.Task{``0}[])
+  id: WaitAny``1(System.Threading.Tasks.Task{``0}[])
+  parent: c_Tasking.Core.TaskWrapper
+  langs:
+  - csharp
+  - vb
+  name: WaitAny<T>(params Task<T>[])
+  nameWithType: TaskWrapper.WaitAny<T>(params Task<T>[])
+  fullName: c_Tasking.Core.TaskWrapper.WaitAny<T>(params System.Threading.Tasks.Task<T>[])
+  type: Method
+  source:
+    remote:
+      path: Core/TaskWrapper.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: WaitAny
+    path: Core/TaskWrapper.cs
+    startLine: 118
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Waits for the first task to complete and returns the completed task.
+  example: []
+  syntax:
+    content: public static Task<Task<T>> WaitAny<T>(params Task<T>[] tasks)
+    parameters:
+    - id: tasks
+      type: System.Threading.Tasks.Task{{T}}[]
+      description: Tasks to wait on.
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{System.Threading.Tasks.Task{{T}}}
+      description: A task wrapping the completed task.
+    content.vb: Public Shared Function WaitAny(Of T)(ParamArray tasks As Task(Of T)()) As Task(Of Task(Of T))
+  overload: c_Tasking.Core.TaskWrapper.WaitAny*
+  nameWithType.vb: TaskWrapper.WaitAny(Of T)(ParamArray Task(Of T)())
+  fullName.vb: c_Tasking.Core.TaskWrapper.WaitAny(Of T)(ParamArray System.Threading.Tasks.Task(Of T)())
+  name.vb: WaitAny(Of T)(ParamArray Task(Of T)())
+references:
+- uid: c_Tasking.Core
+  commentId: N:c_Tasking.Core
+  href: c_Tasking.html
+  name: c_Tasking.Core
+  nameWithType: c_Tasking.Core
+  fullName: c_Tasking.Core
+  spec.csharp:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html
+  spec.vb:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: c_Tasking.Core.TaskWrapper.Run*
+  commentId: Overload:c_Tasking.Core.TaskWrapper.Run
+  href: c_Tasking.Core.TaskWrapper.html#c_Tasking_Core_TaskWrapper_Run_System_Action_
+  name: Run
+  nameWithType: TaskWrapper.Run
+  fullName: c_Tasking.Core.TaskWrapper.Run
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Func{{T}}
+  commentId: T:System.Func{``0}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<T>
+  nameWithType: Func<T>
+  fullName: System.Func<T>
+  nameWithType.vb: Func(Of T)
+  fullName.vb: System.Func(Of T)
+  name.vb: Func(Of T)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: c_Tasking.Core.TaskWrapper.RunAsync*
+  commentId: Overload:c_Tasking.Core.TaskWrapper.RunAsync
+  href: c_Tasking.Core.TaskWrapper.html#c_Tasking_Core_TaskWrapper_RunAsync_System_Func_System_Threading_Tasks_Task__
+  name: RunAsync
+  nameWithType: TaskWrapper.RunAsync
+  fullName: c_Tasking.Core.TaskWrapper.RunAsync
+- uid: System.Func{System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task>
+  nameWithType: Func<Task>
+  fullName: System.Func<System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Task)
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task)
+  name.vb: Func(Of Task)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Func{System.Threading.Tasks.Task{{T}}}
+  commentId: T:System.Func{System.Threading.Tasks.Task{``0}}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task<T>>
+  nameWithType: Func<Task<T>>
+  fullName: System.Func<System.Threading.Tasks.Task<T>>
+  nameWithType.vb: Func(Of Task(Of T))
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task(Of T))
+  name.vb: Func(Of Task(Of T))
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.TimeoutException
+  commentId: T:System.TimeoutException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timeoutexception
+  name: TimeoutException
+  nameWithType: TimeoutException
+  fullName: System.TimeoutException
+- uid: c_Tasking.Core.TaskWrapper.WaitWithTimeout*
+  commentId: Overload:c_Tasking.Core.TaskWrapper.WaitWithTimeout
+  href: c_Tasking.Core.TaskWrapper.html#c_Tasking_Core_TaskWrapper_WaitWithTimeout_System_Threading_Tasks_Task_System_Int32_
+  name: WaitWithTimeout
+  nameWithType: TaskWrapper.WaitWithTimeout
+  fullName: c_Tasking.Core.TaskWrapper.WaitWithTimeout
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: c_Tasking.Core.TaskWrapper.RunParallel*
+  commentId: Overload:c_Tasking.Core.TaskWrapper.RunParallel
+  href: c_Tasking.Core.TaskWrapper.html#c_Tasking_Core_TaskWrapper_RunParallel_System_Threading_Tasks_Task___
+  name: RunParallel
+  nameWithType: TaskWrapper.RunParallel
+  fullName: c_Tasking.Core.TaskWrapper.RunParallel
+- uid: System.Threading.Tasks.Task[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task[]
+  nameWithType: Task[]
+  fullName: System.Threading.Tasks.Task[]
+  nameWithType.vb: Task()
+  fullName.vb: System.Threading.Tasks.Task()
+  name.vb: Task()
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.Task{{T}}[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T>[]
+  nameWithType: Task<T>[]
+  fullName: System.Threading.Tasks.Task<T>[]
+  nameWithType.vb: Task(Of T)()
+  fullName.vb: System.Threading.Tasks.Task(Of T)()
+  name.vb: Task(Of T)()
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: '{T}[]'
+  isExternal: true
+  name: T[]
+  nameWithType: T[]
+  fullName: T[]
+  nameWithType.vb: T()
+  fullName.vb: T()
+  name.vb: T()
+  spec.csharp:
+  - name: T
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - name: T
+  - name: (
+  - name: )
+- uid: c_Tasking.Core.TaskWrapper.WaitAny*
+  commentId: Overload:c_Tasking.Core.TaskWrapper.WaitAny
+  href: c_Tasking.Core.TaskWrapper.html#c_Tasking_Core_TaskWrapper_WaitAny_System_Threading_Tasks_Task___
+  name: WaitAny
+  nameWithType: TaskWrapper.WaitAny
+  fullName: c_Tasking.Core.TaskWrapper.WaitAny
+- uid: System.Threading.Tasks.Task{System.Threading.Tasks.Task{{T}}}
+  commentId: T:System.Threading.Tasks.Task{System.Threading.Tasks.Task{``0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Task<T>>
+  nameWithType: Task<Task<T>>
+  fullName: System.Threading.Tasks.Task<System.Threading.Tasks.Task<T>>
+  nameWithType.vb: Task(Of Task(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Threading.Tasks.Task(Of T))
+  name.vb: Task(Of Task(Of T))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )

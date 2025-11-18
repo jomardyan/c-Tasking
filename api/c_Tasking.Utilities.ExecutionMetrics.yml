@@ -1,0 +1,606 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Utilities.ExecutionMetrics
+  commentId: T:c_Tasking.Utilities.ExecutionMetrics
+  id: ExecutionMetrics
+  parent: c_Tasking.Utilities
+  children:
+  - c_Tasking.Utilities.ExecutionMetrics.AverageExecutionTime
+  - c_Tasking.Utilities.ExecutionMetrics.CancelledOperations
+  - c_Tasking.Utilities.ExecutionMetrics.CompletedOperations
+  - c_Tasking.Utilities.ExecutionMetrics.FailedOperations
+  - c_Tasking.Utilities.ExecutionMetrics.PeakConcurrentOperations
+  - c_Tasking.Utilities.ExecutionMetrics.ToString
+  - c_Tasking.Utilities.ExecutionMetrics.TotalExecutionTime
+  langs:
+  - csharp
+  - vb
+  name: ExecutionMetrics
+  nameWithType: ExecutionMetrics
+  fullName: c_Tasking.Utilities.ExecutionMetrics
+  type: Class
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ExecutionMetrics
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 264
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Statistics and monitoring for task execution.
+  example: []
+  syntax:
+    content: public class ExecutionMetrics
+    content.vb: Public Class ExecutionMetrics
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: c_Tasking.Utilities.ExecutionMetrics.CompletedOperations
+  commentId: P:c_Tasking.Utilities.ExecutionMetrics.CompletedOperations
+  id: CompletedOperations
+  parent: c_Tasking.Utilities.ExecutionMetrics
+  langs:
+  - csharp
+  - vb
+  name: CompletedOperations
+  nameWithType: ExecutionMetrics.CompletedOperations
+  fullName: c_Tasking.Utilities.ExecutionMetrics.CompletedOperations
+  type: Property
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: CompletedOperations
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 269
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Number of operations that completed successfully.
+  example: []
+  syntax:
+    content: public long CompletedOperations { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property CompletedOperations As Long
+  overload: c_Tasking.Utilities.ExecutionMetrics.CompletedOperations*
+- uid: c_Tasking.Utilities.ExecutionMetrics.FailedOperations
+  commentId: P:c_Tasking.Utilities.ExecutionMetrics.FailedOperations
+  id: FailedOperations
+  parent: c_Tasking.Utilities.ExecutionMetrics
+  langs:
+  - csharp
+  - vb
+  name: FailedOperations
+  nameWithType: ExecutionMetrics.FailedOperations
+  fullName: c_Tasking.Utilities.ExecutionMetrics.FailedOperations
+  type: Property
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: FailedOperations
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 273
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Number of operations that failed.
+  example: []
+  syntax:
+    content: public long FailedOperations { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property FailedOperations As Long
+  overload: c_Tasking.Utilities.ExecutionMetrics.FailedOperations*
+- uid: c_Tasking.Utilities.ExecutionMetrics.CancelledOperations
+  commentId: P:c_Tasking.Utilities.ExecutionMetrics.CancelledOperations
+  id: CancelledOperations
+  parent: c_Tasking.Utilities.ExecutionMetrics
+  langs:
+  - csharp
+  - vb
+  name: CancelledOperations
+  nameWithType: ExecutionMetrics.CancelledOperations
+  fullName: c_Tasking.Utilities.ExecutionMetrics.CancelledOperations
+  type: Property
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: CancelledOperations
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 277
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Number of operations that were cancelled.
+  example: []
+  syntax:
+    content: public long CancelledOperations { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property CancelledOperations As Long
+  overload: c_Tasking.Utilities.ExecutionMetrics.CancelledOperations*
+- uid: c_Tasking.Utilities.ExecutionMetrics.TotalExecutionTime
+  commentId: P:c_Tasking.Utilities.ExecutionMetrics.TotalExecutionTime
+  id: TotalExecutionTime
+  parent: c_Tasking.Utilities.ExecutionMetrics
+  langs:
+  - csharp
+  - vb
+  name: TotalExecutionTime
+  nameWithType: ExecutionMetrics.TotalExecutionTime
+  fullName: c_Tasking.Utilities.ExecutionMetrics.TotalExecutionTime
+  type: Property
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: TotalExecutionTime
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 281
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Total cumulative execution time for all tracked operations.
+  example: []
+  syntax:
+    content: public TimeSpan TotalExecutionTime { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public Property TotalExecutionTime As TimeSpan
+  overload: c_Tasking.Utilities.ExecutionMetrics.TotalExecutionTime*
+- uid: c_Tasking.Utilities.ExecutionMetrics.AverageExecutionTime
+  commentId: P:c_Tasking.Utilities.ExecutionMetrics.AverageExecutionTime
+  id: AverageExecutionTime
+  parent: c_Tasking.Utilities.ExecutionMetrics
+  langs:
+  - csharp
+  - vb
+  name: AverageExecutionTime
+  nameWithType: ExecutionMetrics.AverageExecutionTime
+  fullName: c_Tasking.Utilities.ExecutionMetrics.AverageExecutionTime
+  type: Property
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: AverageExecutionTime
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 285
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Average execution time for tracked operations in milliseconds.
+  example: []
+  syntax:
+    content: public double AverageExecutionTime { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property AverageExecutionTime As Double
+  overload: c_Tasking.Utilities.ExecutionMetrics.AverageExecutionTime*
+- uid: c_Tasking.Utilities.ExecutionMetrics.PeakConcurrentOperations
+  commentId: P:c_Tasking.Utilities.ExecutionMetrics.PeakConcurrentOperations
+  id: PeakConcurrentOperations
+  parent: c_Tasking.Utilities.ExecutionMetrics
+  langs:
+  - csharp
+  - vb
+  name: PeakConcurrentOperations
+  nameWithType: ExecutionMetrics.PeakConcurrentOperations
+  fullName: c_Tasking.Utilities.ExecutionMetrics.PeakConcurrentOperations
+  type: Property
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: PeakConcurrentOperations
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 289
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Peak number of concurrent operations observed.
+  example: []
+  syntax:
+    content: public long PeakConcurrentOperations { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property PeakConcurrentOperations As Long
+  overload: c_Tasking.Utilities.ExecutionMetrics.PeakConcurrentOperations*
+- uid: c_Tasking.Utilities.ExecutionMetrics.ToString
+  commentId: M:c_Tasking.Utilities.ExecutionMetrics.ToString
+  id: ToString
+  parent: c_Tasking.Utilities.ExecutionMetrics
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: ExecutionMetrics.ToString()
+  fullName: c_Tasking.Utilities.ExecutionMetrics.ToString()
+  type: Method
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ToString
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 294
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Returns a readable summary of the current execution metrics.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: c_Tasking.Utilities.ExecutionMetrics.ToString*
+references:
+- uid: c_Tasking.Utilities
+  commentId: N:c_Tasking.Utilities
+  href: c_Tasking.html
+  name: c_Tasking.Utilities
+  nameWithType: c_Tasking.Utilities
+  fullName: c_Tasking.Utilities
+  spec.csharp:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Utilities
+    name: Utilities
+    href: c_Tasking.Utilities.html
+  spec.vb:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Utilities
+    name: Utilities
+    href: c_Tasking.Utilities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: c_Tasking.Utilities.ExecutionMetrics.CompletedOperations*
+  commentId: Overload:c_Tasking.Utilities.ExecutionMetrics.CompletedOperations
+  href: c_Tasking.Utilities.ExecutionMetrics.html#c_Tasking_Utilities_ExecutionMetrics_CompletedOperations
+  name: CompletedOperations
+  nameWithType: ExecutionMetrics.CompletedOperations
+  fullName: c_Tasking.Utilities.ExecutionMetrics.CompletedOperations
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: c_Tasking.Utilities.ExecutionMetrics.FailedOperations*
+  commentId: Overload:c_Tasking.Utilities.ExecutionMetrics.FailedOperations
+  href: c_Tasking.Utilities.ExecutionMetrics.html#c_Tasking_Utilities_ExecutionMetrics_FailedOperations
+  name: FailedOperations
+  nameWithType: ExecutionMetrics.FailedOperations
+  fullName: c_Tasking.Utilities.ExecutionMetrics.FailedOperations
+- uid: c_Tasking.Utilities.ExecutionMetrics.CancelledOperations*
+  commentId: Overload:c_Tasking.Utilities.ExecutionMetrics.CancelledOperations
+  href: c_Tasking.Utilities.ExecutionMetrics.html#c_Tasking_Utilities_ExecutionMetrics_CancelledOperations
+  name: CancelledOperations
+  nameWithType: ExecutionMetrics.CancelledOperations
+  fullName: c_Tasking.Utilities.ExecutionMetrics.CancelledOperations
+- uid: c_Tasking.Utilities.ExecutionMetrics.TotalExecutionTime*
+  commentId: Overload:c_Tasking.Utilities.ExecutionMetrics.TotalExecutionTime
+  href: c_Tasking.Utilities.ExecutionMetrics.html#c_Tasking_Utilities_ExecutionMetrics_TotalExecutionTime
+  name: TotalExecutionTime
+  nameWithType: ExecutionMetrics.TotalExecutionTime
+  fullName: c_Tasking.Utilities.ExecutionMetrics.TotalExecutionTime
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: c_Tasking.Utilities.ExecutionMetrics.AverageExecutionTime*
+  commentId: Overload:c_Tasking.Utilities.ExecutionMetrics.AverageExecutionTime
+  href: c_Tasking.Utilities.ExecutionMetrics.html#c_Tasking_Utilities_ExecutionMetrics_AverageExecutionTime
+  name: AverageExecutionTime
+  nameWithType: ExecutionMetrics.AverageExecutionTime
+  fullName: c_Tasking.Utilities.ExecutionMetrics.AverageExecutionTime
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: c_Tasking.Utilities.ExecutionMetrics.PeakConcurrentOperations*
+  commentId: Overload:c_Tasking.Utilities.ExecutionMetrics.PeakConcurrentOperations
+  href: c_Tasking.Utilities.ExecutionMetrics.html#c_Tasking_Utilities_ExecutionMetrics_PeakConcurrentOperations
+  name: PeakConcurrentOperations
+  nameWithType: ExecutionMetrics.PeakConcurrentOperations
+  fullName: c_Tasking.Utilities.ExecutionMetrics.PeakConcurrentOperations
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: c_Tasking.Utilities.ExecutionMetrics.ToString*
+  commentId: Overload:c_Tasking.Utilities.ExecutionMetrics.ToString
+  href: c_Tasking.Utilities.ExecutionMetrics.html#c_Tasking_Utilities_ExecutionMetrics_ToString
+  name: ToString
+  nameWithType: ExecutionMetrics.ToString
+  fullName: c_Tasking.Utilities.ExecutionMetrics.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

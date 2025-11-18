@@ -1,0 +1,1199 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Core.AsyncOperation`1
+  commentId: T:c_Tasking.Core.AsyncOperation`1
+  id: AsyncOperation`1
+  parent: c_Tasking.Core
+  children:
+  - c_Tasking.Core.AsyncOperation`1.#ctor
+  - c_Tasking.Core.AsyncOperation`1.Cancel
+  - c_Tasking.Core.AsyncOperation`1.Create(System.Func{System.Threading.Tasks.Task{`0}})
+  - c_Tasking.Core.AsyncOperation`1.ExecuteAsync(System.Func{System.Threading.Tasks.Task{`0}})
+  - c_Tasking.Core.AsyncOperation`1.IsCompleted
+  - c_Tasking.Core.AsyncOperation`1.OnCancelled(System.Action)
+  - c_Tasking.Core.AsyncOperation`1.OnException(System.Action{System.Exception})
+  - c_Tasking.Core.AsyncOperation`1.OnSuccess(System.Action{`0})
+  - c_Tasking.Core.AsyncOperation`1.Result
+  - c_Tasking.Core.AsyncOperation`1.SetException(System.Exception)
+  - c_Tasking.Core.AsyncOperation`1.SetResult(`0)
+  - c_Tasking.Core.AsyncOperation`1.WaitAsync
+  - c_Tasking.Core.AsyncOperation`1.WaitAsync(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: AsyncOperation<T>
+  nameWithType: AsyncOperation<T>
+  fullName: c_Tasking.Core.AsyncOperation<T>
+  type: Class
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: AsyncOperation
+    path: Core/AsyncOperation.cs
+    startLine: 159
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: >-
+    Generic wrapper for async operations with result tracking and callbacks.
+
+    Supports fluent chaining and lifecycle callbacks with typed results.
+  example: []
+  syntax:
+    content: public class AsyncOperation<T>
+    typeParameters:
+    - id: T
+    content.vb: Public Class AsyncOperation(Of T)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: AsyncOperation(Of T)
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T)
+  name.vb: AsyncOperation(Of T)
+- uid: c_Tasking.Core.AsyncOperation`1.IsCompleted
+  commentId: P:c_Tasking.Core.AsyncOperation`1.IsCompleted
+  id: IsCompleted
+  parent: c_Tasking.Core.AsyncOperation`1
+  langs:
+  - csharp
+  - vb
+  name: IsCompleted
+  nameWithType: AsyncOperation<T>.IsCompleted
+  fullName: c_Tasking.Core.AsyncOperation<T>.IsCompleted
+  type: Property
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: IsCompleted
+    path: Core/AsyncOperation.cs
+    startLine: 171
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Indicates whether the operation has completed (success, failure or cancellation).
+  example: []
+  syntax:
+    content: public bool IsCompleted { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsCompleted As Boolean
+  overload: c_Tasking.Core.AsyncOperation`1.IsCompleted*
+  nameWithType.vb: AsyncOperation(Of T).IsCompleted
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).IsCompleted
+- uid: c_Tasking.Core.AsyncOperation`1.Result
+  commentId: P:c_Tasking.Core.AsyncOperation`1.Result
+  id: Result
+  parent: c_Tasking.Core.AsyncOperation`1
+  langs:
+  - csharp
+  - vb
+  name: Result
+  nameWithType: AsyncOperation<T>.Result
+  fullName: c_Tasking.Core.AsyncOperation<T>.Result
+  type: Property
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Result
+    path: Core/AsyncOperation.cs
+    startLine: 175
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Gets the result of the operation if available.
+  example: []
+  syntax:
+    content: public T? Result { get; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public ReadOnly Property Result As T
+  overload: c_Tasking.Core.AsyncOperation`1.Result*
+  nameWithType.vb: AsyncOperation(Of T).Result
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).Result
+- uid: c_Tasking.Core.AsyncOperation`1.#ctor
+  commentId: M:c_Tasking.Core.AsyncOperation`1.#ctor
+  id: '#ctor'
+  parent: c_Tasking.Core.AsyncOperation`1
+  langs:
+  - csharp
+  - vb
+  name: AsyncOperation()
+  nameWithType: AsyncOperation<T>.AsyncOperation()
+  fullName: c_Tasking.Core.AsyncOperation<T>.AsyncOperation()
+  type: Constructor
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: .ctor
+    path: Core/AsyncOperation.cs
+    startLine: 180
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Creates a new generic <xref href="c_Tasking.Core.AsyncOperation%601" data-throw-if-not-resolved="false"></xref> instance.
+  example: []
+  syntax:
+    content: public AsyncOperation()
+    content.vb: Public Sub New()
+  overload: c_Tasking.Core.AsyncOperation`1.#ctor*
+  nameWithType.vb: AsyncOperation(Of T).New()
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).New()
+  name.vb: New()
+- uid: c_Tasking.Core.AsyncOperation`1.Create(System.Func{System.Threading.Tasks.Task{`0}})
+  commentId: M:c_Tasking.Core.AsyncOperation`1.Create(System.Func{System.Threading.Tasks.Task{`0}})
+  id: Create(System.Func{System.Threading.Tasks.Task{`0}})
+  parent: c_Tasking.Core.AsyncOperation`1
+  langs:
+  - csharp
+  - vb
+  name: Create(Func<Task<T>>)
+  nameWithType: AsyncOperation<T>.Create(Func<Task<T>>)
+  fullName: c_Tasking.Core.AsyncOperation<T>.Create(System.Func<System.Threading.Tasks.Task<T>>)
+  type: Method
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Create
+    path: Core/AsyncOperation.cs
+    startLine: 190
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Creates and starts an async operation from an async function with return value.
+  example: []
+  syntax:
+    content: public static AsyncOperation<T> Create(Func<Task<T>> asyncFunc)
+    parameters:
+    - id: asyncFunc
+      type: System.Func{System.Threading.Tasks.Task{{T}}}
+      description: The asynchronous function that returns the result.
+    return:
+      type: c_Tasking.Core.AsyncOperation`1
+      description: A started <xref href="c_Tasking.Core.AsyncOperation%601" data-throw-if-not-resolved="false"></xref> instance.
+    content.vb: Public Shared Function Create(asyncFunc As Func(Of Task(Of T))) As AsyncOperation(Of T)
+  overload: c_Tasking.Core.AsyncOperation`1.Create*
+  nameWithType.vb: AsyncOperation(Of T).Create(Func(Of Task(Of T)))
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).Create(System.Func(Of System.Threading.Tasks.Task(Of T)))
+  name.vb: Create(Func(Of Task(Of T)))
+- uid: c_Tasking.Core.AsyncOperation`1.WaitAsync
+  commentId: M:c_Tasking.Core.AsyncOperation`1.WaitAsync
+  id: WaitAsync
+  parent: c_Tasking.Core.AsyncOperation`1
+  langs:
+  - csharp
+  - vb
+  name: WaitAsync()
+  nameWithType: AsyncOperation<T>.WaitAsync()
+  fullName: c_Tasking.Core.AsyncOperation<T>.WaitAsync()
+  type: Method
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: WaitAsync
+    path: Core/AsyncOperation.cs
+    startLine: 201
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Waits for the operation to complete.
+  example: []
+  syntax:
+    content: public Task<T?> WaitAsync()
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+      description: A task that resolves to the operation's result.
+    content.vb: Public Function WaitAsync() As Task(Of T)
+  overload: c_Tasking.Core.AsyncOperation`1.WaitAsync*
+  nameWithType.vb: AsyncOperation(Of T).WaitAsync()
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).WaitAsync()
+- uid: c_Tasking.Core.AsyncOperation`1.WaitAsync(System.Int32)
+  commentId: M:c_Tasking.Core.AsyncOperation`1.WaitAsync(System.Int32)
+  id: WaitAsync(System.Int32)
+  parent: c_Tasking.Core.AsyncOperation`1
+  langs:
+  - csharp
+  - vb
+  name: WaitAsync(int)
+  nameWithType: AsyncOperation<T>.WaitAsync(int)
+  fullName: c_Tasking.Core.AsyncOperation<T>.WaitAsync(int)
+  type: Method
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: WaitAsync
+    path: Core/AsyncOperation.cs
+    startLine: 215
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Waits for the operation with a timeout.
+  example: []
+  syntax:
+    content: public Task<T?> WaitAsync(int timeoutMilliseconds)
+    parameters:
+    - id: timeoutMilliseconds
+      type: System.Int32
+      description: Timeout in milliseconds.
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+      description: The operation result when it completes before the timeout.
+    content.vb: Public Function WaitAsync(timeoutMilliseconds As Integer) As Task(Of T)
+  overload: c_Tasking.Core.AsyncOperation`1.WaitAsync*
+  nameWithType.vb: AsyncOperation(Of T).WaitAsync(Integer)
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).WaitAsync(Integer)
+  name.vb: WaitAsync(Integer)
+- uid: c_Tasking.Core.AsyncOperation`1.OnSuccess(System.Action{`0})
+  commentId: M:c_Tasking.Core.AsyncOperation`1.OnSuccess(System.Action{`0})
+  id: OnSuccess(System.Action{`0})
+  parent: c_Tasking.Core.AsyncOperation`1
+  langs:
+  - csharp
+  - vb
+  name: OnSuccess(Action<T?>)
+  nameWithType: AsyncOperation<T>.OnSuccess(Action<T?>)
+  fullName: c_Tasking.Core.AsyncOperation<T>.OnSuccess(System.Action<T?>)
+  type: Method
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: OnSuccess
+    path: Core/AsyncOperation.cs
+    startLine: 228
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Registers a callback to execute when the operation completes successfully with the result.
+  example: []
+  syntax:
+    content: public AsyncOperation<T> OnSuccess(Action<T?> callback)
+    parameters:
+    - id: callback
+      type: System.Action{{T}}
+    return:
+      type: c_Tasking.Core.AsyncOperation`1
+    content.vb: Public Function OnSuccess(callback As Action(Of T)) As AsyncOperation(Of T)
+  overload: c_Tasking.Core.AsyncOperation`1.OnSuccess*
+  nameWithType.vb: AsyncOperation(Of T).OnSuccess(Action(Of T))
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).OnSuccess(System.Action(Of T))
+  name.vb: OnSuccess(Action(Of T))
+- uid: c_Tasking.Core.AsyncOperation`1.OnException(System.Action{System.Exception})
+  commentId: M:c_Tasking.Core.AsyncOperation`1.OnException(System.Action{System.Exception})
+  id: OnException(System.Action{System.Exception})
+  parent: c_Tasking.Core.AsyncOperation`1
+  langs:
+  - csharp
+  - vb
+  name: OnException(Action<Exception>)
+  nameWithType: AsyncOperation<T>.OnException(Action<Exception>)
+  fullName: c_Tasking.Core.AsyncOperation<T>.OnException(System.Action<System.Exception>)
+  type: Method
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: OnException
+    path: Core/AsyncOperation.cs
+    startLine: 237
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Registers a callback to execute if the operation fails with an exception.
+  example: []
+  syntax:
+    content: public AsyncOperation<T> OnException(Action<Exception> callback)
+    parameters:
+    - id: callback
+      type: System.Action{System.Exception}
+    return:
+      type: c_Tasking.Core.AsyncOperation`1
+    content.vb: Public Function OnException(callback As Action(Of Exception)) As AsyncOperation(Of T)
+  overload: c_Tasking.Core.AsyncOperation`1.OnException*
+  nameWithType.vb: AsyncOperation(Of T).OnException(Action(Of Exception))
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).OnException(System.Action(Of System.Exception))
+  name.vb: OnException(Action(Of Exception))
+- uid: c_Tasking.Core.AsyncOperation`1.OnCancelled(System.Action)
+  commentId: M:c_Tasking.Core.AsyncOperation`1.OnCancelled(System.Action)
+  id: OnCancelled(System.Action)
+  parent: c_Tasking.Core.AsyncOperation`1
+  langs:
+  - csharp
+  - vb
+  name: OnCancelled(Action)
+  nameWithType: AsyncOperation<T>.OnCancelled(Action)
+  fullName: c_Tasking.Core.AsyncOperation<T>.OnCancelled(System.Action)
+  type: Method
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: OnCancelled
+    path: Core/AsyncOperation.cs
+    startLine: 246
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Registers a callback to execute if the operation is cancelled.
+  example: []
+  syntax:
+    content: public AsyncOperation<T> OnCancelled(Action callback)
+    parameters:
+    - id: callback
+      type: System.Action
+    return:
+      type: c_Tasking.Core.AsyncOperation`1
+    content.vb: Public Function OnCancelled(callback As Action) As AsyncOperation(Of T)
+  overload: c_Tasking.Core.AsyncOperation`1.OnCancelled*
+  nameWithType.vb: AsyncOperation(Of T).OnCancelled(Action)
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).OnCancelled(System.Action)
+- uid: c_Tasking.Core.AsyncOperation`1.SetResult(`0)
+  commentId: M:c_Tasking.Core.AsyncOperation`1.SetResult(`0)
+  id: SetResult(`0)
+  parent: c_Tasking.Core.AsyncOperation`1
+  langs:
+  - csharp
+  - vb
+  name: SetResult(T?)
+  nameWithType: AsyncOperation<T>.SetResult(T?)
+  fullName: c_Tasking.Core.AsyncOperation<T>.SetResult(T?)
+  type: Method
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: SetResult
+    path: Core/AsyncOperation.cs
+    startLine: 256
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Marks the operation as completed with a result.
+  example: []
+  syntax:
+    content: public void SetResult(T? result)
+    parameters:
+    - id: result
+      type: '{T}'
+      description: The result to set on the operation.
+    content.vb: Public Sub SetResult(result As T)
+  overload: c_Tasking.Core.AsyncOperation`1.SetResult*
+  nameWithType.vb: AsyncOperation(Of T).SetResult(T)
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).SetResult(T)
+  name.vb: SetResult(T)
+- uid: c_Tasking.Core.AsyncOperation`1.SetException(System.Exception)
+  commentId: M:c_Tasking.Core.AsyncOperation`1.SetException(System.Exception)
+  id: SetException(System.Exception)
+  parent: c_Tasking.Core.AsyncOperation`1
+  langs:
+  - csharp
+  - vb
+  name: SetException(Exception)
+  nameWithType: AsyncOperation<T>.SetException(Exception)
+  fullName: c_Tasking.Core.AsyncOperation<T>.SetException(System.Exception)
+  type: Method
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: SetException
+    path: Core/AsyncOperation.cs
+    startLine: 268
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Marks the operation as failed with an exception.
+  example: []
+  syntax:
+    content: public void SetException(Exception ex)
+    parameters:
+    - id: ex
+      type: System.Exception
+      description: Exception that caused the failure.
+    content.vb: Public Sub SetException(ex As Exception)
+  overload: c_Tasking.Core.AsyncOperation`1.SetException*
+  nameWithType.vb: AsyncOperation(Of T).SetException(Exception)
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).SetException(System.Exception)
+- uid: c_Tasking.Core.AsyncOperation`1.Cancel
+  commentId: M:c_Tasking.Core.AsyncOperation`1.Cancel
+  id: Cancel
+  parent: c_Tasking.Core.AsyncOperation`1
+  langs:
+  - csharp
+  - vb
+  name: Cancel()
+  nameWithType: AsyncOperation<T>.Cancel()
+  fullName: c_Tasking.Core.AsyncOperation<T>.Cancel()
+  type: Method
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Cancel
+    path: Core/AsyncOperation.cs
+    startLine: 279
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Cancels the operation.
+  example: []
+  syntax:
+    content: public void Cancel()
+    content.vb: Public Sub Cancel()
+  overload: c_Tasking.Core.AsyncOperation`1.Cancel*
+  nameWithType.vb: AsyncOperation(Of T).Cancel()
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).Cancel()
+- uid: c_Tasking.Core.AsyncOperation`1.ExecuteAsync(System.Func{System.Threading.Tasks.Task{`0}})
+  commentId: M:c_Tasking.Core.AsyncOperation`1.ExecuteAsync(System.Func{System.Threading.Tasks.Task{`0}})
+  id: ExecuteAsync(System.Func{System.Threading.Tasks.Task{`0}})
+  parent: c_Tasking.Core.AsyncOperation`1
+  langs:
+  - csharp
+  - vb
+  name: ExecuteAsync(Func<Task<T>>)
+  nameWithType: AsyncOperation<T>.ExecuteAsync(Func<Task<T>>)
+  fullName: c_Tasking.Core.AsyncOperation<T>.ExecuteAsync(System.Func<System.Threading.Tasks.Task<T>>)
+  type: Method
+  source:
+    remote:
+      path: Core/AsyncOperation.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ExecuteAsync
+    path: Core/AsyncOperation.cs
+    startLine: 291
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: >-
+    Executes the async function and sets the result when complete.
+
+    Exceptions are captured and applied to the operation state.
+  example: []
+  syntax:
+    content: public void ExecuteAsync(Func<Task<T>> asyncFunc)
+    parameters:
+    - id: asyncFunc
+      type: System.Func{System.Threading.Tasks.Task{{T}}}
+      description: The asynchronous function that produces the result.
+    content.vb: Public Sub ExecuteAsync(asyncFunc As Func(Of Task(Of T)))
+  overload: c_Tasking.Core.AsyncOperation`1.ExecuteAsync*
+  nameWithType.vb: AsyncOperation(Of T).ExecuteAsync(Func(Of Task(Of T)))
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).ExecuteAsync(System.Func(Of System.Threading.Tasks.Task(Of T)))
+  name.vb: ExecuteAsync(Func(Of Task(Of T)))
+references:
+- uid: c_Tasking.Core
+  commentId: N:c_Tasking.Core
+  href: c_Tasking.html
+  name: c_Tasking.Core
+  nameWithType: c_Tasking.Core
+  fullName: c_Tasking.Core
+  spec.csharp:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html
+  spec.vb:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: c_Tasking.Core.AsyncOperation`1.IsCompleted*
+  commentId: Overload:c_Tasking.Core.AsyncOperation`1.IsCompleted
+  href: c_Tasking.Core.AsyncOperation-1.html#c_Tasking_Core_AsyncOperation_1_IsCompleted
+  name: IsCompleted
+  nameWithType: AsyncOperation<T>.IsCompleted
+  fullName: c_Tasking.Core.AsyncOperation<T>.IsCompleted
+  nameWithType.vb: AsyncOperation(Of T).IsCompleted
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).IsCompleted
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: c_Tasking.Core.AsyncOperation`1.Result*
+  commentId: Overload:c_Tasking.Core.AsyncOperation`1.Result
+  href: c_Tasking.Core.AsyncOperation-1.html#c_Tasking_Core_AsyncOperation_1_Result
+  name: Result
+  nameWithType: AsyncOperation<T>.Result
+  fullName: c_Tasking.Core.AsyncOperation<T>.Result
+  nameWithType.vb: AsyncOperation(Of T).Result
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).Result
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: c_Tasking.Core.AsyncOperation`1
+  commentId: T:c_Tasking.Core.AsyncOperation`1
+  parent: c_Tasking.Core
+  href: c_Tasking.Core.AsyncOperation-1.html
+  name: AsyncOperation<T>
+  nameWithType: AsyncOperation<T>
+  fullName: c_Tasking.Core.AsyncOperation<T>
+  nameWithType.vb: AsyncOperation(Of T)
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T)
+  name.vb: AsyncOperation(Of T)
+  spec.csharp:
+  - uid: c_Tasking.Core.AsyncOperation`1
+    name: AsyncOperation
+    href: c_Tasking.Core.AsyncOperation-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: c_Tasking.Core.AsyncOperation`1
+    name: AsyncOperation
+    href: c_Tasking.Core.AsyncOperation-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: c_Tasking.Core.AsyncOperation`1.#ctor*
+  commentId: Overload:c_Tasking.Core.AsyncOperation`1.#ctor
+  href: c_Tasking.Core.AsyncOperation-1.html#c_Tasking_Core_AsyncOperation_1__ctor
+  name: AsyncOperation
+  nameWithType: AsyncOperation<T>.AsyncOperation
+  fullName: c_Tasking.Core.AsyncOperation<T>.AsyncOperation
+  nameWithType.vb: AsyncOperation(Of T).New
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).New
+  name.vb: New
+- uid: c_Tasking.Core.AsyncOperation`1.Create*
+  commentId: Overload:c_Tasking.Core.AsyncOperation`1.Create
+  href: c_Tasking.Core.AsyncOperation-1.html#c_Tasking_Core_AsyncOperation_1_Create_System_Func_System_Threading_Tasks_Task__0___
+  name: Create
+  nameWithType: AsyncOperation<T>.Create
+  fullName: c_Tasking.Core.AsyncOperation<T>.Create
+  nameWithType.vb: AsyncOperation(Of T).Create
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).Create
+- uid: System.Func{System.Threading.Tasks.Task{{T}}}
+  commentId: T:System.Func{System.Threading.Tasks.Task{``0}}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task<T>>
+  nameWithType: Func<Task<T>>
+  fullName: System.Func<System.Threading.Tasks.Task<T>>
+  nameWithType.vb: Func(Of Task(Of T))
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task(Of T))
+  name.vb: Func(Of Task(Of T))
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: c_Tasking.Core.AsyncOperation`1.WaitAsync*
+  commentId: Overload:c_Tasking.Core.AsyncOperation`1.WaitAsync
+  href: c_Tasking.Core.AsyncOperation-1.html#c_Tasking_Core_AsyncOperation_1_WaitAsync
+  name: WaitAsync
+  nameWithType: AsyncOperation<T>.WaitAsync
+  fullName: c_Tasking.Core.AsyncOperation<T>.WaitAsync
+  nameWithType.vb: AsyncOperation(Of T).WaitAsync
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).WaitAsync
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: c_Tasking.Core.AsyncOperation`1.OnSuccess*
+  commentId: Overload:c_Tasking.Core.AsyncOperation`1.OnSuccess
+  href: c_Tasking.Core.AsyncOperation-1.html#c_Tasking_Core_AsyncOperation_1_OnSuccess_System_Action__0__
+  name: OnSuccess
+  nameWithType: AsyncOperation<T>.OnSuccess
+  fullName: c_Tasking.Core.AsyncOperation<T>.OnSuccess
+  nameWithType.vb: AsyncOperation(Of T).OnSuccess
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).OnSuccess
+- uid: System.Action{{T}}
+  commentId: T:System.Action{`0}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: c_Tasking.Core.AsyncOperation`1.OnException*
+  commentId: Overload:c_Tasking.Core.AsyncOperation`1.OnException
+  href: c_Tasking.Core.AsyncOperation-1.html#c_Tasking_Core_AsyncOperation_1_OnException_System_Action_System_Exception__
+  name: OnException
+  nameWithType: AsyncOperation<T>.OnException
+  fullName: c_Tasking.Core.AsyncOperation<T>.OnException
+  nameWithType.vb: AsyncOperation(Of T).OnException
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).OnException
+- uid: System.Action{System.Exception}
+  commentId: T:System.Action{System.Exception}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Exception>
+  nameWithType: Action<Exception>
+  fullName: System.Action<System.Exception>
+  nameWithType.vb: Action(Of Exception)
+  fullName.vb: System.Action(Of System.Exception)
+  name.vb: Action(Of Exception)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: )
+- uid: c_Tasking.Core.AsyncOperation`1.OnCancelled*
+  commentId: Overload:c_Tasking.Core.AsyncOperation`1.OnCancelled
+  href: c_Tasking.Core.AsyncOperation-1.html#c_Tasking_Core_AsyncOperation_1_OnCancelled_System_Action_
+  name: OnCancelled
+  nameWithType: AsyncOperation<T>.OnCancelled
+  fullName: c_Tasking.Core.AsyncOperation<T>.OnCancelled
+  nameWithType.vb: AsyncOperation(Of T).OnCancelled
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).OnCancelled
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: c_Tasking.Core.AsyncOperation`1.SetResult*
+  commentId: Overload:c_Tasking.Core.AsyncOperation`1.SetResult
+  href: c_Tasking.Core.AsyncOperation-1.html#c_Tasking_Core_AsyncOperation_1_SetResult__0_
+  name: SetResult
+  nameWithType: AsyncOperation<T>.SetResult
+  fullName: c_Tasking.Core.AsyncOperation<T>.SetResult
+  nameWithType.vb: AsyncOperation(Of T).SetResult
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).SetResult
+- uid: c_Tasking.Core.AsyncOperation`1.SetException*
+  commentId: Overload:c_Tasking.Core.AsyncOperation`1.SetException
+  href: c_Tasking.Core.AsyncOperation-1.html#c_Tasking_Core_AsyncOperation_1_SetException_System_Exception_
+  name: SetException
+  nameWithType: AsyncOperation<T>.SetException
+  fullName: c_Tasking.Core.AsyncOperation<T>.SetException
+  nameWithType.vb: AsyncOperation(Of T).SetException
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).SetException
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: c_Tasking.Core.AsyncOperation`1.Cancel*
+  commentId: Overload:c_Tasking.Core.AsyncOperation`1.Cancel
+  href: c_Tasking.Core.AsyncOperation-1.html#c_Tasking_Core_AsyncOperation_1_Cancel
+  name: Cancel
+  nameWithType: AsyncOperation<T>.Cancel
+  fullName: c_Tasking.Core.AsyncOperation<T>.Cancel
+  nameWithType.vb: AsyncOperation(Of T).Cancel
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).Cancel
+- uid: c_Tasking.Core.AsyncOperation`1.ExecuteAsync*
+  commentId: Overload:c_Tasking.Core.AsyncOperation`1.ExecuteAsync
+  href: c_Tasking.Core.AsyncOperation-1.html#c_Tasking_Core_AsyncOperation_1_ExecuteAsync_System_Func_System_Threading_Tasks_Task__0___
+  name: ExecuteAsync
+  nameWithType: AsyncOperation<T>.ExecuteAsync
+  fullName: c_Tasking.Core.AsyncOperation<T>.ExecuteAsync
+  nameWithType.vb: AsyncOperation(Of T).ExecuteAsync
+  fullName.vb: c_Tasking.Core.AsyncOperation(Of T).ExecuteAsync

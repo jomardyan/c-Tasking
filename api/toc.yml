@@ -1,0 +1,86 @@
+### YamlMime:TableOfContent
+items:
+- uid: c_Tasking
+  name: c_Tasking
+  type: Namespace
+  items:
+  - uid: c_Tasking.Library
+    name: Library
+    type: Class
+  - uid: c_Tasking.TaskHelpers
+    name: TaskHelpers
+    type: Class
+- uid: c_Tasking.Core
+  name: c_Tasking.Core
+  type: Namespace
+  items:
+  - uid: c_Tasking.Core.AsyncOperation
+    name: AsyncOperation
+    type: Class
+  - uid: c_Tasking.Core.AsyncOperation`1
+    name: AsyncOperation<T>
+    type: Class
+  - uid: c_Tasking.Core.ConsoleErrorHandler
+    name: ConsoleErrorHandler
+    type: Class
+  - uid: c_Tasking.Core.ErrorHandler
+    name: ErrorHandler
+    type: Class
+  - uid: c_Tasking.Core.IErrorHandler
+    name: IErrorHandler
+    type: Interface
+  - uid: c_Tasking.Core.ManagedThreadPool
+    name: ManagedThreadPool
+    type: Class
+  - uid: c_Tasking.Core.SimpleThread
+    name: SimpleThread
+    type: Class
+  - uid: c_Tasking.Core.TaskWrapper
+    name: TaskWrapper
+    type: Class
+  - uid: c_Tasking.Core.ThreadPoolStats
+    name: ThreadPoolStats
+    type: Class
+- uid: c_Tasking.Examples
+  name: c_Tasking.Examples
+  type: Namespace
+  items:
+  - uid: c_Tasking.Examples.UsageExamples
+    name: UsageExamples
+    type: Class
+- uid: c_Tasking.Extensions
+  name: c_Tasking.Extensions
+  type: Namespace
+  items:
+  - uid: c_Tasking.Extensions.TaskExtensions
+    name: TaskExtensions
+    type: Class
+- uid: c_Tasking.Utilities
+  name: c_Tasking.Utilities
+  type: Namespace
+  items:
+  - uid: c_Tasking.Utilities.ConcurrentBatcher`1
+    name: ConcurrentBatcher<T>
+    type: Class
+  - uid: c_Tasking.Utilities.ExecutionMetrics
+    name: ExecutionMetrics
+    type: Class
+  - uid: c_Tasking.Utilities.ParallelTaskExecutor
+    name: ParallelTaskExecutor
+    type: Class
+  - uid: c_Tasking.Utilities.TaskRetry
+    name: TaskRetry
+    type: Class
+  - uid: c_Tasking.Utilities.TaskScheduler
+    name: TaskScheduler
+    type: Class
+  - uid: c_Tasking.Utilities.TaskThrottler
+    name: TaskThrottler
+    type: Class
+  - uid: c_Tasking.Utilities.TaskWaiter
+    name: TaskWaiter
+    type: Class
+  - uid: c_Tasking.Utilities.TimeoutManager
+    name: TimeoutManager
+    type: Class
+memberLayout: SamePage

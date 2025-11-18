@@ -1,0 +1,1691 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.TaskHelpers
+  commentId: T:c_Tasking.TaskHelpers
+  id: TaskHelpers
+  parent: c_Tasking
+  children:
+  - c_Tasking.TaskHelpers.FireAsync(System.Func{System.Threading.Tasks.Task},System.Action{System.Exception})
+  - c_Tasking.TaskHelpers.FireAsync``1(System.Func{System.Threading.Tasks.Task{``0}},System.Action{System.Exception})
+  - c_Tasking.TaskHelpers.Retry(System.Action)
+  - c_Tasking.TaskHelpers.RetryAsync(System.Func{System.Threading.Tasks.Task})
+  - c_Tasking.TaskHelpers.RetryAsync(System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Boolean},System.Int32)
+  - c_Tasking.TaskHelpers.RetryAsync``1(System.Func{System.Threading.Tasks.Task{``0}})
+  - c_Tasking.TaskHelpers.Retry``1(System.Func{``0})
+  - c_Tasking.TaskHelpers.RunAfterDelay(System.Func{System.Threading.Tasks.Task},System.Int32)
+  - c_Tasking.TaskHelpers.RunAfterDelay``1(System.Func{System.Threading.Tasks.Task{``0}},System.Int32)
+  - c_Tasking.TaskHelpers.RunInParallel(System.Func{System.Threading.Tasks.Task}[])
+  - c_Tasking.TaskHelpers.RunInParallel``1(System.Func{System.Threading.Tasks.Task{``0}}[])
+  - c_Tasking.TaskHelpers.RunOnThread(System.Action)
+  - c_Tasking.TaskHelpers.RunOnThread(System.Action{System.Threading.CancellationToken})
+  - c_Tasking.TaskHelpers.RunOnThreadPool(System.Action[])
+  - c_Tasking.TaskHelpers.RunOnThreadPool(System.Nullable{System.Int32},System.Action[])
+  - c_Tasking.TaskHelpers.RunWithTimeout(System.Func{System.Threading.Tasks.Task},System.Int32)
+  - c_Tasking.TaskHelpers.RunWithTimeout``1(System.Func{System.Threading.Tasks.Task{``0}},System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: TaskHelpers
+  nameWithType: TaskHelpers
+  fullName: c_Tasking.TaskHelpers
+  type: Class
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: TaskHelpers
+    path: TaskHelpers.cs
+    startLine: 10
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: >-
+    Convenience helpers and shortcuts for common task patterns.
+
+    Provides factory methods for fire-and-forget, quick retries, and common operations.
+  example: []
+  syntax:
+    content: public static class TaskHelpers
+    content.vb: Public Module TaskHelpers
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: c_Tasking.TaskHelpers.FireAsync(System.Func{System.Threading.Tasks.Task},System.Action{System.Exception})
+  commentId: M:c_Tasking.TaskHelpers.FireAsync(System.Func{System.Threading.Tasks.Task},System.Action{System.Exception})
+  id: FireAsync(System.Func{System.Threading.Tasks.Task},System.Action{System.Exception})
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: FireAsync(Func<Task>, Action<Exception>?)
+  nameWithType: TaskHelpers.FireAsync(Func<Task>, Action<Exception>?)
+  fullName: c_Tasking.TaskHelpers.FireAsync(System.Func<System.Threading.Tasks.Task>, System.Action<System.Exception>?)
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: FireAsync
+    path: TaskHelpers.cs
+    startLine: 19
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Creates and fires a task without waiting, with optional error handling.
+  example: []
+  syntax:
+    content: public static void FireAsync(Func<Task> work, Action<Exception>? onError = null)
+    parameters:
+    - id: work
+      type: System.Func{System.Threading.Tasks.Task}
+      description: The work to execute.
+    - id: onError
+      type: System.Action{System.Exception}
+      description: Optional error handler if the task fails.
+    content.vb: Public Shared Sub FireAsync(work As Func(Of Task), onError As Action(Of Exception) = Nothing)
+  overload: c_Tasking.TaskHelpers.FireAsync*
+  nameWithType.vb: TaskHelpers.FireAsync(Func(Of Task), Action(Of Exception))
+  fullName.vb: c_Tasking.TaskHelpers.FireAsync(System.Func(Of System.Threading.Tasks.Task), System.Action(Of System.Exception))
+  name.vb: FireAsync(Func(Of Task), Action(Of Exception))
+- uid: c_Tasking.TaskHelpers.FireAsync``1(System.Func{System.Threading.Tasks.Task{``0}},System.Action{System.Exception})
+  commentId: M:c_Tasking.TaskHelpers.FireAsync``1(System.Func{System.Threading.Tasks.Task{``0}},System.Action{System.Exception})
+  id: FireAsync``1(System.Func{System.Threading.Tasks.Task{``0}},System.Action{System.Exception})
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: FireAsync<T>(Func<Task<T>>, Action<Exception>?)
+  nameWithType: TaskHelpers.FireAsync<T>(Func<Task<T>>, Action<Exception>?)
+  fullName: c_Tasking.TaskHelpers.FireAsync<T>(System.Func<System.Threading.Tasks.Task<T>>, System.Action<System.Exception>?)
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: FireAsync
+    path: TaskHelpers.cs
+    startLine: 30
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Creates and fires a generic task without waiting, with optional error handling.
+  example: []
+  syntax:
+    content: public static void FireAsync<T>(Func<Task<T>> work, Action<Exception>? onError = null)
+    parameters:
+    - id: work
+      type: System.Func{System.Threading.Tasks.Task{{T}}}
+      description: The work to execute.
+    - id: onError
+      type: System.Action{System.Exception}
+      description: Optional error handler if the task fails.
+    typeParameters:
+    - id: T
+      description: Return type.
+    content.vb: Public Shared Sub FireAsync(Of T)(work As Func(Of Task(Of T)), onError As Action(Of Exception) = Nothing)
+  overload: c_Tasking.TaskHelpers.FireAsync*
+  nameWithType.vb: TaskHelpers.FireAsync(Of T)(Func(Of Task(Of T)), Action(Of Exception))
+  fullName.vb: c_Tasking.TaskHelpers.FireAsync(Of T)(System.Func(Of System.Threading.Tasks.Task(Of T)), System.Action(Of System.Exception))
+  name.vb: FireAsync(Of T)(Func(Of Task(Of T)), Action(Of Exception))
+- uid: c_Tasking.TaskHelpers.RetryAsync(System.Func{System.Threading.Tasks.Task})
+  commentId: M:c_Tasking.TaskHelpers.RetryAsync(System.Func{System.Threading.Tasks.Task})
+  id: RetryAsync(System.Func{System.Threading.Tasks.Task})
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: RetryAsync(Func<Task>)
+  nameWithType: TaskHelpers.RetryAsync(Func<Task>)
+  fullName: c_Tasking.TaskHelpers.RetryAsync(System.Func<System.Threading.Tasks.Task>)
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RetryAsync
+    path: TaskHelpers.cs
+    startLine: 42
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Executes async work with automatic retry on failure (3 attempts, 100ms initial backoff).
+  example: []
+  syntax:
+    content: public static Task RetryAsync(Func<Task> work)
+    parameters:
+    - id: work
+      type: System.Func{System.Threading.Tasks.Task}
+      description: The async work to execute and retry if needed.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the retry operation.
+    content.vb: Public Shared Function RetryAsync(work As Func(Of Task)) As Task
+  overload: c_Tasking.TaskHelpers.RetryAsync*
+  nameWithType.vb: TaskHelpers.RetryAsync(Func(Of Task))
+  fullName.vb: c_Tasking.TaskHelpers.RetryAsync(System.Func(Of System.Threading.Tasks.Task))
+  name.vb: RetryAsync(Func(Of Task))
+- uid: c_Tasking.TaskHelpers.RetryAsync(System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Boolean},System.Int32)
+  commentId: M:c_Tasking.TaskHelpers.RetryAsync(System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Boolean},System.Int32)
+  id: RetryAsync(System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Boolean},System.Int32)
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: RetryAsync(Func<Task>, Func<Exception, bool>, int)
+  nameWithType: TaskHelpers.RetryAsync(Func<Task>, Func<Exception, bool>, int)
+  fullName: c_Tasking.TaskHelpers.RetryAsync(System.Func<System.Threading.Tasks.Task>, System.Func<System.Exception, bool>, int)
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RetryAsync
+    path: TaskHelpers.cs
+    startLine: 54
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Executes async work with automatic retry on failure with custom retry predicate.
+  example: []
+  syntax:
+    content: public static Task RetryAsync(Func<Task> work, Func<Exception, bool> shouldRetry, int maxAttempts = 3)
+    parameters:
+    - id: work
+      type: System.Func{System.Threading.Tasks.Task}
+      description: The async work to execute and retry if needed.
+    - id: shouldRetry
+      type: System.Func{System.Exception,System.Boolean}
+      description: Predicate to determine if exception should trigger retry.
+    - id: maxAttempts
+      type: System.Int32
+      description: 'Maximum attempts (default: 3).'
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the retry operation.
+    content.vb: Public Shared Function RetryAsync(work As Func(Of Task), shouldRetry As Func(Of Exception, Boolean), maxAttempts As Integer = 3) As Task
+  overload: c_Tasking.TaskHelpers.RetryAsync*
+  nameWithType.vb: TaskHelpers.RetryAsync(Func(Of Task), Func(Of Exception, Boolean), Integer)
+  fullName.vb: c_Tasking.TaskHelpers.RetryAsync(System.Func(Of System.Threading.Tasks.Task), System.Func(Of System.Exception, Boolean), Integer)
+  name.vb: RetryAsync(Func(Of Task), Func(Of Exception, Boolean), Integer)
+- uid: c_Tasking.TaskHelpers.RetryAsync``1(System.Func{System.Threading.Tasks.Task{``0}})
+  commentId: M:c_Tasking.TaskHelpers.RetryAsync``1(System.Func{System.Threading.Tasks.Task{``0}})
+  id: RetryAsync``1(System.Func{System.Threading.Tasks.Task{``0}})
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: RetryAsync<T>(Func<Task<T>>)
+  nameWithType: TaskHelpers.RetryAsync<T>(Func<Task<T>>)
+  fullName: c_Tasking.TaskHelpers.RetryAsync<T>(System.Func<System.Threading.Tasks.Task<T>>)
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RetryAsync
+    path: TaskHelpers.cs
+    startLine: 65
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Executes async work with result and automatic retry on failure.
+  example: []
+  syntax:
+    content: public static Task<T> RetryAsync<T>(Func<Task<T>> work)
+    parameters:
+    - id: work
+      type: System.Func{System.Threading.Tasks.Task{{T}}}
+      description: The async work to execute and retry if needed.
+    typeParameters:
+    - id: T
+      description: Return type.
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+      description: A task producing the result.
+    content.vb: Public Shared Function RetryAsync(Of T)(work As Func(Of Task(Of T))) As Task(Of T)
+  overload: c_Tasking.TaskHelpers.RetryAsync*
+  nameWithType.vb: TaskHelpers.RetryAsync(Of T)(Func(Of Task(Of T)))
+  fullName.vb: c_Tasking.TaskHelpers.RetryAsync(Of T)(System.Func(Of System.Threading.Tasks.Task(Of T)))
+  name.vb: RetryAsync(Of T)(Func(Of Task(Of T)))
+- uid: c_Tasking.TaskHelpers.Retry(System.Action)
+  commentId: M:c_Tasking.TaskHelpers.Retry(System.Action)
+  id: Retry(System.Action)
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: Retry(Action)
+  nameWithType: TaskHelpers.Retry(Action)
+  fullName: c_Tasking.TaskHelpers.Retry(System.Action)
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Retry
+    path: TaskHelpers.cs
+    startLine: 74
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Executes sync work with automatic retry on failure (3 attempts, 100ms initial backoff).
+  example: []
+  syntax:
+    content: public static void Retry(Action work)
+    parameters:
+    - id: work
+      type: System.Action
+      description: The sync work to execute and retry if needed.
+    content.vb: Public Shared Sub Retry(work As Action)
+  overload: c_Tasking.TaskHelpers.Retry*
+- uid: c_Tasking.TaskHelpers.Retry``1(System.Func{``0})
+  commentId: M:c_Tasking.TaskHelpers.Retry``1(System.Func{``0})
+  id: Retry``1(System.Func{``0})
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: Retry<T>(Func<T>)
+  nameWithType: TaskHelpers.Retry<T>(Func<T>)
+  fullName: c_Tasking.TaskHelpers.Retry<T>(System.Func<T>)
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Retry
+    path: TaskHelpers.cs
+    startLine: 85
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Executes sync work with result and automatic retry on failure.
+  example: []
+  syntax:
+    content: public static T Retry<T>(Func<T> work)
+    parameters:
+    - id: work
+      type: System.Func{{T}}
+      description: The sync work to execute and retry if needed.
+    typeParameters:
+    - id: T
+      description: Return type.
+    return:
+      type: '{T}'
+      description: The result.
+    content.vb: Public Shared Function Retry(Of T)(work As Func(Of T)) As T
+  overload: c_Tasking.TaskHelpers.Retry*
+  nameWithType.vb: TaskHelpers.Retry(Of T)(Func(Of T))
+  fullName.vb: c_Tasking.TaskHelpers.Retry(Of T)(System.Func(Of T))
+  name.vb: Retry(Of T)(Func(Of T))
+- uid: c_Tasking.TaskHelpers.RunInParallel(System.Func{System.Threading.Tasks.Task}[])
+  commentId: M:c_Tasking.TaskHelpers.RunInParallel(System.Func{System.Threading.Tasks.Task}[])
+  id: RunInParallel(System.Func{System.Threading.Tasks.Task}[])
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: RunInParallel(params Func<Task>[])
+  nameWithType: TaskHelpers.RunInParallel(params Func<Task>[])
+  fullName: c_Tasking.TaskHelpers.RunInParallel(params System.Func<System.Threading.Tasks.Task>[])
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunInParallel
+    path: TaskHelpers.cs
+    startLine: 97
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Runs multiple async tasks in parallel and waits for all to complete.
+  example: []
+  syntax:
+    content: public static Task RunInParallel(params Func<Task>[] tasks)
+    parameters:
+    - id: tasks
+      type: System.Func{System.Threading.Tasks.Task}[]
+      description: Tasks to run in parallel.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task that completes when all tasks complete.
+    content.vb: Public Shared Function RunInParallel(ParamArray tasks As Func(Of Task)()) As Task
+  overload: c_Tasking.TaskHelpers.RunInParallel*
+  nameWithType.vb: TaskHelpers.RunInParallel(ParamArray Func(Of Task)())
+  fullName.vb: c_Tasking.TaskHelpers.RunInParallel(ParamArray System.Func(Of System.Threading.Tasks.Task)())
+  name.vb: RunInParallel(ParamArray Func(Of Task)())
+- uid: c_Tasking.TaskHelpers.RunInParallel``1(System.Func{System.Threading.Tasks.Task{``0}}[])
+  commentId: M:c_Tasking.TaskHelpers.RunInParallel``1(System.Func{System.Threading.Tasks.Task{``0}}[])
+  id: RunInParallel``1(System.Func{System.Threading.Tasks.Task{``0}}[])
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: RunInParallel<T>(params Func<Task<T>>[])
+  nameWithType: TaskHelpers.RunInParallel<T>(params Func<Task<T>>[])
+  fullName: c_Tasking.TaskHelpers.RunInParallel<T>(params System.Func<System.Threading.Tasks.Task<T>>[])
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunInParallel
+    path: TaskHelpers.cs
+    startLine: 109
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Runs multiple async tasks in parallel and collects their results.
+  example: []
+  syntax:
+    content: public static Task<T[]> RunInParallel<T>(params Func<Task<T>>[] tasks)
+    parameters:
+    - id: tasks
+      type: System.Func{System.Threading.Tasks.Task{{T}}}[]
+      description: Task factories to run in parallel.
+    typeParameters:
+    - id: T
+      description: Return type of tasks.
+    return:
+      type: System.Threading.Tasks.Task{{T}[]}
+      description: A task producing an array of results.
+    content.vb: Public Shared Function RunInParallel(Of T)(ParamArray tasks As Func(Of Task(Of T))()) As Task(Of T())
+  overload: c_Tasking.TaskHelpers.RunInParallel*
+  nameWithType.vb: TaskHelpers.RunInParallel(Of T)(ParamArray Func(Of Task(Of T))())
+  fullName.vb: c_Tasking.TaskHelpers.RunInParallel(Of T)(ParamArray System.Func(Of System.Threading.Tasks.Task(Of T))())
+  name.vb: RunInParallel(Of T)(ParamArray Func(Of Task(Of T))())
+- uid: c_Tasking.TaskHelpers.RunWithTimeout(System.Func{System.Threading.Tasks.Task},System.Int32)
+  commentId: M:c_Tasking.TaskHelpers.RunWithTimeout(System.Func{System.Threading.Tasks.Task},System.Int32)
+  id: RunWithTimeout(System.Func{System.Threading.Tasks.Task},System.Int32)
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: RunWithTimeout(Func<Task>, int)
+  nameWithType: TaskHelpers.RunWithTimeout(Func<Task>, int)
+  fullName: c_Tasking.TaskHelpers.RunWithTimeout(System.Func<System.Threading.Tasks.Task>, int)
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunWithTimeout
+    path: TaskHelpers.cs
+    startLine: 123
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Runs async work with a timeout, throwing TimeoutException if exceeded.
+  example: []
+  syntax:
+    content: public static Task RunWithTimeout(Func<Task> work, int timeoutMilliseconds)
+    parameters:
+    - id: work
+      type: System.Func{System.Threading.Tasks.Task}
+      description: The async work to execute.
+    - id: timeoutMilliseconds
+      type: System.Int32
+      description: Timeout in milliseconds.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the operation.
+    content.vb: Public Shared Function RunWithTimeout(work As Func(Of Task), timeoutMilliseconds As Integer) As Task
+  overload: c_Tasking.TaskHelpers.RunWithTimeout*
+  nameWithType.vb: TaskHelpers.RunWithTimeout(Func(Of Task), Integer)
+  fullName.vb: c_Tasking.TaskHelpers.RunWithTimeout(System.Func(Of System.Threading.Tasks.Task), Integer)
+  name.vb: RunWithTimeout(Func(Of Task), Integer)
+- uid: c_Tasking.TaskHelpers.RunWithTimeout``1(System.Func{System.Threading.Tasks.Task{``0}},System.Int32)
+  commentId: M:c_Tasking.TaskHelpers.RunWithTimeout``1(System.Func{System.Threading.Tasks.Task{``0}},System.Int32)
+  id: RunWithTimeout``1(System.Func{System.Threading.Tasks.Task{``0}},System.Int32)
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: RunWithTimeout<T>(Func<Task<T>>, int)
+  nameWithType: TaskHelpers.RunWithTimeout<T>(Func<Task<T>>, int)
+  fullName: c_Tasking.TaskHelpers.RunWithTimeout<T>(System.Func<System.Threading.Tasks.Task<T>>, int)
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunWithTimeout
+    path: TaskHelpers.cs
+    startLine: 135
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Runs async work with result and a timeout, throwing TimeoutException if exceeded.
+  example: []
+  syntax:
+    content: public static Task<T> RunWithTimeout<T>(Func<Task<T>> work, int timeoutMilliseconds)
+    parameters:
+    - id: work
+      type: System.Func{System.Threading.Tasks.Task{{T}}}
+      description: The async work to execute.
+    - id: timeoutMilliseconds
+      type: System.Int32
+      description: Timeout in milliseconds.
+    typeParameters:
+    - id: T
+      description: Return type.
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+      description: A task producing the result.
+    content.vb: Public Shared Function RunWithTimeout(Of T)(work As Func(Of Task(Of T)), timeoutMilliseconds As Integer) As Task(Of T)
+  overload: c_Tasking.TaskHelpers.RunWithTimeout*
+  nameWithType.vb: TaskHelpers.RunWithTimeout(Of T)(Func(Of Task(Of T)), Integer)
+  fullName.vb: c_Tasking.TaskHelpers.RunWithTimeout(Of T)(System.Func(Of System.Threading.Tasks.Task(Of T)), Integer)
+  name.vb: RunWithTimeout(Of T)(Func(Of Task(Of T)), Integer)
+- uid: c_Tasking.TaskHelpers.RunAfterDelay(System.Func{System.Threading.Tasks.Task},System.Int32)
+  commentId: M:c_Tasking.TaskHelpers.RunAfterDelay(System.Func{System.Threading.Tasks.Task},System.Int32)
+  id: RunAfterDelay(System.Func{System.Threading.Tasks.Task},System.Int32)
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: RunAfterDelay(Func<Task>, int)
+  nameWithType: TaskHelpers.RunAfterDelay(Func<Task>, int)
+  fullName: c_Tasking.TaskHelpers.RunAfterDelay(System.Func<System.Threading.Tasks.Task>, int)
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunAfterDelay
+    path: TaskHelpers.cs
+    startLine: 148
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Schedules work to run after a delay.
+  example: []
+  syntax:
+    content: public static Task RunAfterDelay(Func<Task> work, int delayMilliseconds)
+    parameters:
+    - id: work
+      type: System.Func{System.Threading.Tasks.Task}
+      description: The work to execute.
+    - id: delayMilliseconds
+      type: System.Int32
+      description: Delay in milliseconds.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task that completes when the work finishes.
+    content.vb: Public Shared Function RunAfterDelay(work As Func(Of Task), delayMilliseconds As Integer) As Task
+  overload: c_Tasking.TaskHelpers.RunAfterDelay*
+  nameWithType.vb: TaskHelpers.RunAfterDelay(Func(Of Task), Integer)
+  fullName.vb: c_Tasking.TaskHelpers.RunAfterDelay(System.Func(Of System.Threading.Tasks.Task), Integer)
+  name.vb: RunAfterDelay(Func(Of Task), Integer)
+- uid: c_Tasking.TaskHelpers.RunAfterDelay``1(System.Func{System.Threading.Tasks.Task{``0}},System.Int32)
+  commentId: M:c_Tasking.TaskHelpers.RunAfterDelay``1(System.Func{System.Threading.Tasks.Task{``0}},System.Int32)
+  id: RunAfterDelay``1(System.Func{System.Threading.Tasks.Task{``0}},System.Int32)
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: RunAfterDelay<T>(Func<Task<T>>, int)
+  nameWithType: TaskHelpers.RunAfterDelay<T>(Func<Task<T>>, int)
+  fullName: c_Tasking.TaskHelpers.RunAfterDelay<T>(System.Func<System.Threading.Tasks.Task<T>>, int)
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunAfterDelay
+    path: TaskHelpers.cs
+    startLine: 161
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Schedules work to run after a delay with result.
+  example: []
+  syntax:
+    content: public static Task<T> RunAfterDelay<T>(Func<Task<T>> work, int delayMilliseconds)
+    parameters:
+    - id: work
+      type: System.Func{System.Threading.Tasks.Task{{T}}}
+      description: The work to execute.
+    - id: delayMilliseconds
+      type: System.Int32
+      description: Delay in milliseconds.
+    typeParameters:
+    - id: T
+      description: Return type.
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+      description: A task producing the result.
+    content.vb: Public Shared Function RunAfterDelay(Of T)(work As Func(Of Task(Of T)), delayMilliseconds As Integer) As Task(Of T)
+  overload: c_Tasking.TaskHelpers.RunAfterDelay*
+  nameWithType.vb: TaskHelpers.RunAfterDelay(Of T)(Func(Of Task(Of T)), Integer)
+  fullName.vb: c_Tasking.TaskHelpers.RunAfterDelay(Of T)(System.Func(Of System.Threading.Tasks.Task(Of T)), Integer)
+  name.vb: RunAfterDelay(Of T)(Func(Of Task(Of T)), Integer)
+- uid: c_Tasking.TaskHelpers.RunOnThread(System.Action)
+  commentId: M:c_Tasking.TaskHelpers.RunOnThread(System.Action)
+  id: RunOnThread(System.Action)
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: RunOnThread(Action)
+  nameWithType: TaskHelpers.RunOnThread(Action)
+  fullName: c_Tasking.TaskHelpers.RunOnThread(System.Action)
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunOnThread
+    path: TaskHelpers.cs
+    startLine: 174
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Creates and starts a background thread that executes the given action.
+  example: []
+  syntax:
+    content: public static SimpleThread RunOnThread(Action work)
+    parameters:
+    - id: work
+      type: System.Action
+      description: The work to execute on the background thread.
+    return:
+      type: c_Tasking.Core.SimpleThread
+      description: The created thread instance.
+    content.vb: Public Shared Function RunOnThread(work As Action) As SimpleThread
+  overload: c_Tasking.TaskHelpers.RunOnThread*
+- uid: c_Tasking.TaskHelpers.RunOnThread(System.Action{System.Threading.CancellationToken})
+  commentId: M:c_Tasking.TaskHelpers.RunOnThread(System.Action{System.Threading.CancellationToken})
+  id: RunOnThread(System.Action{System.Threading.CancellationToken})
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: RunOnThread(Action<CancellationToken>)
+  nameWithType: TaskHelpers.RunOnThread(Action<CancellationToken>)
+  fullName: c_Tasking.TaskHelpers.RunOnThread(System.Action<System.Threading.CancellationToken>)
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunOnThread
+    path: TaskHelpers.cs
+    startLine: 187
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Creates and starts a background thread with cancellation support.
+  example: []
+  syntax:
+    content: public static SimpleThread RunOnThread(Action<CancellationToken> work)
+    parameters:
+    - id: work
+      type: System.Action{System.Threading.CancellationToken}
+      description: The work to execute, receives a cancellation token.
+    return:
+      type: c_Tasking.Core.SimpleThread
+      description: The created thread instance.
+    content.vb: Public Shared Function RunOnThread(work As Action(Of CancellationToken)) As SimpleThread
+  overload: c_Tasking.TaskHelpers.RunOnThread*
+  nameWithType.vb: TaskHelpers.RunOnThread(Action(Of CancellationToken))
+  fullName.vb: c_Tasking.TaskHelpers.RunOnThread(System.Action(Of System.Threading.CancellationToken))
+  name.vb: RunOnThread(Action(Of CancellationToken))
+- uid: c_Tasking.TaskHelpers.RunOnThreadPool(System.Nullable{System.Int32},System.Action[])
+  commentId: M:c_Tasking.TaskHelpers.RunOnThreadPool(System.Nullable{System.Int32},System.Action[])
+  id: RunOnThreadPool(System.Nullable{System.Int32},System.Action[])
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: RunOnThreadPool(int?, params Action[])
+  nameWithType: TaskHelpers.RunOnThreadPool(int?, params Action[])
+  fullName: c_Tasking.TaskHelpers.RunOnThreadPool(int?, params System.Action[])
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunOnThreadPool
+    path: TaskHelpers.cs
+    startLine: 203
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Creates a managed thread pool and executes multiple tasks on it.
+  example: []
+  syntax:
+    content: public static Task RunOnThreadPool(int? maxThreads, params Action[] tasks)
+    parameters:
+    - id: maxThreads
+      type: System.Nullable{System.Int32}
+      description: 'Maximum threads in the pool (default: CPU count).'
+    - id: tasks
+      type: System.Action[]
+      description: Tasks to execute on the pool.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task that completes when all tasks finish.
+    content.vb: Public Shared Function RunOnThreadPool(maxThreads As Integer?, ParamArray tasks As Action()) As Task
+  overload: c_Tasking.TaskHelpers.RunOnThreadPool*
+  nameWithType.vb: TaskHelpers.RunOnThreadPool(Integer?, ParamArray Action())
+  fullName.vb: c_Tasking.TaskHelpers.RunOnThreadPool(Integer?, ParamArray System.Action())
+  name.vb: RunOnThreadPool(Integer?, ParamArray Action())
+- uid: c_Tasking.TaskHelpers.RunOnThreadPool(System.Action[])
+  commentId: M:c_Tasking.TaskHelpers.RunOnThreadPool(System.Action[])
+  id: RunOnThreadPool(System.Action[])
+  parent: c_Tasking.TaskHelpers
+  langs:
+  - csharp
+  - vb
+  name: RunOnThreadPool(params Action[])
+  nameWithType: TaskHelpers.RunOnThreadPool(params Action[])
+  fullName: c_Tasking.TaskHelpers.RunOnThreadPool(params System.Action[])
+  type: Method
+  source:
+    remote:
+      path: TaskHelpers.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RunOnThreadPool
+    path: TaskHelpers.cs
+    startLine: 219
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking
+  summary: Creates a managed thread pool with CPU-count threads and executes multiple tasks.
+  example: []
+  syntax:
+    content: public static Task RunOnThreadPool(params Action[] tasks)
+    parameters:
+    - id: tasks
+      type: System.Action[]
+      description: Tasks to execute on the pool.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task that completes when all tasks finish.
+    content.vb: Public Shared Function RunOnThreadPool(ParamArray tasks As Action()) As Task
+  overload: c_Tasking.TaskHelpers.RunOnThreadPool*
+  nameWithType.vb: TaskHelpers.RunOnThreadPool(ParamArray Action())
+  fullName.vb: c_Tasking.TaskHelpers.RunOnThreadPool(ParamArray System.Action())
+  name.vb: RunOnThreadPool(ParamArray Action())
+references:
+- uid: c_Tasking
+  commentId: N:c_Tasking
+  href: c_Tasking.html
+  name: c_Tasking
+  nameWithType: c_Tasking
+  fullName: c_Tasking
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: c_Tasking.TaskHelpers.FireAsync*
+  commentId: Overload:c_Tasking.TaskHelpers.FireAsync
+  href: c_Tasking.TaskHelpers.html#c_Tasking_TaskHelpers_FireAsync_System_Func_System_Threading_Tasks_Task__System_Action_System_Exception__
+  name: FireAsync
+  nameWithType: TaskHelpers.FireAsync
+  fullName: c_Tasking.TaskHelpers.FireAsync
+- uid: System.Func{System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task>
+  nameWithType: Func<Task>
+  fullName: System.Func<System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Task)
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task)
+  name.vb: Func(Of Task)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Action{System.Exception}
+  commentId: T:System.Action{System.Exception}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Exception>
+  nameWithType: Action<Exception>
+  fullName: System.Action<System.Exception>
+  nameWithType.vb: Action(Of Exception)
+  fullName.vb: System.Action(Of System.Exception)
+  name.vb: Action(Of Exception)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Func{System.Threading.Tasks.Task{{T}}}
+  commentId: T:System.Func{System.Threading.Tasks.Task{``0}}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task<T>>
+  nameWithType: Func<Task<T>>
+  fullName: System.Func<System.Threading.Tasks.Task<T>>
+  nameWithType.vb: Func(Of Task(Of T))
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task(Of T))
+  name.vb: Func(Of Task(Of T))
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: c_Tasking.TaskHelpers.RetryAsync*
+  commentId: Overload:c_Tasking.TaskHelpers.RetryAsync
+  href: c_Tasking.TaskHelpers.html#c_Tasking_TaskHelpers_RetryAsync_System_Func_System_Threading_Tasks_Task__
+  name: RetryAsync
+  nameWithType: TaskHelpers.RetryAsync
+  fullName: c_Tasking.TaskHelpers.RetryAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Func{System.Exception,System.Boolean}
+  commentId: T:System.Func{System.Exception,System.Boolean}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<Exception, bool>
+  nameWithType: Func<Exception, bool>
+  fullName: System.Func<System.Exception, bool>
+  nameWithType.vb: Func(Of Exception, Boolean)
+  fullName.vb: System.Func(Of System.Exception, Boolean)
+  name.vb: Func(Of Exception, Boolean)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: c_Tasking.TaskHelpers.Retry*
+  commentId: Overload:c_Tasking.TaskHelpers.Retry
+  href: c_Tasking.TaskHelpers.html#c_Tasking_TaskHelpers_Retry_System_Action_
+  name: Retry
+  nameWithType: TaskHelpers.Retry
+  fullName: c_Tasking.TaskHelpers.Retry
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System.Func{{T}}
+  commentId: T:System.Func{``0}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<T>
+  nameWithType: Func<T>
+  fullName: System.Func<T>
+  nameWithType.vb: Func(Of T)
+  fullName.vb: System.Func(Of T)
+  name.vb: Func(Of T)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: c_Tasking.TaskHelpers.RunInParallel*
+  commentId: Overload:c_Tasking.TaskHelpers.RunInParallel
+  href: c_Tasking.TaskHelpers.html#c_Tasking_TaskHelpers_RunInParallel_System_Func_System_Threading_Tasks_Task____
+  name: RunInParallel
+  nameWithType: TaskHelpers.RunInParallel
+  fullName: c_Tasking.TaskHelpers.RunInParallel
+- uid: System.Func{System.Threading.Tasks.Task}[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task>[]
+  nameWithType: Func<Task>[]
+  fullName: System.Func<System.Threading.Tasks.Task>[]
+  nameWithType.vb: Func(Of Task)()
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task)()
+  name.vb: Func(Of Task)()
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+  - name: (
+  - name: )
+- uid: System.Func{System.Threading.Tasks.Task{{T}}}[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task<T>>[]
+  nameWithType: Func<Task<T>>[]
+  fullName: System.Func<System.Threading.Tasks.Task<T>>[]
+  nameWithType.vb: Func(Of Task(Of T))()
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task(Of T))()
+  name.vb: Func(Of Task(Of T))()
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.Task{{T}[]}
+  commentId: T:System.Threading.Tasks.Task{``0[]}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T[]>
+  nameWithType: Task<T[]>
+  fullName: System.Threading.Tasks.Task<T[]>
+  nameWithType.vb: Task(Of T())
+  fullName.vb: System.Threading.Tasks.Task(Of T())
+  name.vb: Task(Of T())
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '['
+  - name: ']'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: (
+  - name: )
+  - name: )
+- uid: c_Tasking.TaskHelpers.RunWithTimeout*
+  commentId: Overload:c_Tasking.TaskHelpers.RunWithTimeout
+  href: c_Tasking.TaskHelpers.html#c_Tasking_TaskHelpers_RunWithTimeout_System_Func_System_Threading_Tasks_Task__System_Int32_
+  name: RunWithTimeout
+  nameWithType: TaskHelpers.RunWithTimeout
+  fullName: c_Tasking.TaskHelpers.RunWithTimeout
+- uid: c_Tasking.TaskHelpers.RunAfterDelay*
+  commentId: Overload:c_Tasking.TaskHelpers.RunAfterDelay
+  href: c_Tasking.TaskHelpers.html#c_Tasking_TaskHelpers_RunAfterDelay_System_Func_System_Threading_Tasks_Task__System_Int32_
+  name: RunAfterDelay
+  nameWithType: TaskHelpers.RunAfterDelay
+  fullName: c_Tasking.TaskHelpers.RunAfterDelay
+- uid: c_Tasking.TaskHelpers.RunOnThread*
+  commentId: Overload:c_Tasking.TaskHelpers.RunOnThread
+  href: c_Tasking.TaskHelpers.html#c_Tasking_TaskHelpers_RunOnThread_System_Action_
+  name: RunOnThread
+  nameWithType: TaskHelpers.RunOnThread
+  fullName: c_Tasking.TaskHelpers.RunOnThread
+- uid: c_Tasking.Core.SimpleThread
+  commentId: T:c_Tasking.Core.SimpleThread
+  parent: c_Tasking.Core
+  href: c_Tasking.Core.SimpleThread.html
+  name: SimpleThread
+  nameWithType: SimpleThread
+  fullName: c_Tasking.Core.SimpleThread
+- uid: c_Tasking.Core
+  commentId: N:c_Tasking.Core
+  href: c_Tasking.html
+  name: c_Tasking.Core
+  nameWithType: c_Tasking.Core
+  fullName: c_Tasking.Core
+  spec.csharp:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html
+  spec.vb:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html
+- uid: System.Action{System.Threading.CancellationToken}
+  commentId: T:System.Action{System.Threading.CancellationToken}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<CancellationToken>
+  nameWithType: Action<CancellationToken>
+  fullName: System.Action<System.Threading.CancellationToken>
+  nameWithType.vb: Action(Of CancellationToken)
+  fullName.vb: System.Action(Of System.Threading.CancellationToken)
+  name.vb: Action(Of CancellationToken)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: c_Tasking.TaskHelpers.RunOnThreadPool*
+  commentId: Overload:c_Tasking.TaskHelpers.RunOnThreadPool
+  href: c_Tasking.TaskHelpers.html#c_Tasking_TaskHelpers_RunOnThreadPool_System_Nullable_System_Int32__System_Action___
+  name: RunOnThreadPool
+  nameWithType: TaskHelpers.RunOnThreadPool
+  fullName: c_Tasking.TaskHelpers.RunOnThreadPool
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Action[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action[]
+  nameWithType: Action[]
+  fullName: System.Action[]
+  nameWithType.vb: Action()
+  fullName.vb: System.Action()
+  name.vb: Action()
+  spec.csharp:
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: (
+  - name: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

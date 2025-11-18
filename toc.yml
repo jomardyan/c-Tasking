@@ -1,0 +1,18 @@
+- name: Home
+  href: README.md
+- name: Documentation
+  items:
+  - name: Overview & Help
+    href: docs/HELP.md
+  - name: Usage & Comparison
+    href: docs/USAGE_AND_COMPARISON.md
+  - name: Project Setup
+    href: docs/PROJECT_SETUP.md
+  - name: NuGet Publishing
+    href: docs/NUGET_PUBLISHING.md
+  - name: Contributing
+    href: docs/CONTRIBUTING.md
+  - name: Changelog
+    href: docs/CHANGELOG.md
+- name: API Reference
+  href: api/index.md

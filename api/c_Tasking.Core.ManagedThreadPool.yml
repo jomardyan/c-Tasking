@@ -1,0 +1,874 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Core.ManagedThreadPool
+  commentId: T:c_Tasking.Core.ManagedThreadPool
+  id: ManagedThreadPool
+  parent: c_Tasking.Core
+  children:
+  - c_Tasking.Core.ManagedThreadPool.#ctor(System.Nullable{System.Int32})
+  - c_Tasking.Core.ManagedThreadPool.ActiveThreadCount
+  - c_Tasking.Core.ManagedThreadPool.Dispose
+  - c_Tasking.Core.ManagedThreadPool.EnqueueAsync(System.Func{System.Threading.Tasks.Task})
+  - c_Tasking.Core.ManagedThreadPool.EnqueueTask(System.Action)
+  - c_Tasking.Core.ManagedThreadPool.Finalize
+  - c_Tasking.Core.ManagedThreadPool.GetStats
+  - c_Tasking.Core.ManagedThreadPool.QueuedTaskCount
+  - c_Tasking.Core.ManagedThreadPool.StopAll(System.Int32)
+  - c_Tasking.Core.ManagedThreadPool.WaitAll(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: ManagedThreadPool
+  nameWithType: ManagedThreadPool
+  fullName: c_Tasking.Core.ManagedThreadPool
+  type: Class
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ManagedThreadPool
+    path: Core/ManagedThreadPool.cs
+    startLine: 5
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Simplified thread pool manager for easy management of multiple threads.
+  example: []
+  syntax:
+    content: 'public class ManagedThreadPool : IDisposable'
+    content.vb: Public Class ManagedThreadPool Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: c_Tasking.Core.ManagedThreadPool.ActiveThreadCount
+  commentId: P:c_Tasking.Core.ManagedThreadPool.ActiveThreadCount
+  id: ActiveThreadCount
+  parent: c_Tasking.Core.ManagedThreadPool
+  langs:
+  - csharp
+  - vb
+  name: ActiveThreadCount
+  nameWithType: ManagedThreadPool.ActiveThreadCount
+  fullName: c_Tasking.Core.ManagedThreadPool.ActiveThreadCount
+  type: Property
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ActiveThreadCount
+    path: Core/ManagedThreadPool.cs
+    startLine: 16
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Number of currently active (running) threads in the pool.
+  example: []
+  syntax:
+    content: public int ActiveThreadCount { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property ActiveThreadCount As Integer
+  overload: c_Tasking.Core.ManagedThreadPool.ActiveThreadCount*
+- uid: c_Tasking.Core.ManagedThreadPool.QueuedTaskCount
+  commentId: P:c_Tasking.Core.ManagedThreadPool.QueuedTaskCount
+  id: QueuedTaskCount
+  parent: c_Tasking.Core.ManagedThreadPool
+  langs:
+  - csharp
+  - vb
+  name: QueuedTaskCount
+  nameWithType: ManagedThreadPool.QueuedTaskCount
+  fullName: c_Tasking.Core.ManagedThreadPool.QueuedTaskCount
+  type: Property
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: QueuedTaskCount
+    path: Core/ManagedThreadPool.cs
+    startLine: 20
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Number of tasks currently queued and waiting to be executed.
+  example: []
+  syntax:
+    content: public int QueuedTaskCount { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property QueuedTaskCount As Integer
+  overload: c_Tasking.Core.ManagedThreadPool.QueuedTaskCount*
+- uid: c_Tasking.Core.ManagedThreadPool.#ctor(System.Nullable{System.Int32})
+  commentId: M:c_Tasking.Core.ManagedThreadPool.#ctor(System.Nullable{System.Int32})
+  id: '#ctor(System.Nullable{System.Int32})'
+  parent: c_Tasking.Core.ManagedThreadPool
+  langs:
+  - csharp
+  - vb
+  name: ManagedThreadPool(int?)
+  nameWithType: ManagedThreadPool.ManagedThreadPool(int?)
+  fullName: c_Tasking.Core.ManagedThreadPool.ManagedThreadPool(int?)
+  type: Constructor
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: .ctor
+    path: Core/ManagedThreadPool.cs
+    startLine: 25
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Creates a new managed thread pool with an optional maximum number of threads.
+  example: []
+  syntax:
+    content: public ManagedThreadPool(int? maxThreads = null)
+    parameters:
+    - id: maxThreads
+      type: System.Nullable{System.Int32}
+    content.vb: Public Sub New(maxThreads As Integer? = Nothing)
+  overload: c_Tasking.Core.ManagedThreadPool.#ctor*
+  nameWithType.vb: ManagedThreadPool.New(Integer?)
+  fullName.vb: c_Tasking.Core.ManagedThreadPool.New(Integer?)
+  name.vb: New(Integer?)
+- uid: c_Tasking.Core.ManagedThreadPool.EnqueueTask(System.Action)
+  commentId: M:c_Tasking.Core.ManagedThreadPool.EnqueueTask(System.Action)
+  id: EnqueueTask(System.Action)
+  parent: c_Tasking.Core.ManagedThreadPool
+  langs:
+  - csharp
+  - vb
+  name: EnqueueTask(Action)
+  nameWithType: ManagedThreadPool.EnqueueTask(Action)
+  fullName: c_Tasking.Core.ManagedThreadPool.EnqueueTask(System.Action)
+  type: Method
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: EnqueueTask
+    path: Core/ManagedThreadPool.cs
+    startLine: 36
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Enqueues a task to be executed by an available thread.
+  example: []
+  syntax:
+    content: public void EnqueueTask(Action task)
+    parameters:
+    - id: task
+      type: System.Action
+      description: The synchronous task to execute.
+    content.vb: Public Sub EnqueueTask(task As Action)
+  overload: c_Tasking.Core.ManagedThreadPool.EnqueueTask*
+- uid: c_Tasking.Core.ManagedThreadPool.EnqueueAsync(System.Func{System.Threading.Tasks.Task})
+  commentId: M:c_Tasking.Core.ManagedThreadPool.EnqueueAsync(System.Func{System.Threading.Tasks.Task})
+  id: EnqueueAsync(System.Func{System.Threading.Tasks.Task})
+  parent: c_Tasking.Core.ManagedThreadPool
+  langs:
+  - csharp
+  - vb
+  name: EnqueueAsync(Func<Task>)
+  nameWithType: ManagedThreadPool.EnqueueAsync(Func<Task>)
+  fullName: c_Tasking.Core.ManagedThreadPool.EnqueueAsync(System.Func<System.Threading.Tasks.Task>)
+  type: Method
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: EnqueueAsync
+    path: Core/ManagedThreadPool.cs
+    startLine: 57
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Enqueues an async task.
+  example: []
+  syntax:
+    content: public void EnqueueAsync(Func<Task> asyncTask)
+    parameters:
+    - id: asyncTask
+      type: System.Func{System.Threading.Tasks.Task}
+      description: An async function to execute on the pool.
+    content.vb: Public Sub EnqueueAsync(asyncTask As Func(Of Task))
+  overload: c_Tasking.Core.ManagedThreadPool.EnqueueAsync*
+  nameWithType.vb: ManagedThreadPool.EnqueueAsync(Func(Of Task))
+  fullName.vb: c_Tasking.Core.ManagedThreadPool.EnqueueAsync(System.Func(Of System.Threading.Tasks.Task))
+  name.vb: EnqueueAsync(Func(Of Task))
+- uid: c_Tasking.Core.ManagedThreadPool.WaitAll(System.Int32)
+  commentId: M:c_Tasking.Core.ManagedThreadPool.WaitAll(System.Int32)
+  id: WaitAll(System.Int32)
+  parent: c_Tasking.Core.ManagedThreadPool
+  langs:
+  - csharp
+  - vb
+  name: WaitAll(int)
+  nameWithType: ManagedThreadPool.WaitAll(int)
+  fullName: c_Tasking.Core.ManagedThreadPool.WaitAll(int)
+  type: Method
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: WaitAll
+    path: Core/ManagedThreadPool.cs
+    startLine: 66
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Waits for all threads to complete their current tasks.
+  example: []
+  syntax:
+    content: public void WaitAll(int timeoutMilliseconds = -1)
+    parameters:
+    - id: timeoutMilliseconds
+      type: System.Int32
+      description: Timeout in milliseconds to wait, default is infinite.
+    content.vb: Public Sub WaitAll(timeoutMilliseconds As Integer = -1)
+  overload: c_Tasking.Core.ManagedThreadPool.WaitAll*
+  nameWithType.vb: ManagedThreadPool.WaitAll(Integer)
+  fullName.vb: c_Tasking.Core.ManagedThreadPool.WaitAll(Integer)
+  name.vb: WaitAll(Integer)
+- uid: c_Tasking.Core.ManagedThreadPool.StopAll(System.Int32)
+  commentId: M:c_Tasking.Core.ManagedThreadPool.StopAll(System.Int32)
+  id: StopAll(System.Int32)
+  parent: c_Tasking.Core.ManagedThreadPool
+  langs:
+  - csharp
+  - vb
+  name: StopAll(int)
+  nameWithType: ManagedThreadPool.StopAll(int)
+  fullName: c_Tasking.Core.ManagedThreadPool.StopAll(int)
+  type: Method
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: StopAll
+    path: Core/ManagedThreadPool.cs
+    startLine: 85
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Stops all threads gracefully.
+  example: []
+  syntax:
+    content: public void StopAll(int timeoutMilliseconds = 5000)
+    parameters:
+    - id: timeoutMilliseconds
+      type: System.Int32
+      description: Time in milliseconds to wait for each thread to gracefully stop.
+    content.vb: Public Sub StopAll(timeoutMilliseconds As Integer = 5000)
+  overload: c_Tasking.Core.ManagedThreadPool.StopAll*
+  nameWithType.vb: ManagedThreadPool.StopAll(Integer)
+  fullName.vb: c_Tasking.Core.ManagedThreadPool.StopAll(Integer)
+  name.vb: StopAll(Integer)
+- uid: c_Tasking.Core.ManagedThreadPool.GetStats
+  commentId: M:c_Tasking.Core.ManagedThreadPool.GetStats
+  id: GetStats
+  parent: c_Tasking.Core.ManagedThreadPool
+  langs:
+  - csharp
+  - vb
+  name: GetStats()
+  nameWithType: ManagedThreadPool.GetStats()
+  fullName: c_Tasking.Core.ManagedThreadPool.GetStats()
+  type: Method
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: GetStats
+    path: Core/ManagedThreadPool.cs
+    startLine: 103
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Gets statistics about the thread pool.
+  example: []
+  syntax:
+    content: public ThreadPoolStats GetStats()
+    return:
+      type: c_Tasking.Core.ThreadPoolStats
+    content.vb: Public Function GetStats() As ThreadPoolStats
+  overload: c_Tasking.Core.ManagedThreadPool.GetStats*
+- uid: c_Tasking.Core.ManagedThreadPool.Dispose
+  commentId: M:c_Tasking.Core.ManagedThreadPool.Dispose
+  id: Dispose
+  parent: c_Tasking.Core.ManagedThreadPool
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: ManagedThreadPool.Dispose()
+  fullName: c_Tasking.Core.ManagedThreadPool.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Dispose
+    path: Core/ManagedThreadPool.cs
+    startLine: 160
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Disposes the managed thread pool and stops all threads.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: c_Tasking.Core.ManagedThreadPool.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+- uid: c_Tasking.Core.ManagedThreadPool.Finalize
+  commentId: M:c_Tasking.Core.ManagedThreadPool.Finalize
+  id: Finalize
+  parent: c_Tasking.Core.ManagedThreadPool
+  langs:
+  - csharp
+  - vb
+  name: ~ManagedThreadPool()
+  nameWithType: ManagedThreadPool.~ManagedThreadPool()
+  fullName: c_Tasking.Core.ManagedThreadPool.~ManagedThreadPool()
+  type: Method
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Finalize
+    path: Core/ManagedThreadPool.cs
+    startLine: 173
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Finalizer ensures resources are cleaned up if Dispose was not called.
+  example: []
+  syntax:
+    content: protected ~ManagedThreadPool()
+    content.vb: 'Protected '
+  overload: c_Tasking.Core.ManagedThreadPool.Finalize*
+  nameWithType.vb: ''
+  fullName.vb: ''
+  name.vb: ''
+references:
+- uid: c_Tasking.Core
+  commentId: N:c_Tasking.Core
+  href: c_Tasking.html
+  name: c_Tasking.Core
+  nameWithType: c_Tasking.Core
+  fullName: c_Tasking.Core
+  spec.csharp:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html
+  spec.vb:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: c_Tasking.Core.ManagedThreadPool.ActiveThreadCount*
+  commentId: Overload:c_Tasking.Core.ManagedThreadPool.ActiveThreadCount
+  href: c_Tasking.Core.ManagedThreadPool.html#c_Tasking_Core_ManagedThreadPool_ActiveThreadCount
+  name: ActiveThreadCount
+  nameWithType: ManagedThreadPool.ActiveThreadCount
+  fullName: c_Tasking.Core.ManagedThreadPool.ActiveThreadCount
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: c_Tasking.Core.ManagedThreadPool.QueuedTaskCount*
+  commentId: Overload:c_Tasking.Core.ManagedThreadPool.QueuedTaskCount
+  href: c_Tasking.Core.ManagedThreadPool.html#c_Tasking_Core_ManagedThreadPool_QueuedTaskCount
+  name: QueuedTaskCount
+  nameWithType: ManagedThreadPool.QueuedTaskCount
+  fullName: c_Tasking.Core.ManagedThreadPool.QueuedTaskCount
+- uid: c_Tasking.Core.ManagedThreadPool.#ctor*
+  commentId: Overload:c_Tasking.Core.ManagedThreadPool.#ctor
+  href: c_Tasking.Core.ManagedThreadPool.html#c_Tasking_Core_ManagedThreadPool__ctor_System_Nullable_System_Int32__
+  name: ManagedThreadPool
+  nameWithType: ManagedThreadPool.ManagedThreadPool
+  fullName: c_Tasking.Core.ManagedThreadPool.ManagedThreadPool
+  nameWithType.vb: ManagedThreadPool.New
+  fullName.vb: c_Tasking.Core.ManagedThreadPool.New
+  name.vb: New
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: c_Tasking.Core.ManagedThreadPool.EnqueueTask*
+  commentId: Overload:c_Tasking.Core.ManagedThreadPool.EnqueueTask
+  href: c_Tasking.Core.ManagedThreadPool.html#c_Tasking_Core_ManagedThreadPool_EnqueueTask_System_Action_
+  name: EnqueueTask
+  nameWithType: ManagedThreadPool.EnqueueTask
+  fullName: c_Tasking.Core.ManagedThreadPool.EnqueueTask
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: c_Tasking.Core.ManagedThreadPool.EnqueueAsync*
+  commentId: Overload:c_Tasking.Core.ManagedThreadPool.EnqueueAsync
+  href: c_Tasking.Core.ManagedThreadPool.html#c_Tasking_Core_ManagedThreadPool_EnqueueAsync_System_Func_System_Threading_Tasks_Task__
+  name: EnqueueAsync
+  nameWithType: ManagedThreadPool.EnqueueAsync
+  fullName: c_Tasking.Core.ManagedThreadPool.EnqueueAsync
+- uid: System.Func{System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task>
+  nameWithType: Func<Task>
+  fullName: System.Func<System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Task)
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task)
+  name.vb: Func(Of Task)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: c_Tasking.Core.ManagedThreadPool.WaitAll*
+  commentId: Overload:c_Tasking.Core.ManagedThreadPool.WaitAll
+  href: c_Tasking.Core.ManagedThreadPool.html#c_Tasking_Core_ManagedThreadPool_WaitAll_System_Int32_
+  name: WaitAll
+  nameWithType: ManagedThreadPool.WaitAll
+  fullName: c_Tasking.Core.ManagedThreadPool.WaitAll
+- uid: c_Tasking.Core.ManagedThreadPool.StopAll*
+  commentId: Overload:c_Tasking.Core.ManagedThreadPool.StopAll
+  href: c_Tasking.Core.ManagedThreadPool.html#c_Tasking_Core_ManagedThreadPool_StopAll_System_Int32_
+  name: StopAll
+  nameWithType: ManagedThreadPool.StopAll
+  fullName: c_Tasking.Core.ManagedThreadPool.StopAll
+- uid: c_Tasking.Core.ManagedThreadPool.GetStats*
+  commentId: Overload:c_Tasking.Core.ManagedThreadPool.GetStats
+  href: c_Tasking.Core.ManagedThreadPool.html#c_Tasking_Core_ManagedThreadPool_GetStats
+  name: GetStats
+  nameWithType: ManagedThreadPool.GetStats
+  fullName: c_Tasking.Core.ManagedThreadPool.GetStats
+- uid: c_Tasking.Core.ThreadPoolStats
+  commentId: T:c_Tasking.Core.ThreadPoolStats
+  parent: c_Tasking.Core
+  href: c_Tasking.Core.ThreadPoolStats.html
+  name: ThreadPoolStats
+  nameWithType: ThreadPoolStats
+  fullName: c_Tasking.Core.ThreadPoolStats
+- uid: c_Tasking.Core.ManagedThreadPool.Dispose*
+  commentId: Overload:c_Tasking.Core.ManagedThreadPool.Dispose
+  href: c_Tasking.Core.ManagedThreadPool.html#c_Tasking_Core_ManagedThreadPool_Dispose
+  name: Dispose
+  nameWithType: ManagedThreadPool.Dispose
+  fullName: c_Tasking.Core.ManagedThreadPool.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+- uid: c_Tasking.Core.ManagedThreadPool.Finalize*
+  commentId: Overload:c_Tasking.Core.ManagedThreadPool.Finalize
+  href: c_Tasking.Core.ManagedThreadPool.html#c_Tasking_Core_ManagedThreadPool_Finalize
+  name: ~ManagedThreadPool
+  nameWithType: ManagedThreadPool.~ManagedThreadPool
+  fullName: c_Tasking.Core.ManagedThreadPool.~ManagedThreadPool
+  spec.csharp:
+  - name: "~"
+  - uid: c_Tasking.Core.ManagedThreadPool.Finalize*
+    name: ManagedThreadPool
+    href: c_Tasking.Core.ManagedThreadPool.html#c_Tasking_Core_ManagedThreadPool_Finalize

@@ -1,0 +1,511 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Core.ThreadPoolStats
+  commentId: T:c_Tasking.Core.ThreadPoolStats
+  id: ThreadPoolStats
+  parent: c_Tasking.Core
+  children:
+  - c_Tasking.Core.ThreadPoolStats.ActiveThreads
+  - c_Tasking.Core.ThreadPoolStats.MaxThreads
+  - c_Tasking.Core.ThreadPoolStats.QueuedTasks
+  - c_Tasking.Core.ThreadPoolStats.ToString
+  - c_Tasking.Core.ThreadPoolStats.TotalThreads
+  langs:
+  - csharp
+  - vb
+  name: ThreadPoolStats
+  nameWithType: ThreadPoolStats
+  fullName: c_Tasking.Core.ThreadPoolStats
+  type: Class
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ThreadPoolStats
+    path: Core/ManagedThreadPool.cs
+    startLine: 182
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Statistics about a thread pool.
+  example: []
+  syntax:
+    content: public class ThreadPoolStats
+    content.vb: Public Class ThreadPoolStats
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: c_Tasking.Core.ThreadPoolStats.MaxThreads
+  commentId: P:c_Tasking.Core.ThreadPoolStats.MaxThreads
+  id: MaxThreads
+  parent: c_Tasking.Core.ThreadPoolStats
+  langs:
+  - csharp
+  - vb
+  name: MaxThreads
+  nameWithType: ThreadPoolStats.MaxThreads
+  fullName: c_Tasking.Core.ThreadPoolStats.MaxThreads
+  type: Property
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: MaxThreads
+    path: Core/ManagedThreadPool.cs
+    startLine: 187
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Maximum configured threads for the pool.
+  example: []
+  syntax:
+    content: public int MaxThreads { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxThreads As Integer
+  overload: c_Tasking.Core.ThreadPoolStats.MaxThreads*
+- uid: c_Tasking.Core.ThreadPoolStats.ActiveThreads
+  commentId: P:c_Tasking.Core.ThreadPoolStats.ActiveThreads
+  id: ActiveThreads
+  parent: c_Tasking.Core.ThreadPoolStats
+  langs:
+  - csharp
+  - vb
+  name: ActiveThreads
+  nameWithType: ThreadPoolStats.ActiveThreads
+  fullName: c_Tasking.Core.ThreadPoolStats.ActiveThreads
+  type: Property
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ActiveThreads
+    path: Core/ManagedThreadPool.cs
+    startLine: 191
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Number of active threads at the time the stats were captured.
+  example: []
+  syntax:
+    content: public int ActiveThreads { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ActiveThreads As Integer
+  overload: c_Tasking.Core.ThreadPoolStats.ActiveThreads*
+- uid: c_Tasking.Core.ThreadPoolStats.QueuedTasks
+  commentId: P:c_Tasking.Core.ThreadPoolStats.QueuedTasks
+  id: QueuedTasks
+  parent: c_Tasking.Core.ThreadPoolStats
+  langs:
+  - csharp
+  - vb
+  name: QueuedTasks
+  nameWithType: ThreadPoolStats.QueuedTasks
+  fullName: c_Tasking.Core.ThreadPoolStats.QueuedTasks
+  type: Property
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: QueuedTasks
+    path: Core/ManagedThreadPool.cs
+    startLine: 195
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Number of tasks queued waiting execution in the pool.
+  example: []
+  syntax:
+    content: public int QueuedTasks { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property QueuedTasks As Integer
+  overload: c_Tasking.Core.ThreadPoolStats.QueuedTasks*
+- uid: c_Tasking.Core.ThreadPoolStats.TotalThreads
+  commentId: P:c_Tasking.Core.ThreadPoolStats.TotalThreads
+  id: TotalThreads
+  parent: c_Tasking.Core.ThreadPoolStats
+  langs:
+  - csharp
+  - vb
+  name: TotalThreads
+  nameWithType: ThreadPoolStats.TotalThreads
+  fullName: c_Tasking.Core.ThreadPoolStats.TotalThreads
+  type: Property
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: TotalThreads
+    path: Core/ManagedThreadPool.cs
+    startLine: 199
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Total number of threads that have been created by the pool.
+  example: []
+  syntax:
+    content: public int TotalThreads { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TotalThreads As Integer
+  overload: c_Tasking.Core.ThreadPoolStats.TotalThreads*
+- uid: c_Tasking.Core.ThreadPoolStats.ToString
+  commentId: M:c_Tasking.Core.ThreadPoolStats.ToString
+  id: ToString
+  parent: c_Tasking.Core.ThreadPoolStats
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: ThreadPoolStats.ToString()
+  fullName: c_Tasking.Core.ThreadPoolStats.ToString()
+  type: Method
+  source:
+    remote:
+      path: Core/ManagedThreadPool.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ToString
+    path: Core/ManagedThreadPool.cs
+    startLine: 204
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Core
+  summary: Returns a string representation of the thread pool stats.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: c_Tasking.Core.ThreadPoolStats.ToString*
+references:
+- uid: c_Tasking.Core
+  commentId: N:c_Tasking.Core
+  href: c_Tasking.html
+  name: c_Tasking.Core
+  nameWithType: c_Tasking.Core
+  fullName: c_Tasking.Core
+  spec.csharp:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html
+  spec.vb:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Core
+    name: Core
+    href: c_Tasking.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: c_Tasking.Core.ThreadPoolStats.MaxThreads*
+  commentId: Overload:c_Tasking.Core.ThreadPoolStats.MaxThreads
+  href: c_Tasking.Core.ThreadPoolStats.html#c_Tasking_Core_ThreadPoolStats_MaxThreads
+  name: MaxThreads
+  nameWithType: ThreadPoolStats.MaxThreads
+  fullName: c_Tasking.Core.ThreadPoolStats.MaxThreads
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: c_Tasking.Core.ThreadPoolStats.ActiveThreads*
+  commentId: Overload:c_Tasking.Core.ThreadPoolStats.ActiveThreads
+  href: c_Tasking.Core.ThreadPoolStats.html#c_Tasking_Core_ThreadPoolStats_ActiveThreads
+  name: ActiveThreads
+  nameWithType: ThreadPoolStats.ActiveThreads
+  fullName: c_Tasking.Core.ThreadPoolStats.ActiveThreads
+- uid: c_Tasking.Core.ThreadPoolStats.QueuedTasks*
+  commentId: Overload:c_Tasking.Core.ThreadPoolStats.QueuedTasks
+  href: c_Tasking.Core.ThreadPoolStats.html#c_Tasking_Core_ThreadPoolStats_QueuedTasks
+  name: QueuedTasks
+  nameWithType: ThreadPoolStats.QueuedTasks
+  fullName: c_Tasking.Core.ThreadPoolStats.QueuedTasks
+- uid: c_Tasking.Core.ThreadPoolStats.TotalThreads*
+  commentId: Overload:c_Tasking.Core.ThreadPoolStats.TotalThreads
+  href: c_Tasking.Core.ThreadPoolStats.html#c_Tasking_Core_ThreadPoolStats_TotalThreads
+  name: TotalThreads
+  nameWithType: ThreadPoolStats.TotalThreads
+  fullName: c_Tasking.Core.ThreadPoolStats.TotalThreads
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: c_Tasking.Core.ThreadPoolStats.ToString*
+  commentId: Overload:c_Tasking.Core.ThreadPoolStats.ToString
+  href: c_Tasking.Core.ThreadPoolStats.html#c_Tasking_Core_ThreadPoolStats_ToString
+  name: ToString
+  nameWithType: ThreadPoolStats.ToString
+  fullName: c_Tasking.Core.ThreadPoolStats.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

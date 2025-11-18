@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Examples
+  commentId: N:c_Tasking.Examples
+  id: c_Tasking.Examples
+  children:
+  - c_Tasking.Examples.UsageExamples
+  langs:
+  - csharp
+  - vb
+  name: c_Tasking.Examples
+  nameWithType: c_Tasking.Examples
+  fullName: c_Tasking.Examples
+  type: Namespace
+  assemblies:
+  - c-Tasking
+references:
+- uid: c_Tasking.Examples.UsageExamples
+  commentId: T:c_Tasking.Examples.UsageExamples
+  href: c_Tasking.Examples.UsageExamples.html
+  name: UsageExamples
+  nameWithType: UsageExamples
+  fullName: c_Tasking.Examples.UsageExamples

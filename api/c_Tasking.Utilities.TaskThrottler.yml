@@ -1,0 +1,770 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Utilities.TaskThrottler
+  commentId: T:c_Tasking.Utilities.TaskThrottler
+  id: TaskThrottler
+  parent: c_Tasking.Utilities
+  children:
+  - c_Tasking.Utilities.TaskThrottler.#ctor(System.Int32,System.TimeSpan)
+  - c_Tasking.Utilities.TaskThrottler.Dispose
+  - c_Tasking.Utilities.TaskThrottler.Finalize
+  - c_Tasking.Utilities.TaskThrottler.ThrottleAsync(System.Func{System.Threading.Tasks.Task})
+  - c_Tasking.Utilities.TaskThrottler.ThrottleAsync``1(System.Func{System.Threading.Tasks.Task{``0}})
+  langs:
+  - csharp
+  - vb
+  name: TaskThrottler
+  nameWithType: TaskThrottler
+  fullName: c_Tasking.Utilities.TaskThrottler
+  type: Class
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: TaskThrottler
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 136
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Throttling utilities to rate-limit operations.
+  example: []
+  syntax:
+    content: 'public class TaskThrottler : IDisposable'
+    content.vb: Public Class TaskThrottler Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: c_Tasking.Utilities.TaskThrottler.#ctor(System.Int32,System.TimeSpan)
+  commentId: M:c_Tasking.Utilities.TaskThrottler.#ctor(System.Int32,System.TimeSpan)
+  id: '#ctor(System.Int32,System.TimeSpan)'
+  parent: c_Tasking.Utilities.TaskThrottler
+  langs:
+  - csharp
+  - vb
+  name: TaskThrottler(int, TimeSpan)
+  nameWithType: TaskThrottler.TaskThrottler(int, TimeSpan)
+  fullName: c_Tasking.Utilities.TaskThrottler.TaskThrottler(int, System.TimeSpan)
+  type: Constructor
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: .ctor
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 145
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Creates a throttler that allows maxOperations within timeWindow.
+  example: []
+  syntax:
+    content: public TaskThrottler(int maxOperations, TimeSpan timeWindow)
+    parameters:
+    - id: maxOperations
+      type: System.Int32
+    - id: timeWindow
+      type: System.TimeSpan
+    content.vb: Public Sub New(maxOperations As Integer, timeWindow As TimeSpan)
+  overload: c_Tasking.Utilities.TaskThrottler.#ctor*
+  nameWithType.vb: TaskThrottler.New(Integer, TimeSpan)
+  fullName.vb: c_Tasking.Utilities.TaskThrottler.New(Integer, System.TimeSpan)
+  name.vb: New(Integer, TimeSpan)
+- uid: c_Tasking.Utilities.TaskThrottler.ThrottleAsync``1(System.Func{System.Threading.Tasks.Task{``0}})
+  commentId: M:c_Tasking.Utilities.TaskThrottler.ThrottleAsync``1(System.Func{System.Threading.Tasks.Task{``0}})
+  id: ThrottleAsync``1(System.Func{System.Threading.Tasks.Task{``0}})
+  parent: c_Tasking.Utilities.TaskThrottler
+  langs:
+  - csharp
+  - vb
+  name: ThrottleAsync<T>(Func<Task<T>>)
+  nameWithType: TaskThrottler.ThrottleAsync<T>(Func<Task<T>>)
+  fullName: c_Tasking.Utilities.TaskThrottler.ThrottleAsync<T>(System.Func<System.Threading.Tasks.Task<T>>)
+  type: Method
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ThrottleAsync
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 156
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Throttles an async operation.
+  example: []
+  syntax:
+    content: public Task<T> ThrottleAsync<T>(Func<Task<T>> operation)
+    parameters:
+    - id: operation
+      type: System.Func{System.Threading.Tasks.Task{{T}}}
+      description: The operation to throttle.
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+      description: The result of the operation.
+    content.vb: Public Function ThrottleAsync(Of T)(operation As Func(Of Task(Of T))) As Task(Of T)
+  overload: c_Tasking.Utilities.TaskThrottler.ThrottleAsync*
+  nameWithType.vb: TaskThrottler.ThrottleAsync(Of T)(Func(Of Task(Of T)))
+  fullName.vb: c_Tasking.Utilities.TaskThrottler.ThrottleAsync(Of T)(System.Func(Of System.Threading.Tasks.Task(Of T)))
+  name.vb: ThrottleAsync(Of T)(Func(Of Task(Of T)))
+- uid: c_Tasking.Utilities.TaskThrottler.ThrottleAsync(System.Func{System.Threading.Tasks.Task})
+  commentId: M:c_Tasking.Utilities.TaskThrottler.ThrottleAsync(System.Func{System.Threading.Tasks.Task})
+  id: ThrottleAsync(System.Func{System.Threading.Tasks.Task})
+  parent: c_Tasking.Utilities.TaskThrottler
+  langs:
+  - csharp
+  - vb
+  name: ThrottleAsync(Func<Task>)
+  nameWithType: TaskThrottler.ThrottleAsync(Func<Task>)
+  fullName: c_Tasking.Utilities.TaskThrottler.ThrottleAsync(System.Func<System.Threading.Tasks.Task>)
+  type: Method
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ThrottleAsync
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 174
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Throttles an async operation without return value.
+  example: []
+  syntax:
+    content: public Task ThrottleAsync(Func<Task> operation)
+    parameters:
+    - id: operation
+      type: System.Func{System.Threading.Tasks.Task}
+      description: The operation to throttle.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function ThrottleAsync(operation As Func(Of Task)) As Task
+  overload: c_Tasking.Utilities.TaskThrottler.ThrottleAsync*
+  nameWithType.vb: TaskThrottler.ThrottleAsync(Func(Of Task))
+  fullName.vb: c_Tasking.Utilities.TaskThrottler.ThrottleAsync(System.Func(Of System.Threading.Tasks.Task))
+  name.vb: ThrottleAsync(Func(Of Task))
+- uid: c_Tasking.Utilities.TaskThrottler.Dispose
+  commentId: M:c_Tasking.Utilities.TaskThrottler.Dispose
+  id: Dispose
+  parent: c_Tasking.Utilities.TaskThrottler
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: TaskThrottler.Dispose()
+  fullName: c_Tasking.Utilities.TaskThrottler.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Dispose
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 197
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Disposes the throttler and releases any internal resources.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: c_Tasking.Utilities.TaskThrottler.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+- uid: c_Tasking.Utilities.TaskThrottler.Finalize
+  commentId: M:c_Tasking.Utilities.TaskThrottler.Finalize
+  id: Finalize
+  parent: c_Tasking.Utilities.TaskThrottler
+  langs:
+  - csharp
+  - vb
+  name: ~TaskThrottler()
+  nameWithType: TaskThrottler.~TaskThrottler()
+  fullName: c_Tasking.Utilities.TaskThrottler.~TaskThrottler()
+  type: Method
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Finalize
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 211
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Finalizer ensures resources are cleaned up if Dispose was not called.
+  example: []
+  syntax:
+    content: protected ~TaskThrottler()
+    content.vb: 'Protected '
+  overload: c_Tasking.Utilities.TaskThrottler.Finalize*
+  nameWithType.vb: ''
+  fullName.vb: ''
+  name.vb: ''
+references:
+- uid: c_Tasking.Utilities
+  commentId: N:c_Tasking.Utilities
+  href: c_Tasking.html
+  name: c_Tasking.Utilities
+  nameWithType: c_Tasking.Utilities
+  fullName: c_Tasking.Utilities
+  spec.csharp:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Utilities
+    name: Utilities
+    href: c_Tasking.Utilities.html
+  spec.vb:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Utilities
+    name: Utilities
+    href: c_Tasking.Utilities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: c_Tasking.Utilities.TaskThrottler.#ctor*
+  commentId: Overload:c_Tasking.Utilities.TaskThrottler.#ctor
+  href: c_Tasking.Utilities.TaskThrottler.html#c_Tasking_Utilities_TaskThrottler__ctor_System_Int32_System_TimeSpan_
+  name: TaskThrottler
+  nameWithType: TaskThrottler.TaskThrottler
+  fullName: c_Tasking.Utilities.TaskThrottler.TaskThrottler
+  nameWithType.vb: TaskThrottler.New
+  fullName.vb: c_Tasking.Utilities.TaskThrottler.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: c_Tasking.Utilities.TaskThrottler.ThrottleAsync*
+  commentId: Overload:c_Tasking.Utilities.TaskThrottler.ThrottleAsync
+  href: c_Tasking.Utilities.TaskThrottler.html#c_Tasking_Utilities_TaskThrottler_ThrottleAsync__1_System_Func_System_Threading_Tasks_Task___0___
+  name: ThrottleAsync
+  nameWithType: TaskThrottler.ThrottleAsync
+  fullName: c_Tasking.Utilities.TaskThrottler.ThrottleAsync
+- uid: System.Func{System.Threading.Tasks.Task{{T}}}
+  commentId: T:System.Func{System.Threading.Tasks.Task{``0}}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task<T>>
+  nameWithType: Func<Task<T>>
+  fullName: System.Func<System.Threading.Tasks.Task<T>>
+  nameWithType.vb: Func(Of Task(Of T))
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task(Of T))
+  name.vb: Func(Of Task(Of T))
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Func{System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task>
+  nameWithType: Func<Task>
+  fullName: System.Func<System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Task)
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task)
+  name.vb: Func(Of Task)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: c_Tasking.Utilities.TaskThrottler.Dispose*
+  commentId: Overload:c_Tasking.Utilities.TaskThrottler.Dispose
+  href: c_Tasking.Utilities.TaskThrottler.html#c_Tasking_Utilities_TaskThrottler_Dispose
+  name: Dispose
+  nameWithType: TaskThrottler.Dispose
+  fullName: c_Tasking.Utilities.TaskThrottler.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+- uid: c_Tasking.Utilities.TaskThrottler.Finalize*
+  commentId: Overload:c_Tasking.Utilities.TaskThrottler.Finalize
+  href: c_Tasking.Utilities.TaskThrottler.html#c_Tasking_Utilities_TaskThrottler_Finalize
+  name: ~TaskThrottler
+  nameWithType: TaskThrottler.~TaskThrottler
+  fullName: c_Tasking.Utilities.TaskThrottler.~TaskThrottler
+  spec.csharp:
+  - name: "~"
+  - uid: c_Tasking.Utilities.TaskThrottler.Finalize*
+    name: TaskThrottler
+    href: c_Tasking.Utilities.TaskThrottler.html#c_Tasking_Utilities_TaskThrottler_Finalize

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Project Setup and Distribution Guide | c-Tasking Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Project Setup and Distribution Guide | c-Tasking Documentation ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jomardyan/c-Tasking/blob/main/docs/PROJECT_SETUP.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="c-Tasking">
+            c-Tasking
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="project-setup-and-distribution-guide">Project Setup and Distribution Guide</h1>
+
+<h2 id="-project-structure">📁 Project Structure</h2>
+<pre><code>c-Tasking/
+├── Core/                        # Core threading and task management
+│   ├── TaskWrapper.cs           # Simple task execution wrapper
+│   ├── SimpleThread.cs          # Thread management with cancellation
+│   ├── AsyncOperation.cs        # Async operation tracking
+│   └── ManagedThreadPool.cs     # Thread pool with auto-queuing
+│
+├── Utilities/                   # Utility and helper classes
+│   ├── TaskScheduler.cs         # Task scheduling utilities
+│   ├── TaskRetry.cs             # Retry logic with backoff
+│   ├── ConcurrentBatcher.cs     # Batch processing utilities
+│   └── AdvancedUtilities.cs     # Advanced parallel/throttling utilities
+│
+├── Extensions/                  # LINQ-style extension methods
+│   └── TaskExtensions.cs        # Task extension methods
+│
+├── Examples/                    # Usage examples
+│   └── UsageExamples.cs         # Comprehensive examples
+│
+├── .github/workflows/           # CI/CD workflows
+│   ├── build.yml                # Build and test workflow
+│   └── publish.yml              # NuGet publishing workflow
+│
+├── README.md                    # Main documentation
+├── HELP.md                      # Comprehensive library overview
+├── USAGE_AND_COMPARISON.md      # Usage comparisons and patterns
+├── CONTRIBUTING.md              # Contributing guidelines
+├── CHANGELOG.md                 # Version history
+├── NUGET_PUBLISHING.md          # NuGet publishing guide
+├── LICENSE                      # MIT License
+├── icon.png                     # Package icon
+├── c-Tasking.csproj             # Project file with NuGet metadata
+├── c-Tasking.sln                # Visual Studio solution
+└── .gitignore                   # Git ignore rules
+</code></pre>
+<h2 id="-development-setup">🛠️ Development Setup</h2>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>.NET 10.0 SDK or later</li>
+<li>Visual Studio 2022 / VS Code with C# extension</li>
+<li>Git</li>
+</ul>
+<h3 id="initial-setup">Initial Setup</h3>
+<pre><code class="lang-bash"># Clone the repository
+git clone https://github.com/jomardyan/c-Tasking.git
+cd c-Tasking
+
+# Restore dependencies
+dotnet restore
+
+# Build the project
+dotnet build
+
+# Run any tests
+dotnet test
+
+# Create local NuGet package
+dotnet pack -c Release -o ./nupkg
+</code></pre>
+<h3 id="vs-code-integrated-terminal-font">VS Code: Integrated Terminal Font</h3>
+<p>If you use VS Code, configure the integrated terminal to use a Nerd Font for proper glyphs and icons. You can change this via the settings UI (Ctrl+, -&gt; Features -&gt; Terminal -&gt; Integrated: Font Family) or by adding the following to your user/workspace <code>settings.json</code>:</p>
+<pre><code class="lang-json">{
+  &quot;terminal.integrated.fontFamily&quot;: &quot;MesloLGM Nerd Font&quot;
+}
+</code></pre>
+<p>This repository includes a workspace setting at <code>.vscode/settings.json</code> that sets the Terminal font family to <code>MesloLGM Nerd Font</code> as an example — update as needed to match your installed Nerd Font.</p>
+<h2 id="-package-information">📦 Package Information</h2>
+<h3 id="nuget-package-details">NuGet Package Details</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Package ID</td>
+<td>c-Tasking</td>
+</tr>
+<tr>
+<td>Current Version</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>Framework</td>
+<td>.NET 10.0+</td>
+</tr>
+<tr>
+<td>License</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>Jomar Dyan</td>
+</tr>
+<tr>
+<td>Repository</td>
+<td>github.com/jomardyan/c-Tasking</td>
+</tr>
+<tr>
+<td>Tags</td>
+<td>threading, async, tasks, multitasking, concurrency</td>
+</tr>
+</tbody>
+</table>
+<h3 id="package-contents">Package Contents</h3>
+<p>The NuGet package includes:</p>
+<pre><code>c-Tasking.1.0.0.nupkg
+├── lib/
+│   └── net10.0/
+│       ├── c-Tasking.dll
+│       └── c-Tasking.xml (documentation)
+├── README.md
+├── LICENSE
+├── icon.png
+└── package metadata (nuspec)
+</code></pre>
+<h2 id="-distribution-channels">🚀 Distribution Channels</h2>
+<h3 id="1-nugetorg-primary">1. NuGet.org (Primary)</h3>
+<p><strong>Official Package:</strong> <a href="https://www.nuget.org/packages/c-Tasking/">https://www.nuget.org/packages/c-Tasking/</a></p>
+<p><strong>Installation:</strong></p>
+<pre><code class="lang-bash">dotnet add package c-Tasking
+</code></pre>
+<p><strong>Publishing Process:</strong></p>
+<ol>
+<li>Create a GitHub release with tag (e.g., <code>v1.0.0</code>)</li>
+<li>GitHub Actions automatically publishes to NuGet</li>
+<li>Verify at <a href="https://www.nuget.org/packages/c-Tasking/">https://www.nuget.org/packages/c-Tasking/</a></li>
+</ol>
+<h3 id="2-github-releases">2. GitHub Releases</h3>
+<p>Releases are available at: <a href="https://github.com/jomardyan/c-Tasking/releases">https://github.com/jomardyan/c-Tasking/releases</a></p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Source code archives (zip/tar.gz)</li>
+<li>Change logs</li>
+<li>Release notes</li>
+<li>Binary downloads</li>
+</ul>
+<h3 id="3-source-code">3. Source Code</h3>
+<p><strong>Repository:</strong> <a href="https://github.com/jomardyan/c-Tasking">https://github.com/jomardyan/c-Tasking</a></p>
+<p>Clone directly:</p>
+<pre><code class="lang-bash">git clone https://github.com/jomardyan/c-Tasking.git
+</code></pre>
+<h2 id="-documentation-files">📝 Documentation Files</h2>
+<h3 id="core-documentation">Core Documentation</h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>README.md</code></td>
+<td>Main introduction, features, quick start, API reference</td>
+</tr>
+<tr>
+<td><code>HELP.md</code></td>
+<td>Comprehensive guide and examples</td>
+</tr>
+<tr>
+<td><code>USAGE_AND_COMPARISON.md</code></td>
+<td>Usage patterns and comparisons</td>
+</tr>
+<tr>
+<td><code>CHANGELOG.md</code></td>
+<td>Version history and changes</td>
+</tr>
+<tr>
+<td><code>CONTRIBUTING.md</code></td>
+<td>Contribution guidelines</td>
+</tr>
+<tr>
+<td><code>LICENSE</code></td>
+<td>MIT License terms</td>
+</tr>
+</tbody>
+</table>
+<h3 id="development-documentation">Development Documentation</h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NUGET_PUBLISHING.md</code></td>
+<td>NuGet publishing guide</td>
+</tr>
+<tr>
+<td><code>.github/workflows/</code></td>
+<td>CI/CD workflows</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-cicd-pipeline">🔄 CI/CD Pipeline</h2>
+<h3 id="automated-workflows">Automated Workflows</h3>
+<p><strong>1. Build Workflow</strong> (<code>.github/workflows/build.yml</code>)</p>
+<ul>
+<li>Triggers on: push to main/develop, pull requests</li>
+<li>Steps:
+<ul>
+<li>Setup .NET 10.0</li>
+<li>Restore dependencies</li>
+<li>Build in Release mode</li>
+<li>Run tests</li>
+<li>Create NuGet package</li>
+<li>Upload artifacts</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. Publishing Workflow</strong> (<code>.github/workflows/publish.yml</code>)</p>
+<ul>
+<li>Triggers on: version tag push (e.g., <code>v1.0.0</code>)</li>
+<li>Steps:
+<ul>
+<li>Build release version</li>
+<li>Create NuGet package</li>
+<li>Push to NuGet.org</li>
+<li>Create GitHub release</li>
+</ul>
+</li>
+</ul>
+<h3 id="manual-publishing">Manual Publishing</h3>
+<pre><code class="lang-bash"># Locally
+dotnet pack -c Release
+dotnet nuget push bin/Release/c-Tasking.1.0.0.nupkg --api-key YOUR_API_KEY
+
+# Using GitHub CLI
+gh release create v1.0.0 --generate-notes
+</code></pre>
+<h2 id="-security--best-practices">🔐 Security &amp; Best Practices</h2>
+<h3 id="api-key-management">API Key Management</h3>
+<ul>
+<li>Never commit API keys to repository</li>
+<li>Use GitHub Secrets for CI/CD</li>
+<li>Rotate keys periodically</li>
+<li>Use read-only keys when possible</li>
+</ul>
+<h3 id="code-quality">Code Quality</h3>
+<ul>
+<li>XML documentation on all public APIs</li>
+<li>Zero compiler warnings in Release mode</li>
+<li>Nullable reference types enabled</li>
+<li>Consistent code style</li>
+</ul>
+<h3 id="testing">Testing</h3>
+<ul>
+<li>Comprehensive examples in <code>UsageExamples.cs</code></li>
+<li>All public APIs documented</li>
+<li>Example patterns for common scenarios</li>
+</ul>
+<h2 id="-versioning-strategy">📊 Versioning Strategy</h2>
+<p>Follow Semantic Versioning (MAJOR.MINOR.PATCH):</p>
+<ul>
+<li><strong>1.0.0</strong> → Initial release</li>
+<li><strong>1.1.0</strong> → New features, backward compatible</li>
+<li><strong>1.0.1</strong> → Bug fixes, backward compatible</li>
+<li><strong>2.0.0</strong> → Breaking changes</li>
+</ul>
+<p>Update version in:</p>
+<ol>
+<li><code>c-Tasking.csproj</code> - <code>&lt;Version&gt;</code> tag</li>
+<li><code>CHANGELOG.md</code> - Add release section</li>
+<li><code>CONTRIBUTING.md</code> - Update if needed</li>
+</ol>
+<h2 id="-release-checklist">📋 Release Checklist</h2>
+<p>Before releasing a new version:</p>
+<ul>
+<li>[ ] Update version in <code>.csproj</code></li>
+<li>[ ] Update <code>CHANGELOG.md</code></li>
+<li>[ ] Verify all tests pass</li>
+<li>[ ] Test NuGet package locally</li>
+<li>[ ] Verify documentation is current</li>
+<li>[ ] Commit changes: <code>git commit -am &quot;Release v1.x.x&quot;</code></li>
+<li>[ ] Create tag: <code>git tag v1.x.x</code></li>
+<li>[ ] Push: <code>git push origin v1.x.x</code></li>
+<li>[ ] GitHub Actions publishes to NuGet</li>
+<li>[ ] Create GitHub release with notes</li>
+</ul>
+<h2 id="-quick-command-reference">🎯 Quick Command Reference</h2>
+<h3 id="building--testing">Building &amp; Testing</h3>
+<pre><code class="lang-bash">dotnet build                          # Debug build
+dotnet build -c Release               # Release build
+dotnet test                           # Run tests
+dotnet clean                          # Clean build artifacts
+</code></pre>
+<h3 id="packaging">Packaging</h3>
+<pre><code class="lang-bash">dotnet pack -c Release                # Create NuGet package
+dotnet pack -c Release -o ./nupkg     # Create and output to folder
+</code></pre>
+<h3 id="publishing">Publishing</h3>
+<pre><code class="lang-bash"># Manual NuGet push
+dotnet nuget push ./nupkg/c-Tasking.1.0.0.nupkg \
+  --api-key YOUR_API_KEY \
+  --source https://api.nuget.org/v3/index.json
+
+# GitHub release
+gh release create v1.0.0 --generate-notes
+</code></pre>
+<h3 id="documentation-generation">Documentation Generation</h3>
+<pre><code class="lang-bash"># The project generates XML documentation automatically
+# Located at: bin/Release/net10.0/c-Tasking.xml
+</code></pre>
+<h2 id="-important-links">🔗 Important Links</h2>
+<ul>
+<li><strong>NuGet Package:</strong> <a href="https://www.nuget.org/packages/c-Tasking/">https://www.nuget.org/packages/c-Tasking/</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/jomardyan/c-Tasking">https://github.com/jomardyan/c-Tasking</a></li>
+<li><strong>GitHub Issues:</strong> <a href="https://github.com/jomardyan/c-Tasking/issues">https://github.com/jomardyan/c-Tasking/issues</a></li>
+<li><strong>Discussions:</strong> <a href="https://github.com/jomardyan/c-Tasking/discussions">https://github.com/jomardyan/c-Tasking/discussions</a></li>
+</ul>
+<h2 id="-support">📞 Support</h2>
+<p>For questions or issues:</p>
+<ol>
+<li>Check documentation files</li>
+<li>Review <code>UsageExamples.cs</code></li>
+<li>Open GitHub issue</li>
+<li>Visit GitHub discussions</li>
+</ol>
+<h2 id="-additional-resources">🎓 Additional Resources</h2>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/">Microsoft .NET Documentation</a></li>
+<li><a href="https://docs.microsoft.com/en-us/nuget/">NuGet Documentation</a></li>
+<li><a href="https://semver.org/">Semantic Versioning</a></li>
+<li><a href="https://keepachangelog.com/">Keep a Changelog</a></li>
+<li><a href="https://docs.github.com/en/actions">GitHub Actions Documentation</a></li>
+</ul>
+<hr>
+<p><strong>Last Updated:</strong> November 17, 2025
+<strong>Version:</strong> 1.0.0</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jomardyan/c-Tasking/blob/main/docs/PROJECT_SETUP.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

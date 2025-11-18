@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>c-Tasking Library - Complete Documentation | c-Tasking Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="c-Tasking Library - Complete Documentation | c-Tasking Documentation ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jomardyan/c-Tasking/blob/main/docs/HELP.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="c-Tasking">
+            c-Tasking
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="c-tasking-library---complete-documentation">c-Tasking Library - Complete Documentation</h1>
+
+<p><strong>Version:</strong> 1.0.0<br>
+<strong>Last Updated:</strong> November 18, 2025<br>
+<strong>Status:</strong> Release Ready<br>
+<strong>License:</strong> MIT</p>
+<hr>
+<h2 id="-table-of-contents">?? Table of Contents</h2>
+<ol>
+<li><a href="#introduction--quick-start">Introduction &amp; Quick Start</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#core-components">Core Components</a></li>
+<li><a href="#utilities--advanced-features">Utilities &amp; Advanced Features</a></li>
+<li><a href="#complete-api-reference">Complete API Reference</a></li>
+<li><a href="#usage-examples">Usage Examples</a></li>
+<li><a href="#best-practices">Best Practices</a></li>
+<li><a href="#common-patterns">Common Patterns</a></li>
+<li><a href="#development--contribution">Development &amp; Contribution</a></li>
+<li><a href="#publishing--distribution">Publishing &amp; Distribution</a></li>
+<li><a href="#faq--troubleshooting">FAQ &amp; Troubleshooting</a></li>
+</ol>
+<hr>
+<h2 id="introduction--quick-start">Introduction &amp; Quick Start</h2>
+<h3 id="what-is-c-tasking">What is c-Tasking?</h3>
+<p>c-Tasking is a lightweight, zero-dependency C# library that simplifies threading and multitasking. It wraps .NET's native APIs in easy-to-use classes and methods, making complex threading operations straightforward and safe.</p>
+<h3 id="key-features">Key Features</h3>
+<p>? <strong>Simple Task Execution</strong> - Run sync/async code with minimal boilerplate<br>
+? <strong>Thread Management</strong> - Easy thread lifecycle and cancellation control<br>
+? <strong>Thread Pooling</strong> - Automatic queuing and load balancing<br>
+? <strong>Task Scheduling</strong> - One-time and repeating scheduled tasks<br>
+? <strong>Retry Logic</strong> - Automatic retry with exponential backoff<br>
+? <strong>Batch Processing</strong> - Concurrent batch operations<br>
+? <strong>LINQ Extensions</strong> - Fluent async operation chaining<br>
+? <strong>Production Ready</strong> - Full resource management and timeout handling<br>
+? <strong>Well Documented</strong> - Comprehensive guides and examples<br>
+<strong>Zero Dependencies</strong> - Pure .NET 10.0 implementation</p>
+<h3 id="quick-start-5-minutes">Quick Start (5 Minutes)</h3>
+<pre><code class="lang-csharp">using c_Tasking.Core;
+using c_Tasking.Utilities;
+using c_Tasking.Extensions;
+
+// 1. Simple async task
+await TaskWrapper.RunAsync(async () =&gt;
+{
+    await Task.Delay(1000);
+    Console.WriteLine(&quot;Task complete!&quot;);
+});
+
+// 2. Simple thread
+var thread = new SimpleThread();
+thread.Start(cancellationToken =&gt;
+{
+    while (!cancellationToken.IsCancellationRequested)
+    {
+        Console.WriteLine(&quot;Working...&quot;);
+        Thread.Sleep(100);
+    }
+});
+Thread.Sleep(500);
+thread.Stop(timeoutMilliseconds: 5000);
+
+// 3. Thread pool
+using var pool = new ManagedThreadPool(maxThreads: 4);
+for (int i = 0; i &lt; 10; i++)
+    pool.EnqueueTask(() =&gt; DoWork());
+pool.WaitAll();
+pool.StopAll();
+
+// 4. Task scheduling
+using var scheduler = new TaskScheduler();
+scheduler.ScheduleRepeating(() =&gt;
+    Console.WriteLine(&quot;Runs every 10 seconds&quot;),
+    intervalMilliseconds: 10000);
+
+// 5. Retry logic
+var result = await TaskRetry.ExecuteWithRetry(
+    async () =&gt; await CallApiAsync(),
+    maxAttempts: 3,
+    initialDelayMilliseconds: 100
+);
+
+// 6. Batch processing
+var batcher = new ConcurrentBatcher&lt;int&gt;(batchSize: 10, maxConcurrentBatches: 3);
+await batcher.ProcessBatches(
+    Enumerable.Range(1, 100),
+    async item =&gt; { await ProcessItemAsync(item); }
+);
+</code></pre>
+<hr>
+<h2 id="installation">Installation</h2>
+<h3 id="via-nuget">Via NuGet</h3>
+<pre><code class="lang-bash">dotnet add package c-Tasking
+</code></pre>
+<p>Or in your <code>.csproj</code>:</p>
+<pre><code class="lang-xml">&lt;ItemGroup&gt;
+    &lt;PackageReference Include=&quot;c-Tasking&quot; Version=&quot;1.0.0&quot; /&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+<h3 id="from-source">From Source</h3>
+<pre><code class="lang-bash">git clone https://github.com/jomardyan/c-Tasking.git
+cd c-Tasking
+dotnet build -c Release
+</code></pre>
+<h3 id="using-local-nuget">Using Local NuGet</h3>
+<pre><code class="lang-bash">dotnet pack -c Release -o ./nupkg
+dotnet add package c-Tasking --source ./nupkg
+</code></pre>
+<h3 id="required-dependencies">Required Dependencies</h3>
+<ul>
+<li><strong>.NET 10.0+</strong> (no other external dependencies)</li>
+<li>C# 12.0+ compatible compiler</li>
+</ul>
+<hr>
+<h2 id="core-components">Core Components</h2>
+<h3 id="1-taskwrapper---simple-task-execution">1. TaskWrapper - Simple Task Execution</h3>
+<p>The most basic way to run tasks on the thread pool without threading complexity.</p>
+<h4 id="overview">Overview</h4>
+<pre><code class="lang-csharp">using c_Tasking.Core;
+
+// Sync action, run async
+await TaskWrapper.Run(() =&gt; DoSyncWork());
+
+// Sync function with return
+var result = await TaskWrapper.Run(() =&gt; GetValue());
+
+// Async action
+await TaskWrapper.RunAsync(async () =&gt; await DoAsyncWork());
+
+// Async function with return
+var data = await TaskWrapper.RunAsync(async () =&gt; await GetDataAsync());
+
+// Multiple tasks in parallel
+await TaskWrapper.RunParallel(
+    Task.Run(() =&gt; Work1()),
+    Task.Run(() =&gt; Work2()),
+    Task.Run(() =&gt; Work3())
+);
+
+// Wait with timeout
+TaskWrapper.WaitWithTimeout(myTask, 5000); // throws if exceeds 5 seconds
+</code></pre>
+<h4 id="methods">Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Run(Action)</code></td>
+<td>Task</td>
+<td>Execute sync code asynchronously</td>
+</tr>
+<tr>
+<td><code>Run&lt;T&gt;(Func&lt;T&gt;)</code></td>
+<td>Task<t></t></td>
+<td>Execute sync code with return value</td>
+</tr>
+<tr>
+<td><code>RunAsync(Func&lt;Task&gt;)</code></td>
+<td>Task</td>
+<td>Execute async code</td>
+</tr>
+<tr>
+<td><code>RunAsync&lt;T&gt;(Func&lt;Task&lt;T&gt;&gt;)</code></td>
+<td>Task<t></t></td>
+<td>Execute async code with return value</td>
+</tr>
+<tr>
+<td><code>RunParallel(params Task[])</code></td>
+<td>Task</td>
+<td>Execute multiple tasks in parallel</td>
+</tr>
+<tr>
+<td><code>RunParallel&lt;T&gt;(params Task&lt;T&gt;[])</code></td>
+<td>Task&lt;T[]&gt;</td>
+<td>Execute tasks parallel, return results</td>
+</tr>
+<tr>
+<td><code>WaitWithTimeout(Task, int)</code></td>
+<td>void</td>
+<td>Wait with timeout, throws TimeoutException</td>
+</tr>
+<tr>
+<td><code>WaitWithTimeout&lt;T&gt;(Task&lt;T&gt;, int)</code></td>
+<td>T</td>
+<td>Wait with timeout, return result</td>
+</tr>
+<tr>
+<td><code>WaitAny(params Task[])</code></td>
+<td>Task</td>
+<td>Wait for any task to complete</td>
+</tr>
+<tr>
+<td><code>WaitAny&lt;T&gt;(params Task&lt;T&gt;[])</code></td>
+<td>Task&lt;Task<t>&gt;</t></td>
+<td>Wait for any generic task to complete</td>
+</tr>
+</tbody>
+</table>
+<h4 id="when-to-use">When to Use</h4>
+<ul>
+<li>Quick async operations</li>
+<li>Parallel work without complex coordination</li>
+<li>Simple threading needs</li>
+<li>Task pool execution</li>
+</ul>
+<hr>
+<h3 id="2-simplethread---thread-management">2. SimpleThread - Thread Management</h3>
+<p>Direct thread control with simplified lifecycle and cancellation.</p>
+<h4 id="overview-1">Overview</h4>
+<pre><code class="lang-csharp">using c_Tasking.Core;
+
+// Basic thread
+var thread = new SimpleThread();
+thread.Start(() =&gt;
+{
+    for (int i = 0; i &lt; 10; i++)
+    {
+        Console.WriteLine($&quot;Step {i}&quot;);
+        Thread.Sleep(100);
+    }
+});
+
+thread.Join(); // Wait for completion
+Console.WriteLine($&quot;Thread ID: {thread.GetThreadId()}&quot;);
+Console.WriteLine($&quot;Is running: {thread.IsRunning}&quot;);
+Console.WriteLine($&quot;Is alive: {thread.IsAlive}&quot;);
+
+// Thread with cancellation support
+var cancelThread = new SimpleThread();
+cancelThread.Start(cancellationToken =&gt;
+{
+    while (!cancellationToken.IsCancellationRequested)
+    {
+        Console.WriteLine(&quot;Working...&quot;);
+        Thread.Sleep(200);
+    }
+});
+
+Thread.Sleep(1000);
+cancelThread.Stop(timeoutMilliseconds: 5000); // Graceful shutdown
+
+// Set thread properties
+thread.SetPriority(ThreadPriority.Highest);
+thread.SetAsBackgroundThread(false);
+</code></pre>
+<h4 id="properties">Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IsRunning</code></td>
+<td>bool</td>
+<td>Whether thread is currently executing</td>
+</tr>
+<tr>
+<td><code>IsAlive</code></td>
+<td>bool</td>
+<td>Whether underlying thread is alive</td>
+</tr>
+</tbody>
+</table>
+<h4 id="methods-1">Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Start(Action)</code></td>
+<td>void</td>
+<td>Start thread with simple action</td>
+</tr>
+<tr>
+<td><code>Start(Action&lt;CancellationToken&gt;)</code></td>
+<td>void</td>
+<td>Start with cancellation support</td>
+</tr>
+<tr>
+<td><code>Join(int)</code></td>
+<td>bool</td>
+<td>Wait for thread completion</td>
+</tr>
+<tr>
+<td><code>Stop(int)</code></td>
+<td>void</td>
+<td>Stop gracefully with timeout</td>
+</tr>
+<tr>
+<td><code>SetPriority(ThreadPriority)</code></td>
+<td>void</td>
+<td>Set thread priority</td>
+</tr>
+<tr>
+<td><code>SetAsBackgroundThread(bool)</code></td>
+<td>void</td>
+<td>Set background thread flag</td>
+</tr>
+<tr>
+<td><code>GetThreadId()</code></td>
+<td>int?</td>
+<td>Get managed thread ID</td>
+</tr>
+</tbody>
+</table>
+<h4 id="when-to-use-1">When to Use</h4>
+<ul>
+<li>Long-running operations</li>
+<li>Operations needing cancellation</li>
+<li>Background work with lifecycle control</li>
+<li>When you need direct thread manipulation</li>
+</ul>
+<hr>
+<h3 id="3-asyncoperation---async-tracking">3. AsyncOperation - Async Tracking</h3>
+<p>Manual control over async operations for tracking completion, failures, and results.</p>
+<h4 id="overview-2">Overview</h4>
+<pre><code class="lang-csharp">using c_Tasking.Core;
+
+// Create from async function
+var operation = AsyncOperation.Create(async () =&gt;
+{
+    await Task.Delay(500);
+    Console.WriteLine(&quot;Done&quot;);
+});
+
+await operation.WaitAsync();
+
+// With result
+var resultOp = AsyncOperation&lt;int&gt;.Create(async () =&gt;
+{
+    await Task.Delay(500);
+    return 42;
+});
+
+int result = await resultOp.WaitAsync();
+
+// Manual operation control
+var manualOp = new AsyncOperation&lt;string&gt;();
+
+_ = Task.Run(async () =&gt;
+{
+    await Task.Delay(1000);
+    manualOp.SetResult(&quot;Completed!&quot;);
+});
+
+var finalResult = await manualOp.WaitAsync();
+
+// Handle errors
+var errorOp = new AsyncOperation();
+errorOp.SetException(new Exception(&quot;Something failed&quot;));
+
+// Cancel operation
+var cancelOp = new AsyncOperation();
+cancelOp.Cancel();
+
+// Wait with timeout
+try
+{
+    await resultOp.WaitAsync(timeoutMilliseconds: 2000);
+}
+catch (OperationCanceledException)
+{
+    Console.WriteLine(&quot;Operation timed out&quot;);
+}
+</code></pre>
+<h4 id="methods-2">Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Create(Func&lt;Task&gt;)</code></td>
+<td>AsyncOperation</td>
+<td>Create and run async operation</td>
+</tr>
+<tr>
+<td><code>Create&lt;T&gt;(Func&lt;Task&lt;T&gt;&gt;)</code></td>
+<td>AsyncOperation<t></t></td>
+<td>Create with result</td>
+</tr>
+<tr>
+<td><code>WaitAsync()</code></td>
+<td>Task</td>
+<td>Wait for completion</td>
+</tr>
+<tr>
+<td><code>WaitAsync(int)</code></td>
+<td>Task</td>
+<td>Wait with timeout</td>
+</tr>
+<tr>
+<td><code>SetResult()</code> / <code>SetResult&lt;T&gt;(T)</code></td>
+<td>void</td>
+<td>Mark operation complete</td>
+</tr>
+<tr>
+<td><code>SetException(Exception)</code></td>
+<td>void</td>
+<td>Mark operation failed</td>
+</tr>
+<tr>
+<td><code>Cancel()</code></td>
+<td>void</td>
+<td>Cancel operation</td>
+</tr>
+<tr>
+<td><code>IsCompleted { get; }</code></td>
+<td>bool</td>
+<td>Check if complete</td>
+</tr>
+<tr>
+<td><code>Result { get; }</code></td>
+<td>T?</td>
+<td>Get result (generic only)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="when-to-use-2">When to Use</h4>
+<ul>
+<li>Complex async workflows</li>
+<li>Manual result tracking</li>
+<li>Callback-based integrations</li>
+<li>Integration with legacy code</li>
+</ul>
+<hr>
+<h3 id="4-managedthreadpool---thread-pool-management">4. ManagedThreadPool - Thread Pool Management</h3>
+<p>Manage multiple concurrent threads with automatic queuing and load balancing.</p>
+<h4 id="overview-3">Overview</h4>
+<pre><code class="lang-csharp">using c_Tasking.Core;
+
+// Create pool with max 4 concurrent threads
+using var pool = new ManagedThreadPool(maxThreads: 4);
+
+// Enqueue tasks
+for (int i = 0; i &lt; 20; i++)
+{
+    int taskNum = i;
+    pool.EnqueueTask(() =&gt;
+    {
+        Console.WriteLine($&quot;Task {taskNum} executing&quot;);
+        Thread.Sleep(1000);
+    });
+}
+
+// Enqueue async work
+await pool.EnqueueAsync(async () =&gt;
+{
+    await Task.Delay(500);
+    Console.WriteLine(&quot;Async task done&quot;);
+});
+
+// Monitor pool
+var stats = pool.GetStats();
+Console.WriteLine($&quot;Active threads: {stats.ActiveThreads}&quot;);
+Console.WriteLine($&quot;Queued tasks: {stats.QueuedTasks}&quot;);
+Console.WriteLine($&quot;Max threads: {stats.MaxThreads}&quot;);
+
+// Properties
+int active = pool.ActiveThreadCount;
+int queued = pool.QueuedTaskCount;
+
+// Wait for all to complete
+pool.WaitAll(timeoutMilliseconds: 30000);
+
+// Graceful shutdown
+pool.StopAll(timeoutMilliseconds: 5000);
+
+// Automatic cleanup with using statement
+</code></pre>
+<h4 id="threadpoolstats">ThreadPoolStats</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MaxThreads</code></td>
+<td>int</td>
+<td>Maximum thread count</td>
+</tr>
+<tr>
+<td><code>ActiveThreads</code></td>
+<td>int</td>
+<td>Currently active threads</td>
+</tr>
+<tr>
+<td><code>QueuedTasks</code></td>
+<td>int</td>
+<td>Tasks waiting in queue</td>
+</tr>
+<tr>
+<td><code>TotalThreads</code></td>
+<td>int</td>
+<td>Total threads created</td>
+</tr>
+</tbody>
+</table>
+<h4 id="methods-3">Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EnqueueTask(Action)</code></td>
+<td>void</td>
+<td>Queue synchronous task</td>
+</tr>
+<tr>
+<td><code>EnqueueAsync(Func&lt;Task&gt;)</code></td>
+<td>void</td>
+<td>Queue async task</td>
+</tr>
+<tr>
+<td><code>WaitAll(int)</code></td>
+<td>void</td>
+<td>Wait for all tasks to complete</td>
+</tr>
+<tr>
+<td><code>StopAll(int)</code></td>
+<td>void</td>
+<td>Stop all threads gracefully</td>
+</tr>
+<tr>
+<td><code>GetStats()</code></td>
+<td>ThreadPoolStats</td>
+<td>Get pool statistics</td>
+</tr>
+<tr>
+<td><code>ActiveThreadCount { get; }</code></td>
+<td>int</td>
+<td>Current active threads</td>
+</tr>
+<tr>
+<td><code>QueuedTaskCount { get; }</code></td>
+<td>int</td>
+<td>Current queued tasks</td>
+</tr>
+<tr>
+<td><code>Dispose()</code></td>
+<td>void</td>
+<td>Cleanup resources</td>
+</tr>
+</tbody>
+</table>
+<h4 id="when-to-use-3">When to Use</h4>
+<ul>
+<li>Process many items concurrently</li>
+<li>Manage thread count</li>
+<li>Load balancing</li>
+<li>Limited resource pools</li>
+</ul>
+<hr>
+<h2 id="utilities--advanced-features">Utilities &amp; Advanced Features</h2>
+<h3 id="1-taskscheduler---scheduled-execution">1. TaskScheduler - Scheduled Execution</h3>
+<p>Schedule tasks to run at specific times or intervals.</p>
+<h4 id="overview-4">Overview</h4>
+<pre><code class="lang-csharp">using c_Tasking.Utilities;
+
+using var scheduler = new TaskScheduler();
+
+// Run once after delay
+int taskId1 = scheduler.ScheduleOnce(() =&gt;
+{
+    Console.WriteLine(&quot;Runs once after 2 seconds&quot;);
+}, delayMilliseconds: 2000);
+
+// Run repeatedly
+int taskId2 = scheduler.ScheduleRepeating(() =&gt;
+{
+    Console.WriteLine(&quot;Runs every second&quot;);
+}, intervalMilliseconds: 1000);
+
+// Run with initial delay then repeat
+int taskId3 = scheduler.ScheduleWithDelay(() =&gt;
+{
+    Console.WriteLine(&quot;First after 1s, then every 2s&quot;);
+}, delayMilliseconds: 1000, intervalMilliseconds: 2000);
+
+// Async scheduling
+int taskId4 = scheduler.ScheduleOnceAsync(async () =&gt;
+{
+    await Task.Delay(500);
+    Console.WriteLine(&quot;Async scheduled task&quot;);
+}, delayMilliseconds: 1000);
+
+// Async repeating
+int taskId5 = scheduler.ScheduleRepeatingAsync(async () =&gt;
+{
+    await Task.Delay(100);
+    Console.WriteLine(&quot;Async every 5 seconds&quot;);
+}, intervalMilliseconds: 5000);
+
+// Cancel a task
+scheduler.Cancel(taskId1);
+
+// Cancel all tasks
+scheduler.CancelAll();
+
+// Auto-cleanup with using statement
+</code></pre>
+<h4 id="methods-4">Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ScheduleOnce(Action, int)</code></td>
+<td>int</td>
+<td>Run once after delay</td>
+</tr>
+<tr>
+<td><code>ScheduleRepeating(Action, int)</code></td>
+<td>int</td>
+<td>Run repeatedly</td>
+</tr>
+<tr>
+<td><code>ScheduleWithDelay(Action, int, int)</code></td>
+<td>int</td>
+<td>Run with delay then repeat</td>
+</tr>
+<tr>
+<td><code>ScheduleOnceAsync(Func&lt;Task&gt;, int)</code></td>
+<td>int</td>
+<td>Async run once</td>
+</tr>
+<tr>
+<td><code>ScheduleRepeatingAsync(Func&lt;Task&gt;, int)</code></td>
+<td>int</td>
+<td>Async repeat</td>
+</tr>
+<tr>
+<td><code>Cancel(int)</code></td>
+<td>bool</td>
+<td>Cancel specific task</td>
+</tr>
+<tr>
+<td><code>CancelAll()</code></td>
+<td>void</td>
+<td>Cancel all tasks</td>
+</tr>
+<tr>
+<td><code>Dispose()</code></td>
+<td>void</td>
+<td>Cleanup resources</td>
+</tr>
+</tbody>
+</table>
+<h4 id="when-to-use-4">When to Use</h4>
+<ul>
+<li>Periodic tasks</li>
+<li>Cleanup operations</li>
+<li>Heartbeats and monitoring</li>
+<li>Timeouts and delays</li>
+</ul>
+<hr>
+<h3 id="2-taskretry---automatic-retry">2. TaskRetry - Automatic Retry</h3>
+<p>Retry operations with exponential backoff and custom error handling.</p>
+<h4 id="overview-5">Overview</h4>
+<pre><code class="lang-csharp">using c_Tasking.Utilities;
+
+// Simple retry with exponential backoff
+var result = await TaskRetry.ExecuteWithRetry(
+    async () =&gt; await FetchDataFromApi(),
+    maxAttempts: 5,
+    initialDelayMilliseconds: 100
+);
+
+// With custom error filter
+await TaskRetry.ExecuteWithRetry(
+    async () =&gt; await RiskyOperation(),
+    maxAttempts: 3,
+    initialDelayMilliseconds: 500,
+    shouldRetry: ex =&gt; ex is TimeoutException // Only retry timeouts
+);
+
+// Synchronous retry
+var data = TaskRetry.Execute(
+    () =&gt; ParseComplexData(),
+    maxAttempts: 3,
+    initialDelayMilliseconds: 200
+);
+
+// Retry without result
+await TaskRetry.ExecuteWithRetry(
+    async () =&gt; await SendMessage(),
+    maxAttempts: 4
+);
+</code></pre>
+<h4 id="backoff-strategy">Backoff Strategy</h4>
+<ul>
+<li>Attempt 1: fails immediately</li>
+<li>Attempt 2: waits 100ms (initialDelay)</li>
+<li>Attempt 3: waits 200ms (initialDelay � 2)</li>
+<li>Attempt 4: waits 400ms (initialDelay � 4)</li>
+<li>Attempt 5: waits 800ms (initialDelay � 8)</li>
+<li>(continues doubling until maxAttempts reached)</li>
+</ul>
+<h4 id="methods-5">Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ExecuteWithRetry&lt;T&gt;(Func&lt;Task&lt;T&gt;&gt;, ...)</code></td>
+<td>Task<t></t></td>
+<td>Retry async with return</td>
+</tr>
+<tr>
+<td><code>ExecuteWithRetry(Func&lt;Task&gt;, ...)</code></td>
+<td>Task</td>
+<td>Retry async without result</td>
+</tr>
+<tr>
+<td><code>Execute&lt;T&gt;(Func&lt;T&gt;, ...)</code></td>
+<td>T</td>
+<td>Retry sync with return</td>
+</tr>
+<tr>
+<td><code>Execute(Func&lt;Task&gt;, ...)</code></td>
+<td>Task</td>
+<td>Retry sync without result</td>
+</tr>
+</tbody>
+</table>
+<h4 id="when-to-use-5">When to Use</h4>
+<ul>
+<li>Network calls</li>
+<li>API requests</li>
+<li>Transient failures</li>
+<li>Unreliable operations</li>
+</ul>
+<hr>
+<h3 id="3-concurrentbatcher---batch-processing">3. ConcurrentBatcher - Batch Processing</h3>
+<p>Process items in batches concurrently for efficient resource usage.</p>
+<h4 id="overview-6">Overview</h4>
+<pre><code class="lang-csharp">using c_Tasking.Utilities;
+
+var items = Enumerable.Range(1, 100).ToList();
+
+// Basic batching
+var batcher = new ConcurrentBatcher&lt;int&gt;(
+    batchSize: 10,              // Process 10 items per batch
+    maxConcurrentBatches: 3     // Run 3 batches in parallel
+);
+
+// Process with results
+await batcher.ProcessBatches(
+    items,
+    async item =&gt;
+    {
+        var result = await ProcessItemAsync(item);
+        return result;
+    },
+    async results =&gt;
+    {
+        Console.WriteLine($&quot;Batch complete: {results.Count} items&quot;);
+        await SaveResults(results);
+    }
+);
+
+// Process without results
+await batcher.ProcessBatches(
+    items,
+    async item =&gt;
+    {
+        await DoSomething(item);
+    },
+    async () =&gt;
+    {
+        Console.WriteLine(&quot;Batch processing complete&quot;);
+    }
+);
+</code></pre>
+<h4 id="methods-6">Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProcessBatches&lt;TResult&gt;(...)</code></td>
+<td>Task</td>
+<td>Process with results callback</td>
+</tr>
+<tr>
+<td><code>ProcessBatches(...)</code></td>
+<td>Task</td>
+<td>Process without results</td>
+</tr>
+</tbody>
+</table>
+<h4 id="when-to-use-6">When to Use</h4>
+<ul>
+<li>Bulk operations</li>
+<li>API batch processing</li>
+<li>Data transformation</li>
+<li>Large dataset processing</li>
+</ul>
+<hr>
+<h3 id="4-taskextensions---linq-like-operations">4. TaskExtensions - LINQ-like Operations</h3>
+<p>Fluent operations on tasks for cleaner async code.</p>
+<h4 id="overview-7">Overview</h4>
+<pre><code class="lang-csharp">using c_Tasking.Extensions;
+
+// Success callback
+await Task.Run(() =&gt; 42)
+    .OnSuccess(result =&gt; Console.WriteLine($&quot;Success: {result}&quot;));
+
+// Exception handler
+await someTask
+    .OnException(ex =&gt; Console.WriteLine($&quot;Error: {ex.Message}&quot;));
+
+// Cancellation handler
+await someTask
+    .OnCancelled(() =&gt; Console.WriteLine(&quot;Task was cancelled&quot;));
+
+// Finally block
+await someTask
+    .Finally(() =&gt; Console.WriteLine(&quot;Task ended&quot;));
+
+// Transform result (Map)
+var doubled = await Task.Run(() =&gt; 5)
+    .Map(x =&gt; x * 2);
+
+// Async transformation
+var data = await Task.Run(() =&gt; &quot;api&quot;)
+    .MapAsync(async endpoint =&gt; await GetDataFrom(endpoint));
+
+// Chain operations
+var result = await Task.Run(() =&gt; 10)
+    .Chain(async num =&gt;
+    {
+        await Task.Delay(100);
+        return num * 2;
+    });
+
+// Try wait (returns success status)
+var (completed, result) = someTask.TryWait(timeoutMs: 5000);
+
+// Ignore exceptions
+await riskyTask.IgnoreException();
+var value = await riskyTaskWithResult.IgnoreException&lt;int&gt;();
+
+// Parallel execution
+await TaskExtensions.WaitAllInParallel(task1, task2, task3);
+
+// Wait for first completion
+await TaskExtensions.WaitAnyToComplete(task1, task2, task3);
+</code></pre>
+<h4 id="methods-7">Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OnSuccess(task, callback)</code></td>
+<td>Task</td>
+<td>Run callback on success</td>
+</tr>
+<tr>
+<td><code>OnSuccess&lt;T&gt;(task, callback)</code></td>
+<td>Task</td>
+<td>Run callback with result</td>
+</tr>
+<tr>
+<td><code>OnException(task, callback)</code></td>
+<td>Task</td>
+<td>Run callback on error</td>
+</tr>
+<tr>
+<td><code>OnCancelled(task, callback)</code></td>
+<td>Task</td>
+<td>Run callback on cancel</td>
+</tr>
+<tr>
+<td><code>Finally(task, callback)</code></td>
+<td>Task</td>
+<td>Run callback always</td>
+</tr>
+<tr>
+<td><code>Map&lt;T,R&gt;(task, mapper)</code></td>
+<td>Task<r></r></td>
+<td>Transform result</td>
+</tr>
+<tr>
+<td><code>MapAsync&lt;T,R&gt;(task, mapper)</code></td>
+<td>Task<r></r></td>
+<td>Async transform</td>
+</tr>
+<tr>
+<td><code>Chain(task, nextTask)</code></td>
+<td>Task</td>
+<td>Chain operations</td>
+</tr>
+<tr>
+<td><code>Chain&lt;T,R&gt;(task, nextTask)</code></td>
+<td>Task<r></r></td>
+<td>Chain with result</td>
+</tr>
+<tr>
+<td><code>TryWait(task, ms)</code></td>
+<td>(bool, T?)</td>
+<td>Wait with timeout</td>
+</tr>
+<tr>
+<td><code>IgnoreException(task)</code></td>
+<td>Task</td>
+<td>Suppress errors</td>
+</tr>
+<tr>
+<td><code>IgnoreException&lt;T&gt;(task)</code></td>
+<td>Task&lt;T?&gt;</td>
+<td>Suppress errors, return null on failure</td>
+</tr>
+<tr>
+<td><code>WaitAllInParallel(tasks)</code></td>
+<td>Task</td>
+<td>All tasks in parallel</td>
+</tr>
+<tr>
+<td><code>WaitAnyToComplete(tasks)</code></td>
+<td>Task</td>
+<td>Any task to complete</td>
+</tr>
+</tbody>
+</table>
+<h4 id="when-to-use-7">When to Use</h4>
+<ul>
+<li>Cleaner async code</li>
+<li>Operation chaining</li>
+<li>Error handling</li>
+<li>Result transformation</li>
+</ul>
+<hr>
+<h2 id="complete-api-reference">Complete API Reference</h2>
+<h3 id="namespaces">Namespaces</h3>
+<pre><code class="lang-csharp">using c_Tasking.Core;           // TaskWrapper, SimpleThread, AsyncOperation, ManagedThreadPool
+using c_Tasking.Utilities;      // TaskScheduler, TaskRetry, ConcurrentBatcher
+using c_Tasking.Extensions;     // TaskExtensions
+</code></pre>
+<h3 id="core-classes-summary">Core Classes Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Purpose</th>
+<th>Lifecycle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TaskWrapper</code></td>
+<td>Task execution</td>
+<td>Static methods</td>
+</tr>
+<tr>
+<td><code>SimpleThread</code></td>
+<td>Thread management</td>
+<td>Create instance</td>
+</tr>
+<tr>
+<td><code>AsyncOperation</code></td>
+<td>Async tracking</td>
+<td>Create instance</td>
+</tr>
+<tr>
+<td><code>ManagedThreadPool</code></td>
+<td>Thread pool</td>
+<td>IDisposable</td>
+</tr>
+<tr>
+<td><code>TaskScheduler</code></td>
+<td>Task scheduling</td>
+<td>IDisposable</td>
+</tr>
+<tr>
+<td><code>TaskRetry</code></td>
+<td>Retry logic</td>
+<td>Static methods</td>
+</tr>
+<tr>
+<td><code>ConcurrentBatcher&lt;T&gt;</code></td>
+<td>Batch processing</td>
+<td>Create instance</td>
+</tr>
+<tr>
+<td><code>TaskExtensions</code></td>
+<td>Extension methods</td>
+<td>Extension methods</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="example-1-download-multiple-files-with-retry">Example 1: Download Multiple Files with Retry</h3>
+<pre><code class="lang-csharp">var urls = new[] { &quot;http://...&quot;, &quot;http://...&quot;, &quot;http://...&quot; };
+var batcher = new ConcurrentBatcher&lt;string&gt;(batchSize: 5, maxConcurrentBatches: 3);
+
+await batcher.ProcessBatches(
+    urls,
+    async url =&gt;
+    {
+        return await TaskRetry.ExecuteWithRetry(
+            async () =&gt; await DownloadFile(url),
+            maxAttempts: 3,
+            shouldRetry: ex =&gt; ex is HttpRequestException
+        );
+    },
+    async results =&gt;
+    {
+        await SaveResults(results);
+        Console.WriteLine($&quot;Downloaded {results.Count} files&quot;);
+    }
+);
+</code></pre>
+<h3 id="example-2-long-running-background-task">Example 2: Long-Running Background Task</h3>
+<pre><code class="lang-csharp">var thread = new SimpleThread();
+
+thread.Start(cancellationToken =&gt;
+{
+    while (!cancellationToken.IsCancellationRequested)
+    {
+        try
+        {
+            PerformBackgroundWork();
+            Thread.Sleep(5000);
+        }
+        catch (Exception ex)
+        {
+            LogError(ex);
+        }
+    }
+});
+
+// Application running...
+
+// Gracefully stop on shutdown
+thread.Stop(timeoutMilliseconds: 10000);
+</code></pre>
+<h3 id="example-3-scheduled-data-sync">Example 3: Scheduled Data Sync</h3>
+<pre><code class="lang-csharp">using var scheduler = new TaskScheduler();
+
+// Sync every 30 minutes
+scheduler.ScheduleRepeatingAsync(async () =&gt;
+{
+    await SyncDataWithServer();
+}, intervalMilliseconds: 30 * 60 * 1000);
+
+// Cleanup every 24 hours
+scheduler.ScheduleWithDelay(
+    async () =&gt; await CleanupOldData(),
+    delayMilliseconds: 24 * 60 * 60 * 1000,
+    intervalMilliseconds: 24 * 60 * 60 * 1000
+);
+</code></pre>
+<h3 id="example-4-process-queue-with-thread-pool">Example 4: Process Queue with Thread Pool</h3>
+<pre><code class="lang-csharp">using var pool = new ManagedThreadPool(maxThreads: Environment.ProcessorCount);
+
+var queueItems = GetQueueItems();
+
+foreach (var item in queueItems)
+{
+    pool.EnqueueTask(() =&gt;
+    {
+        try
+        {
+            ProcessQueueItem(item);
+        }
+        catch (Exception ex)
+        {
+            LogError(ex);
+        }
+    });
+}
+
+pool.WaitAll(timeoutMilliseconds: 60000);
+pool.StopAll(timeoutMilliseconds: 5000);
+</code></pre>
+<h3 id="example-5-retry-with-custom-logic">Example 5: Retry with Custom Logic</h3>
+<pre><code class="lang-csharp">var result = await TaskRetry.ExecuteWithRetry(
+    async () =&gt;
+    {
+        var response = await apiClient.GetAsync(&quot;https://api.example.com/data&quot;);
+        return await response.Content.ReadAsStringAsync();
+    },
+    maxAttempts: 5,
+    initialDelayMilliseconds: 500,
+    shouldRetry: ex =&gt;
+    {
+        // Retry on timeout or server errors (5xx)
+        return ex is TimeoutException ||
+               (ex is HttpRequestException hre &amp;&amp; 
+                hre.Message.Contains(&quot;5&quot;));
+    }
+);
+</code></pre>
+<h3 id="example-6-linq-style-async-chain">Example 6: LINQ-style Async Chain</h3>
+<pre><code class="lang-csharp">var result = await FetchUserAsync(userId)
+    .Map(user =&gt; user.Email)
+    .MapAsync(async email =&gt; await SendWelcomeEmail(email))
+    .OnSuccess(() =&gt; Console.WriteLine(&quot;Email sent&quot;))
+    .OnException(ex =&gt; Console.WriteLine($&quot;Error: {ex.Message}&quot;))
+    .Finally(() =&gt; Console.WriteLine(&quot;Process complete&quot;))
+    .IgnoreException();
+</code></pre>
+<hr>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-resource-cleanup">1. Resource Cleanup</h3>
+<p>Always use <code>using</code> statement for <code>ManagedThreadPool</code> and <code>TaskScheduler</code>:</p>
+<pre><code class="lang-csharp">using var pool = new ManagedThreadPool(4);
+// Your code
+// Automatic cleanup on scope exit
+</code></pre>
+<h3 id="2-error-handling">2. Error Handling</h3>
+<p>Wrap operations in try-catch for production:</p>
+<pre><code class="lang-csharp">try
+{
+    var result = await TaskRetry.ExecuteWithRetry(
+        async () =&gt; await Operation(),
+        maxAttempts: 3,
+        shouldRetry: ex =&gt; ex is not InvalidOperationException
+    );
+}
+catch (AggregateException ae)
+{
+    foreach (var inner in ae.InnerExceptions)
+        LogError(inner);
+}
+</code></pre>
+<h3 id="3-timeout-management">3. Timeout Management</h3>
+<p>Set appropriate timeouts based on operation type:</p>
+<pre><code class="lang-csharp">// Network operations: 30 seconds
+// File operations: 60 seconds
+// Local operations: 5 seconds
+TaskWrapper.WaitWithTimeout(task, 30000);
+</code></pre>
+<h3 id="4-thread-count-selection">4. Thread Count Selection</h3>
+<p>Use <code>Environment.ProcessorCount</code> as baseline:</p>
+<pre><code class="lang-csharp">var pool = new ManagedThreadPool(
+    maxThreads: Environment.ProcessorCount * 2
+);
+</code></pre>
+<h3 id="5-logging-in-production">5. Logging in Production</h3>
+<p>Log task progress:</p>
+<pre><code class="lang-csharp">scheduler.ScheduleOnceAsync(async () =&gt;
+{
+    logger.LogInformation(&quot;Scheduled task started&quot;);
+    await DoWork();
+    logger.LogInformation(&quot;Scheduled task completed&quot;);
+}, delayMilliseconds: 1000);
+</code></pre>
+<h3 id="6-cancellation-support">6. Cancellation Support</h3>
+<p>Always check cancellation tokens:</p>
+<pre><code class="lang-csharp">thread.Start(cancellationToken =&gt;
+{
+    while (!cancellationToken.IsCancellationRequested)
+    {
+        // Do work
+        if (cancellationToken.IsCancellationRequested)
+            break;
+    }
+});
+</code></pre>
+<h3 id="7-resource-limits">7. Resource Limits</h3>
+<p>Monitor pool statistics:</p>
+<pre><code class="lang-csharp">var stats = pool.GetStats();
+if (stats.QueuedTasks &gt; 1000)
+    logger.LogWarning(&quot;High queue depth: {Count}&quot;, stats.QueuedTasks);
+</code></pre>
+<hr>
+<h2 id="common-patterns">Common Patterns</h2>
+<h3 id="fire-and-forget-safe">Fire and Forget (Safe)</h3>
+<pre><code class="lang-csharp">_ = Task.Run(() =&gt; DoWork()).IgnoreException();
+</code></pre>
+<h3 id="parallel-execution">Parallel Execution</h3>
+<pre><code class="lang-csharp">await TaskExtensions.WaitAllInParallel(
+    Task.Run(() =&gt; Work1()),
+    Task.Run(() =&gt; Work2()),
+    Task.Run(() =&gt; Work3())
+);
+</code></pre>
+<h3 id="sequential-chain">Sequential Chain</h3>
+<pre><code class="lang-csharp">await task1
+    .Chain(async _ =&gt; await task2)
+    .Chain(async _ =&gt; await task3);
+</code></pre>
+<h3 id="conditional-retry">Conditional Retry</h3>
+<pre><code class="lang-csharp">await TaskRetry.ExecuteWithRetry(
+    operation,
+    maxAttempts: 3,
+    shouldRetry: ex =&gt; ex is TimeoutException || 
+                      ex is HttpRequestException
+);
+</code></pre>
+<h3 id="batch-and-schedule">Batch and Schedule</h3>
+<pre><code class="lang-csharp">using var scheduler = new TaskScheduler();
+scheduler.ScheduleRepeatingAsync(async () =&gt;
+{
+    await batcher.ProcessBatches(items, processor);
+}, intervalMilliseconds: 60000);
+</code></pre>
+<h3 id="poll-until-condition">Poll Until Condition</h3>
+<pre><code class="lang-csharp">var timeoutAt = DateTime.UtcNow.AddSeconds(30);
+while (DateTime.UtcNow &lt; timeoutAt)
+{
+    if (CheckCondition())
+        break;
+    await Task.Delay(100);
+}
+</code></pre>
+<h3 id="background-work-shutdown">Background Work Shutdown</h3>
+<pre><code class="lang-csharp">var thread = new SimpleThread();
+thread.Start(ct =&gt; BackgroundWork(ct));
+
+// On shutdown
+using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(10));
+thread.Stop(10000);
+if (!thread.Join(2000))
+    logger.LogWarning(&quot;Thread did not stop gracefully&quot;);
+</code></pre>
+<hr>
+<h2 id="development--contribution">Development &amp; Contribution</h2>
+<h3 id="getting-started">Getting Started</h3>
+<ol>
+<li><p><strong>Clone the repository:</strong></p>
+<pre><code class="lang-bash">git clone https://github.com/jomardyan/c-Tasking.git
+cd c-Tasking
+</code></pre>
+</li>
+<li><p><strong>Setup development environment:</strong></p>
+<pre><code class="lang-bash">dotnet restore
+dotnet build
+dotnet test
+</code></pre>
+</li>
+<li><p><strong>Create a feature branch:</strong></p>
+<pre><code class="lang-bash">git checkout -b feature/your-feature
+</code></pre>
+</li>
+</ol>
+<h3 id="code-style-guidelines">Code Style Guidelines</h3>
+<ul>
+<li>Follow C# naming conventions (PascalCase for public members)</li>
+<li>Use meaningful variable names</li>
+<li>Add XML documentation comments to all public members</li>
+<li>Keep methods focused and reasonably sized</li>
+<li>Add unit tests for new features</li>
+</ul>
+<h3 id="example-documentation">Example Documentation</h3>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Performs an important operation asynchronously.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;input&quot;&gt;The input string to process.&lt;/param&gt;
+/// &lt;returns&gt;The number of items processed.&lt;/returns&gt;
+/// &lt;exception cref=&quot;ArgumentException&quot;&gt;Thrown when input is empty.&lt;/exception&gt;
+public async Task&lt;int&gt; PerformOperationAsync(string input)
+{
+    ValidateInput(input);
+    var result = await ProcessAsync(input);
+    return result;
+}
+
+private static void ValidateInput(string input)
+{
+    if (string.IsNullOrWhiteSpace(input))
+        throw new ArgumentException(&quot;Input cannot be empty&quot;, nameof(input));
+}
+</code></pre>
+<h3 id="project-structure">Project Structure</h3>
+<pre><code>c-Tasking/
+??? Core/
+?   ??? TaskWrapper.cs
+?   ??? SimpleThread.cs
+?   ??? AsyncOperation.cs
+?   ??? ManagedThreadPool.cs
+??? Utilities/
+?   ??? TaskScheduler.cs
+?   ??? TaskRetry.cs
+?   ??? ConcurrentBatcher.cs
+?   ??? AdvancedUtilities.cs
+??? Extensions/
+?   ??? TaskExtensions.cs
+??? Examples/
+?   ??? UsageExamples.cs
+??? ... (documentation and config files)
+</code></pre>
+<h3 id="pull-request-process">Pull Request Process</h3>
+<ol>
+<li>Update documentation and examples if needed</li>
+<li>Add unit tests for new functionality</li>
+<li>Ensure all tests pass: <code>dotnet test</code></li>
+<li>Build the package: <code>dotnet pack</code></li>
+<li>Update CHANGELOG.md</li>
+<li>Reference any related issues in PR description</li>
+</ol>
+<h3 id="reporting-issues">Reporting Issues</h3>
+<p>When reporting issues, include:</p>
+<ul>
+<li>Clear, descriptive title</li>
+<li>Description of the issue</li>
+<li>Steps to reproduce</li>
+<li>Expected behavior</li>
+<li>Actual behavior</li>
+<li>Environment (OS, .NET version)</li>
+<li>Code sample if applicable</li>
+</ul>
+<h3 id="feature-requests">Feature Requests</h3>
+<p>Feature requests welcome! Please provide:</p>
+<ul>
+<li>Clear description of the feature</li>
+<li>Use case and motivation</li>
+<li>Potential implementation approach</li>
+<li>Any related issues</li>
+</ul>
+<hr>
+<h2 id="publishing--distribution">Publishing &amp; Distribution</h2>
+<h3 id="version-management">Version Management</h3>
+<p>Follow Semantic Versioning (MAJOR.MINOR.PATCH):</p>
+<ul>
+<li><strong>1.0.0</strong> ? Initial release</li>
+<li><strong>1.1.0</strong> ? New features, backward compatible</li>
+<li><strong>1.0.1</strong> ? Bug fixes, backward compatible</li>
+<li><strong>2.0.0</strong> ? Breaking changes</li>
+</ul>
+<h3 id="updating-version">Updating Version</h3>
+<ol>
+<li><p>Update version in <code>c-Tasking.csproj</code>:</p>
+<pre><code class="lang-xml">&lt;Version&gt;1.1.0&lt;/Version&gt;
+</code></pre>
+</li>
+<li><p>Update <code>CHANGELOG.md</code> with changes</p>
+</li>
+<li><p>Commit and create tag:</p>
+<pre><code class="lang-bash">git add c-Tasking.csproj CHANGELOG.md
+git commit -m &quot;Version 1.1.0&quot;
+git tag v1.1.0
+git push origin v1.1.0
+</code></pre>
+</li>
+</ol>
+<h3 id="publishing-to-nuget">Publishing to NuGet</h3>
+<p><strong>Automatic (GitHub Actions):</strong></p>
+<ul>
+<li>Create a release with tag format <code>v1.0.0</code></li>
+<li>GitHub Actions automatically publishes to NuGet</li>
+</ul>
+<p><strong>Manual Publishing:</strong></p>
+<pre><code class="lang-bash"># Create package
+dotnet pack -c Release
+
+# Push to NuGet
+dotnet nuget push &quot;./bin/Release/c-Tasking.1.0.0.nupkg&quot; \
+  --api-key YOUR_API_KEY \
+  --source https://api.nuget.org/v3/index.json
+</code></pre>
+<h3 id="getting-nuget-api-key">Getting NuGet API Key</h3>
+<ol>
+<li>Sign in to <a href="https://www.nuget.org/">https://www.nuget.org/</a></li>
+<li>Go to profile settings</li>
+<li>Click &quot;Edit Profile&quot;</li>
+<li>Go to &quot;API Keys&quot;</li>
+<li>Create new key with &quot;Push&quot; permissions</li>
+<li>Copy the key</li>
+</ol>
+<h3 id="package-verification">Package Verification</h3>
+<pre><code class="lang-bash"># Wait a few minutes for indexing
+dotnet package search c-Tasking
+
+# Or visit: https://www.nuget.org/packages/c-Tasking/
+</code></pre>
+<h3 id="pre-release-versions">Pre-release Versions</h3>
+<pre><code class="lang-xml">&lt;Version&gt;1.0.0-beta.1&lt;/Version&gt;
+&lt;Version&gt;1.0.0-rc.1&lt;/Version&gt;
+</code></pre>
+<hr>
+<h2 id="faq--troubleshooting">FAQ &amp; Troubleshooting</h2>
+<h3 id="q-which-should-i-use-taskwrapper-or-simplethread">Q: Which should I use: TaskWrapper or SimpleThread?</h3>
+<p><strong>A:</strong> Use <code>TaskWrapper</code> for:</p>
+<ul>
+<li>Quick async operations</li>
+<li>Parallel work</li>
+<li>Simple threading needs</li>
+</ul>
+<p>Use <code>SimpleThread</code> for:</p>
+<ul>
+<li>Long-running operations</li>
+<li>Operations needing cancellation</li>
+<li>Direct thread control</li>
+</ul>
+<h3 id="q-how-do-i-stop-a-thread-gracefully">Q: How do I stop a thread gracefully?</h3>
+<p><strong>A:</strong> Use the <code>Stop</code> method with a timeout:</p>
+<pre><code class="lang-csharp">thread.Stop(timeoutMilliseconds: 5000); // 5 second timeout
+</code></pre>
+<p>The thread should check <code>cancellationToken.IsCancellationRequested</code> regularly to respond quickly.</p>
+<h3 id="q-what-happens-if-a-retry-limit-is-exceeded">Q: What happens if a retry limit is exceeded?</h3>
+<p><strong>A:</strong> The last exception is thrown:</p>
+<pre><code class="lang-csharp">try
+{
+    await TaskRetry.ExecuteWithRetry(operation, maxAttempts: 3);
+}
+catch (Exception ex)
+{
+    // This is the exception from the 3rd attempt
+}
+</code></pre>
+<h3 id="q-how-do-i-set-thread-priority">Q: How do I set thread priority?</h3>
+<p><strong>A:</strong> Use <code>SetPriority</code>:</p>
+<pre><code class="lang-csharp">thread.SetPriority(ThreadPriority.Highest);
+// Options: Lowest, BelowNormal, Normal, AboveNormal, Highest
+</code></pre>
+<h3 id="q-can-i-use-this-with-asyncawait">Q: Can I use this with async/await?</h3>
+<p><strong>A:</strong> Yes! All components support async operations:</p>
+<pre><code class="lang-csharp">await TaskWrapper.RunAsync(async () =&gt; { /* async work */ });
+scheduler.ScheduleRepeatingAsync(async () =&gt; { /* async work */ }, 1000);
+await pool.EnqueueAsync(async () =&gt; { /* async work */ });
+</code></pre>
+<h3 id="q-what-if-my-task-needs-to-access-shared-state">Q: What if my task needs to access shared state?</h3>
+<p><strong>A:</strong> Use proper synchronization:</p>
+<pre><code class="lang-csharp">private readonly object _lock = new();
+private int _counter = 0;
+
+pool.EnqueueTask(() =&gt;
+{
+    lock (_lock)
+    {
+        _counter++;
+    }
+});
+</code></pre>
+<h3 id="q-how-do-i-timeout-a-long-operation">Q: How do I timeout a long operation?</h3>
+<p><strong>A:</strong> Use <code>WaitWithTimeout</code> or <code>TryWait</code>:</p>
+<pre><code class="lang-csharp">// Throws TimeoutException
+TaskWrapper.WaitWithTimeout(myTask, timeoutMilliseconds: 5000);
+
+// Returns bool
+var (completed, _) = myTask.TryWait(timeoutMilliseconds: 5000);
+</code></pre>
+<h3 id="q-can-i-track-task-progress">Q: Can I track task progress?</h3>
+<p><strong>A:</strong> Monitor pool statistics:</p>
+<pre><code class="lang-csharp">var stats = pool.GetStats();
+Console.WriteLine($&quot;Progress: {stats.ActiveThreads}/{stats.MaxThreads}&quot;);
+</code></pre>
+<h3 id="q-whats-the-performance-overhead">Q: What's the performance overhead?</h3>
+<p><strong>A:</strong> Minimal. c-Tasking is a thin wrapper around .NET threading APIs with negligible overhead.</p>
+<h3 id="q-is-this-thread-safe">Q: Is this thread-safe?</h3>
+<p><strong>A:</strong> Yes, all public APIs are thread-safe. However, your own shared state needs synchronization.</p>
+<h3 id="q-can-i-use-this-in-a-web-application">Q: Can I use this in a web application?</h3>
+<p><strong>A:</strong> Yes, but consider:</p>
+<ul>
+<li>Thread pools may grow unbounded with many requests</li>
+<li>Use <code>ManagedThreadPool</code> with reasonable <code>maxThreads</code></li>
+<li>Prefer <code>TaskWrapper</code> for request handling</li>
+<li>Use <code>TaskScheduler</code> for background tasks</li>
+</ul>
+<h3 id="q-how-do-i-handle-cancellation-properly">Q: How do I handle cancellation properly?</h3>
+<p><strong>A:</strong> Regularly check the cancellation token:</p>
+<pre><code class="lang-csharp">thread.Start(cancellationToken =&gt;
+{
+    while (!cancellationToken.IsCancellationRequested)
+    {
+        // Do work
+        
+        // Check frequently
+        if (cancellationToken.IsCancellationRequested)
+            return;
+        
+        Thread.Sleep(100);
+    }
+});
+</code></pre>
+<h3 id="q-what-happens-if-an-operation-is-canceled">Q: What happens if an operation is canceled?</h3>
+<p><strong>A:</strong> An <code>OperationCanceledException</code> is thrown:</p>
+<pre><code class="lang-csharp">try
+{
+    await operation.WaitAsync(timeoutMilliseconds: 100);
+}
+catch (OperationCanceledException)
+{
+    Console.WriteLine(&quot;Operation timed out or was cancelled&quot;);
+}
+</code></pre>
+<hr>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/jomardyan/c-Tasking">https://github.com/jomardyan/c-Tasking</a></li>
+<li><strong>NuGet Package:</strong> <a href="https://www.nuget.org/packages/c-Tasking/">https://www.nuget.org/packages/c-Tasking/</a></li>
+<li><strong>Issues &amp; Discussions:</strong> <a href="https://github.com/jomardyan/c-Tasking/issues">https://github.com/jomardyan/c-Tasking/issues</a></li>
+<li><strong>.NET Documentation:</strong> <a href="https://docs.microsoft.com/en-us/dotnet/">https://docs.microsoft.com/en-us/dotnet/</a></li>
+<li><strong>Threading Guide:</strong> <a href="https://docs.microsoft.com/en-us/dotnet/standard/threading/">https://docs.microsoft.com/en-us/dotnet/standard/threading/</a></li>
+</ul>
+<hr>
+<h2 id="summary">Summary</h2>
+<p>c-Tasking provides a comprehensive set of threading and multitasking utilities for C# developers. With zero dependencies and a clean API, it simplifies complex threading operations while maintaining production-ready reliability and performance.</p>
+<p><strong>Key Takeaways:</strong></p>
+<ul>
+<li>? Use <code>TaskWrapper</code> for simple async operations</li>
+<li>? Use <code>SimpleThread</code> for long-running operations</li>
+<li>? Use <code>ManagedThreadPool</code> for concurrent task management</li>
+<li>? Use <code>TaskScheduler</code> for scheduled work</li>
+<li>? Use <code>TaskRetry</code> for fault-tolerant operations</li>
+<li>? Use <code>ConcurrentBatcher</code> for bulk processing</li>
+<li>? Use <code>TaskExtensions</code> for fluent async code</li>
+</ul>
+<p>For more information, see individual component documentation or visit the GitHub repository.</p>
+<hr>
+<p><strong>Version:</strong> 1.0.0<br>
+<strong>Last Updated:</strong> November 17, 2025<br>
+<strong>License:</strong> MIT<br>
+<strong>Status:</strong> Production Ready</p>
+<p>Questions? Create an issue on GitHub or check the examples in <code>UsageExamples.cs</code>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jomardyan/c-Tasking/blob/main/docs/HELP.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

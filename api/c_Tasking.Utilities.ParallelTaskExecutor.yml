@@ -1,0 +1,749 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Utilities.ParallelTaskExecutor
+  commentId: T:c_Tasking.Utilities.ParallelTaskExecutor
+  id: ParallelTaskExecutor
+  parent: c_Tasking.Utilities
+  children:
+  - c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync``1(System.Collections.Generic.IEnumerable{System.Func{System.Threading.Tasks.Task{``0}}},System.Int32)
+  - c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task},System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: ParallelTaskExecutor
+  nameWithType: ParallelTaskExecutor
+  fullName: c_Tasking.Utilities.ParallelTaskExecutor
+  type: Class
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ParallelTaskExecutor
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 5
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Advanced utilities for parallel task execution and optimization.
+  example: []
+  syntax:
+    content: public static class ParallelTaskExecutor
+    content.vb: Public Module ParallelTaskExecutor
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task},System.Int32)
+  commentId: M:c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task},System.Int32)
+  id: ExecuteParallelAsync``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task},System.Int32)
+  parent: c_Tasking.Utilities.ParallelTaskExecutor
+  langs:
+  - csharp
+  - vb
+  name: ExecuteParallelAsync<T>(IEnumerable<T>, Func<T, Task>, int)
+  nameWithType: ParallelTaskExecutor.ExecuteParallelAsync<T>(IEnumerable<T>, Func<T, Task>, int)
+  fullName: c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync<T>(System.Collections.Generic.IEnumerable<T>, System.Func<T, System.Threading.Tasks.Task>, int)
+  type: Method
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ExecuteParallelAsync
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 16
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Executes multiple async tasks with a maximum degree of parallelism.
+  example: []
+  syntax:
+    content: public static Task ExecuteParallelAsync<T>(IEnumerable<T> items, Func<T, Task> asyncAction, int maxDegreeOfParallelism = 4)
+    parameters:
+    - id: items
+      type: System.Collections.Generic.IEnumerable{{T}}
+      description: Items to run the action for.
+    - id: asyncAction
+      type: System.Func{{T},System.Threading.Tasks.Task}
+      description: Async action that executes per item.
+    - id: maxDegreeOfParallelism
+      type: System.Int32
+      description: Maximum parallelism for execution.
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Shared Function ExecuteParallelAsync(Of T)(items As IEnumerable(Of T), asyncAction As Func(Of T, Task), maxDegreeOfParallelism As Integer = 4) As Task
+  overload: c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync*
+  nameWithType.vb: ParallelTaskExecutor.ExecuteParallelAsync(Of T)(IEnumerable(Of T), Func(Of T, Task), Integer)
+  fullName.vb: c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, System.Threading.Tasks.Task), Integer)
+  name.vb: ExecuteParallelAsync(Of T)(IEnumerable(Of T), Func(Of T, Task), Integer)
+- uid: c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync``1(System.Collections.Generic.IEnumerable{System.Func{System.Threading.Tasks.Task{``0}}},System.Int32)
+  commentId: M:c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync``1(System.Collections.Generic.IEnumerable{System.Func{System.Threading.Tasks.Task{``0}}},System.Int32)
+  id: ExecuteParallelAsync``1(System.Collections.Generic.IEnumerable{System.Func{System.Threading.Tasks.Task{``0}}},System.Int32)
+  parent: c_Tasking.Utilities.ParallelTaskExecutor
+  langs:
+  - csharp
+  - vb
+  name: ExecuteParallelAsync<TResult>(IEnumerable<Func<Task<TResult>>>, int)
+  nameWithType: ParallelTaskExecutor.ExecuteParallelAsync<TResult>(IEnumerable<Func<Task<TResult>>>, int)
+  fullName: c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync<TResult>(System.Collections.Generic.IEnumerable<System.Func<System.Threading.Tasks.Task<TResult>>>, int)
+  type: Method
+  source:
+    remote:
+      path: Utilities/AdvancedUtilities.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ExecuteParallelAsync
+    path: Utilities/AdvancedUtilities.cs
+    startLine: 47
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Utilities
+  summary: Executes multiple async functions that return results with controlled parallelism.
+  example: []
+  syntax:
+    content: public static Task<IEnumerable<TResult>> ExecuteParallelAsync<TResult>(IEnumerable<Func<Task<TResult>>> asyncFunctions, int maxDegreeOfParallelism = 4)
+    parameters:
+    - id: asyncFunctions
+      type: System.Collections.Generic.IEnumerable{System.Func{System.Threading.Tasks.Task{{TResult}}}}
+      description: Async functions to invoke in parallel.
+    - id: maxDegreeOfParallelism
+      type: System.Int32
+      description: Maximum concurrency.
+    typeParameters:
+    - id: TResult
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{TResult}}}
+      description: An enumerable of results for each function invocation.
+    content.vb: Public Shared Function ExecuteParallelAsync(Of TResult)(asyncFunctions As IEnumerable(Of Func(Of Task(Of TResult))), maxDegreeOfParallelism As Integer = 4) As Task(Of IEnumerable(Of TResult))
+  overload: c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync*
+  nameWithType.vb: ParallelTaskExecutor.ExecuteParallelAsync(Of TResult)(IEnumerable(Of Func(Of Task(Of TResult))), Integer)
+  fullName.vb: c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync(Of TResult)(System.Collections.Generic.IEnumerable(Of System.Func(Of System.Threading.Tasks.Task(Of TResult))), Integer)
+  name.vb: ExecuteParallelAsync(Of TResult)(IEnumerable(Of Func(Of Task(Of TResult))), Integer)
+references:
+- uid: c_Tasking.Utilities
+  commentId: N:c_Tasking.Utilities
+  href: c_Tasking.html
+  name: c_Tasking.Utilities
+  nameWithType: c_Tasking.Utilities
+  fullName: c_Tasking.Utilities
+  spec.csharp:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Utilities
+    name: Utilities
+    href: c_Tasking.Utilities.html
+  spec.vb:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Utilities
+    name: Utilities
+    href: c_Tasking.Utilities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync*
+  commentId: Overload:c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync
+  href: c_Tasking.Utilities.ParallelTaskExecutor.html#c_Tasking_Utilities_ParallelTaskExecutor_ExecuteParallelAsync__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Threading_Tasks_Task__System_Int32_
+  name: ExecuteParallelAsync
+  nameWithType: ParallelTaskExecutor.ExecuteParallelAsync
+  fullName: c_Tasking.Utilities.ParallelTaskExecutor.ExecuteParallelAsync
+- uid: System.Collections.Generic.IEnumerable{{T}}
+  commentId: T:System.Collections.Generic.IEnumerable{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Func{{T},System.Threading.Tasks.Task}
+  commentId: T:System.Func{``0,System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, Task>
+  nameWithType: Func<T, Task>
+  fullName: System.Func<T, System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of T, Task)
+  fullName.vb: System.Func(Of T, System.Threading.Tasks.Task)
+  name.vb: Func(Of T, Task)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Collections.Generic.IEnumerable{System.Func{System.Threading.Tasks.Task{{TResult}}}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Func{System.Threading.Tasks.Task{``0}}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Func<Task<TResult>>>
+  nameWithType: IEnumerable<Func<Task<TResult>>>
+  fullName: System.Collections.Generic.IEnumerable<System.Func<System.Threading.Tasks.Task<TResult>>>
+  nameWithType.vb: IEnumerable(Of Func(Of Task(Of TResult)))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Func(Of System.Threading.Tasks.Task(Of TResult)))
+  name.vb: IEnumerable(Of Func(Of Task(Of TResult)))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{TResult}}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{``0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<TResult>>
+  nameWithType: Task<IEnumerable<TResult>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<TResult>>
+  nameWithType.vb: Task(Of IEnumerable(Of TResult))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of TResult))
+  name.vb: Task(Of IEnumerable(Of TResult))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )

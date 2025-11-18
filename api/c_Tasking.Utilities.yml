@@ -1,0 +1,91 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Utilities
+  commentId: N:c_Tasking.Utilities
+  id: c_Tasking.Utilities
+  children:
+  - c_Tasking.Utilities.ConcurrentBatcher`1
+  - c_Tasking.Utilities.ExecutionMetrics
+  - c_Tasking.Utilities.ParallelTaskExecutor
+  - c_Tasking.Utilities.TaskRetry
+  - c_Tasking.Utilities.TaskScheduler
+  - c_Tasking.Utilities.TaskThrottler
+  - c_Tasking.Utilities.TaskWaiter
+  - c_Tasking.Utilities.TimeoutManager
+  langs:
+  - csharp
+  - vb
+  name: c_Tasking.Utilities
+  nameWithType: c_Tasking.Utilities
+  fullName: c_Tasking.Utilities
+  type: Namespace
+  assemblies:
+  - c-Tasking
+references:
+- uid: c_Tasking.Utilities.ParallelTaskExecutor
+  commentId: T:c_Tasking.Utilities.ParallelTaskExecutor
+  href: c_Tasking.Utilities.ParallelTaskExecutor.html
+  name: ParallelTaskExecutor
+  nameWithType: ParallelTaskExecutor
+  fullName: c_Tasking.Utilities.ParallelTaskExecutor
+- uid: c_Tasking.Utilities.TimeoutManager
+  commentId: T:c_Tasking.Utilities.TimeoutManager
+  href: c_Tasking.Utilities.TimeoutManager.html
+  name: TimeoutManager
+  nameWithType: TimeoutManager
+  fullName: c_Tasking.Utilities.TimeoutManager
+- uid: c_Tasking.Utilities.TaskThrottler
+  commentId: T:c_Tasking.Utilities.TaskThrottler
+  href: c_Tasking.Utilities.TaskThrottler.html
+  name: TaskThrottler
+  nameWithType: TaskThrottler
+  fullName: c_Tasking.Utilities.TaskThrottler
+- uid: c_Tasking.Utilities.TaskWaiter
+  commentId: T:c_Tasking.Utilities.TaskWaiter
+  href: c_Tasking.Utilities.TaskWaiter.html
+  name: TaskWaiter
+  nameWithType: TaskWaiter
+  fullName: c_Tasking.Utilities.TaskWaiter
+- uid: c_Tasking.Utilities.ExecutionMetrics
+  commentId: T:c_Tasking.Utilities.ExecutionMetrics
+  href: c_Tasking.Utilities.ExecutionMetrics.html
+  name: ExecutionMetrics
+  nameWithType: ExecutionMetrics
+  fullName: c_Tasking.Utilities.ExecutionMetrics
+- uid: c_Tasking.Utilities.ConcurrentBatcher`1
+  commentId: T:c_Tasking.Utilities.ConcurrentBatcher`1
+  href: c_Tasking.Utilities.ConcurrentBatcher-1.html
+  name: ConcurrentBatcher<T>
+  nameWithType: ConcurrentBatcher<T>
+  fullName: c_Tasking.Utilities.ConcurrentBatcher<T>
+  nameWithType.vb: ConcurrentBatcher(Of T)
+  fullName.vb: c_Tasking.Utilities.ConcurrentBatcher(Of T)
+  name.vb: ConcurrentBatcher(Of T)
+  spec.csharp:
+  - uid: c_Tasking.Utilities.ConcurrentBatcher`1
+    name: ConcurrentBatcher
+    href: c_Tasking.Utilities.ConcurrentBatcher-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: c_Tasking.Utilities.ConcurrentBatcher`1
+    name: ConcurrentBatcher
+    href: c_Tasking.Utilities.ConcurrentBatcher-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: c_Tasking.Utilities.TaskRetry
+  commentId: T:c_Tasking.Utilities.TaskRetry
+  href: c_Tasking.Utilities.TaskRetry.html
+  name: TaskRetry
+  nameWithType: TaskRetry
+  fullName: c_Tasking.Utilities.TaskRetry
+- uid: c_Tasking.Utilities.TaskScheduler
+  commentId: T:c_Tasking.Utilities.TaskScheduler
+  href: c_Tasking.Utilities.TaskScheduler.html
+  name: TaskScheduler
+  nameWithType: TaskScheduler
+  fullName: c_Tasking.Utilities.TaskScheduler

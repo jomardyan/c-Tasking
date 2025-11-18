@@ -1,0 +1,1969 @@
+### YamlMime:ManagedReference
+items:
+- uid: c_Tasking.Extensions.TaskExtensions
+  commentId: T:c_Tasking.Extensions.TaskExtensions
+  id: TaskExtensions
+  parent: c_Tasking.Extensions
+  children:
+  - c_Tasking.Extensions.TaskExtensions.Chain(System.Threading.Tasks.Task,System.Func{System.Threading.Tasks.Task})
+  - c_Tasking.Extensions.TaskExtensions.Chain``2(System.Threading.Tasks.Task{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})
+  - c_Tasking.Extensions.TaskExtensions.Delay(System.Int32)
+  - c_Tasking.Extensions.TaskExtensions.Finally(System.Threading.Tasks.Task,System.Action)
+  - c_Tasking.Extensions.TaskExtensions.FireAndForget(System.Threading.Tasks.Task,System.Action{System.Exception})
+  - c_Tasking.Extensions.TaskExtensions.FireAndForget``1(System.Threading.Tasks.Task{``0},System.Action{System.Exception})
+  - c_Tasking.Extensions.TaskExtensions.IgnoreException(System.Threading.Tasks.Task)
+  - c_Tasking.Extensions.TaskExtensions.IgnoreException``1(System.Threading.Tasks.Task{``0})
+  - c_Tasking.Extensions.TaskExtensions.MapAsync``2(System.Threading.Tasks.Task{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})
+  - c_Tasking.Extensions.TaskExtensions.Map``2(System.Threading.Tasks.Task{``0},System.Func{``0,``1})
+  - c_Tasking.Extensions.TaskExtensions.OnCancelled(System.Threading.Tasks.Task,System.Action)
+  - c_Tasking.Extensions.TaskExtensions.OnException(System.Threading.Tasks.Task,System.Action{System.Exception})
+  - c_Tasking.Extensions.TaskExtensions.OnSuccess(System.Threading.Tasks.Task,System.Action)
+  - c_Tasking.Extensions.TaskExtensions.OnSuccess``1(System.Threading.Tasks.Task{``0},System.Action{``0})
+  - c_Tasking.Extensions.TaskExtensions.RetryOnFailure(System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Boolean},System.Int32,System.Int32)
+  - c_Tasking.Extensions.TaskExtensions.RetryOnFailure(System.Func{System.Threading.Tasks.Task},System.Int32,System.Int32)
+  - c_Tasking.Extensions.TaskExtensions.ThenAsync``2(System.Threading.Tasks.Task{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})
+  - c_Tasking.Extensions.TaskExtensions.TryWait(System.Threading.Tasks.Task,System.Int32)
+  - c_Tasking.Extensions.TaskExtensions.TryWait``1(System.Threading.Tasks.Task{``0},System.Int32)
+  - c_Tasking.Extensions.TaskExtensions.WaitAllInParallel(System.Threading.Tasks.Task[])
+  - c_Tasking.Extensions.TaskExtensions.WaitAnyToComplete(System.Threading.Tasks.Task[])
+  - c_Tasking.Extensions.TaskExtensions.WithTimeout(System.Threading.Tasks.Task,System.Int32)
+  - c_Tasking.Extensions.TaskExtensions.WithTimeout``1(System.Threading.Tasks.Task{``0},System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: TaskExtensions
+  nameWithType: TaskExtensions
+  fullName: c_Tasking.Extensions.TaskExtensions
+  type: Class
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: TaskExtensions
+    path: Extensions/TaskExtensions.cs
+    startLine: 9
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: >-
+    Extension methods for Task operations to simplify common patterns and provide fluent APIs.
+
+    Includes shortcuts for fire-and-forget, retries, timeouts, chaining, and error handling.
+  example: []
+  syntax:
+    content: public static class TaskExtensions
+    content.vb: Public Module TaskExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: c_Tasking.Extensions.TaskExtensions.FireAndForget(System.Threading.Tasks.Task,System.Action{System.Exception})
+  commentId: M:c_Tasking.Extensions.TaskExtensions.FireAndForget(System.Threading.Tasks.Task,System.Action{System.Exception})
+  id: FireAndForget(System.Threading.Tasks.Task,System.Action{System.Exception})
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: FireAndForget(Task, Action<Exception>?)
+  nameWithType: TaskExtensions.FireAndForget(Task, Action<Exception>?)
+  fullName: c_Tasking.Extensions.TaskExtensions.FireAndForget(System.Threading.Tasks.Task, System.Action<System.Exception>?)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: FireAndForget
+    path: Extensions/TaskExtensions.cs
+    startLine: 18
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Executes a task fire-and-forget style, with optional error handling.
+  example: []
+  syntax:
+    content: public static void FireAndForget(this Task task, Action<Exception>? onException = null)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task
+      description: The task to fire without waiting.
+    - id: onException
+      type: System.Action{System.Exception}
+      description: Optional error callback if the task fails.
+    content.vb: Public Shared Sub FireAndForget(task As Task, onException As Action(Of Exception) = Nothing)
+  overload: c_Tasking.Extensions.TaskExtensions.FireAndForget*
+  nameWithType.vb: TaskExtensions.FireAndForget(Task, Action(Of Exception))
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.FireAndForget(System.Threading.Tasks.Task, System.Action(Of System.Exception))
+  name.vb: FireAndForget(Task, Action(Of Exception))
+- uid: c_Tasking.Extensions.TaskExtensions.FireAndForget``1(System.Threading.Tasks.Task{``0},System.Action{System.Exception})
+  commentId: M:c_Tasking.Extensions.TaskExtensions.FireAndForget``1(System.Threading.Tasks.Task{``0},System.Action{System.Exception})
+  id: FireAndForget``1(System.Threading.Tasks.Task{``0},System.Action{System.Exception})
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: FireAndForget<T>(Task<T>, Action<Exception>?)
+  nameWithType: TaskExtensions.FireAndForget<T>(Task<T>, Action<Exception>?)
+  fullName: c_Tasking.Extensions.TaskExtensions.FireAndForget<T>(System.Threading.Tasks.Task<T>, System.Action<System.Exception>?)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: FireAndForget
+    path: Extensions/TaskExtensions.cs
+    startLine: 35
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Executes a task fire-and-forget style, with optional error handling.
+  example: []
+  syntax:
+    content: public static void FireAndForget<T>(this Task<T> task, Action<Exception>? onException = null)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task{{T}}
+      description: The task to fire without waiting.
+    - id: onException
+      type: System.Action{System.Exception}
+      description: Optional error callback if the task fails.
+    typeParameters:
+    - id: T
+      description: Return type of the task.
+    content.vb: Public Shared Sub FireAndForget(Of T)(task As Task(Of T), onException As Action(Of Exception) = Nothing)
+  overload: c_Tasking.Extensions.TaskExtensions.FireAndForget*
+  nameWithType.vb: TaskExtensions.FireAndForget(Of T)(Task(Of T), Action(Of Exception))
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.FireAndForget(Of T)(System.Threading.Tasks.Task(Of T), System.Action(Of System.Exception))
+  name.vb: FireAndForget(Of T)(Task(Of T), Action(Of Exception))
+- uid: c_Tasking.Extensions.TaskExtensions.Finally(System.Threading.Tasks.Task,System.Action)
+  commentId: M:c_Tasking.Extensions.TaskExtensions.Finally(System.Threading.Tasks.Task,System.Action)
+  id: Finally(System.Threading.Tasks.Task,System.Action)
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: Finally(Task, Action)
+  nameWithType: TaskExtensions.Finally(Task, Action)
+  fullName: c_Tasking.Extensions.TaskExtensions.Finally(System.Threading.Tasks.Task, System.Action)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Finally
+    path: Extensions/TaskExtensions.cs
+    startLine: 54
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Executes a callback when the task completes, regardless of success or failure.
+  example: []
+  syntax:
+    content: public static Task Finally(this Task task, Action callback)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task
+      description: The task to monitor.
+    - id: callback
+      type: System.Action
+      description: The callback executed upon completion.
+    return:
+      type: System.Threading.Tasks.Task
+      description: The original task.
+    content.vb: Public Shared Function [Finally](task As Task, callback As Action) As Task
+  overload: c_Tasking.Extensions.TaskExtensions.Finally*
+- uid: c_Tasking.Extensions.TaskExtensions.OnSuccess(System.Threading.Tasks.Task,System.Action)
+  commentId: M:c_Tasking.Extensions.TaskExtensions.OnSuccess(System.Threading.Tasks.Task,System.Action)
+  id: OnSuccess(System.Threading.Tasks.Task,System.Action)
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: OnSuccess(Task, Action)
+  nameWithType: TaskExtensions.OnSuccess(Task, Action)
+  fullName: c_Tasking.Extensions.TaskExtensions.OnSuccess(System.Threading.Tasks.Task, System.Action)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: OnSuccess
+    path: Extensions/TaskExtensions.cs
+    startLine: 68
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Executes a callback when the task completes successfully.
+  example: []
+  syntax:
+    content: public static Task OnSuccess(this Task task, Action callback)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task
+      description: The task to monitor.
+    - id: callback
+      type: System.Action
+      description: Callback executed on successful completion.
+    return:
+      type: System.Threading.Tasks.Task
+      description: The original task.
+    content.vb: Public Shared Function OnSuccess(task As Task, callback As Action) As Task
+  overload: c_Tasking.Extensions.TaskExtensions.OnSuccess*
+- uid: c_Tasking.Extensions.TaskExtensions.OnSuccess``1(System.Threading.Tasks.Task{``0},System.Action{``0})
+  commentId: M:c_Tasking.Extensions.TaskExtensions.OnSuccess``1(System.Threading.Tasks.Task{``0},System.Action{``0})
+  id: OnSuccess``1(System.Threading.Tasks.Task{``0},System.Action{``0})
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: OnSuccess<T>(Task<T>, Action<T>)
+  nameWithType: TaskExtensions.OnSuccess<T>(Task<T>, Action<T>)
+  fullName: c_Tasking.Extensions.TaskExtensions.OnSuccess<T>(System.Threading.Tasks.Task<T>, System.Action<T>)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: OnSuccess
+    path: Extensions/TaskExtensions.cs
+    startLine: 86
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Executes a callback when a generic task completes successfully, passing the result.
+  example: []
+  syntax:
+    content: public static Task OnSuccess<T>(this Task<T> task, Action<T> callback)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task{{T}}
+      description: The task to monitor.
+    - id: callback
+      type: System.Action{{T}}
+      description: Callback invoked with the task result.
+    typeParameters:
+    - id: T
+      description: Return type of the task.
+    return:
+      type: System.Threading.Tasks.Task
+      description: The original task.
+    content.vb: Public Shared Function OnSuccess(Of T)(task As Task(Of T), callback As Action(Of T)) As Task
+  overload: c_Tasking.Extensions.TaskExtensions.OnSuccess*
+  nameWithType.vb: TaskExtensions.OnSuccess(Of T)(Task(Of T), Action(Of T))
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.OnSuccess(Of T)(System.Threading.Tasks.Task(Of T), System.Action(Of T))
+  name.vb: OnSuccess(Of T)(Task(Of T), Action(Of T))
+- uid: c_Tasking.Extensions.TaskExtensions.OnException(System.Threading.Tasks.Task,System.Action{System.Exception})
+  commentId: M:c_Tasking.Extensions.TaskExtensions.OnException(System.Threading.Tasks.Task,System.Action{System.Exception})
+  id: OnException(System.Threading.Tasks.Task,System.Action{System.Exception})
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: OnException(Task, Action<Exception>)
+  nameWithType: TaskExtensions.OnException(Task, Action<Exception>)
+  fullName: c_Tasking.Extensions.TaskExtensions.OnException(System.Threading.Tasks.Task, System.Action<System.Exception>)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: OnException
+    path: Extensions/TaskExtensions.cs
+    startLine: 103
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Executes a callback when the task fails with an exception.
+  example: []
+  syntax:
+    content: public static Task OnException(this Task task, Action<Exception> callback)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task
+      description: The monitored task.
+    - id: callback
+      type: System.Action{System.Exception}
+      description: Callback invoked with the exception that caused the failure.
+    return:
+      type: System.Threading.Tasks.Task
+      description: The original task.
+    content.vb: Public Shared Function OnException(task As Task, callback As Action(Of Exception)) As Task
+  overload: c_Tasking.Extensions.TaskExtensions.OnException*
+  nameWithType.vb: TaskExtensions.OnException(Task, Action(Of Exception))
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.OnException(System.Threading.Tasks.Task, System.Action(Of System.Exception))
+  name.vb: OnException(Task, Action(Of Exception))
+- uid: c_Tasking.Extensions.TaskExtensions.OnCancelled(System.Threading.Tasks.Task,System.Action)
+  commentId: M:c_Tasking.Extensions.TaskExtensions.OnCancelled(System.Threading.Tasks.Task,System.Action)
+  id: OnCancelled(System.Threading.Tasks.Task,System.Action)
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: OnCancelled(Task, Action)
+  nameWithType: TaskExtensions.OnCancelled(Task, Action)
+  fullName: c_Tasking.Extensions.TaskExtensions.OnCancelled(System.Threading.Tasks.Task, System.Action)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: OnCancelled
+    path: Extensions/TaskExtensions.cs
+    startLine: 129
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Executes a callback when the task is cancelled.
+  example: []
+  syntax:
+    content: public static Task OnCancelled(this Task task, Action callback)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task
+      description: The monitored task.
+    - id: callback
+      type: System.Action
+      description: Callback executed when the task is cancelled.
+    return:
+      type: System.Threading.Tasks.Task
+      description: The original task.
+    content.vb: Public Shared Function OnCancelled(task As Task, callback As Action) As Task
+  overload: c_Tasking.Extensions.TaskExtensions.OnCancelled*
+- uid: c_Tasking.Extensions.TaskExtensions.TryWait(System.Threading.Tasks.Task,System.Int32)
+  commentId: M:c_Tasking.Extensions.TaskExtensions.TryWait(System.Threading.Tasks.Task,System.Int32)
+  id: TryWait(System.Threading.Tasks.Task,System.Int32)
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: TryWait(Task, int)
+  nameWithType: TaskExtensions.TryWait(Task, int)
+  fullName: c_Tasking.Extensions.TaskExtensions.TryWait(System.Threading.Tasks.Task, int)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: TryWait
+    path: Extensions/TaskExtensions.cs
+    startLine: 148
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Waits for a task with a timeout, returns true if completed, false if timed out.
+  example: []
+  syntax:
+    content: public static bool TryWait(this Task task, int timeoutMilliseconds)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task
+      description: The task to wait on.
+    - id: timeoutMilliseconds
+      type: System.Int32
+      description: Timeout in milliseconds.
+    return:
+      type: System.Boolean
+      description: True if the task completes within the timeout; otherwise false.
+    content.vb: Public Shared Function TryWait(task As Task, timeoutMilliseconds As Integer) As Boolean
+  overload: c_Tasking.Extensions.TaskExtensions.TryWait*
+  nameWithType.vb: TaskExtensions.TryWait(Task, Integer)
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.TryWait(System.Threading.Tasks.Task, Integer)
+  name.vb: TryWait(Task, Integer)
+- uid: c_Tasking.Extensions.TaskExtensions.TryWait``1(System.Threading.Tasks.Task{``0},System.Int32)
+  commentId: M:c_Tasking.Extensions.TaskExtensions.TryWait``1(System.Threading.Tasks.Task{``0},System.Int32)
+  id: TryWait``1(System.Threading.Tasks.Task{``0},System.Int32)
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: TryWait<T>(Task<T>, int)
+  nameWithType: TaskExtensions.TryWait<T>(Task<T>, int)
+  fullName: c_Tasking.Extensions.TaskExtensions.TryWait<T>(System.Threading.Tasks.Task<T>, int)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: TryWait
+    path: Extensions/TaskExtensions.cs
+    startLine: 159
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Waits for task with a timeout, returns result and completion status.
+  example: []
+  syntax:
+    content: public static (bool completed, T? result) TryWait<T>(this Task<T> task, int timeoutMilliseconds)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task{{T}}
+      description: The task to wait on.
+    - id: timeoutMilliseconds
+      type: System.Int32
+      description: Timeout in milliseconds.
+    typeParameters:
+    - id: T
+    return:
+      type: System.ValueTuple{System.Boolean,{T}}
+      description: Tuple with completion status and result if completed.
+    content.vb: Public Shared Function TryWait(Of T)(task As Task(Of T), timeoutMilliseconds As Integer) As (completed As Boolean, result As T)
+  overload: c_Tasking.Extensions.TaskExtensions.TryWait*
+  nameWithType.vb: TaskExtensions.TryWait(Of T)(Task(Of T), Integer)
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.TryWait(Of T)(System.Threading.Tasks.Task(Of T), Integer)
+  name.vb: TryWait(Of T)(Task(Of T), Integer)
+- uid: c_Tasking.Extensions.TaskExtensions.WithTimeout(System.Threading.Tasks.Task,System.Int32)
+  commentId: M:c_Tasking.Extensions.TaskExtensions.WithTimeout(System.Threading.Tasks.Task,System.Int32)
+  id: WithTimeout(System.Threading.Tasks.Task,System.Int32)
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: WithTimeout(Task, int)
+  nameWithType: TaskExtensions.WithTimeout(Task, int)
+  fullName: c_Tasking.Extensions.TaskExtensions.WithTimeout(System.Threading.Tasks.Task, int)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: WithTimeout
+    path: Extensions/TaskExtensions.cs
+    startLine: 171
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Executes a task with a timeout, throwing TimeoutException if exceeded.
+  example: []
+  syntax:
+    content: public static Task WithTimeout(this Task task, int timeoutMilliseconds)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task
+      description: The task to execute.
+    - id: timeoutMilliseconds
+      type: System.Int32
+      description: Timeout in milliseconds.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the wait operation.
+    content.vb: Public Shared Function WithTimeout(task As Task, timeoutMilliseconds As Integer) As Task
+  overload: c_Tasking.Extensions.TaskExtensions.WithTimeout*
+  nameWithType.vb: TaskExtensions.WithTimeout(Task, Integer)
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.WithTimeout(System.Threading.Tasks.Task, Integer)
+  name.vb: WithTimeout(Task, Integer)
+- uid: c_Tasking.Extensions.TaskExtensions.WithTimeout``1(System.Threading.Tasks.Task{``0},System.Int32)
+  commentId: M:c_Tasking.Extensions.TaskExtensions.WithTimeout``1(System.Threading.Tasks.Task{``0},System.Int32)
+  id: WithTimeout``1(System.Threading.Tasks.Task{``0},System.Int32)
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: WithTimeout<T>(Task<T>, int)
+  nameWithType: TaskExtensions.WithTimeout<T>(Task<T>, int)
+  fullName: c_Tasking.Extensions.TaskExtensions.WithTimeout<T>(System.Threading.Tasks.Task<T>, int)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: WithTimeout
+    path: Extensions/TaskExtensions.cs
+    startLine: 191
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Executes a task with a timeout and returns the result, throwing TimeoutException if exceeded.
+  example: []
+  syntax:
+    content: public static Task<T> WithTimeout<T>(this Task<T> task, int timeoutMilliseconds)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task{{T}}
+      description: The task to execute.
+    - id: timeoutMilliseconds
+      type: System.Int32
+      description: Timeout in milliseconds.
+    typeParameters:
+    - id: T
+      description: Return type of the task.
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+      description: The task result if it completes before the timeout.
+    content.vb: Public Shared Function WithTimeout(Of T)(task As Task(Of T), timeoutMilliseconds As Integer) As Task(Of T)
+  overload: c_Tasking.Extensions.TaskExtensions.WithTimeout*
+  nameWithType.vb: TaskExtensions.WithTimeout(Of T)(Task(Of T), Integer)
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.WithTimeout(Of T)(System.Threading.Tasks.Task(Of T), Integer)
+  name.vb: WithTimeout(Of T)(Task(Of T), Integer)
+- uid: c_Tasking.Extensions.TaskExtensions.Map``2(System.Threading.Tasks.Task{``0},System.Func{``0,``1})
+  commentId: M:c_Tasking.Extensions.TaskExtensions.Map``2(System.Threading.Tasks.Task{``0},System.Func{``0,``1})
+  id: Map``2(System.Threading.Tasks.Task{``0},System.Func{``0,``1})
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: Map<T, TResult>(Task<T>, Func<T, TResult>)
+  nameWithType: TaskExtensions.Map<T, TResult>(Task<T>, Func<T, TResult>)
+  fullName: c_Tasking.Extensions.TaskExtensions.Map<T, TResult>(System.Threading.Tasks.Task<T>, System.Func<T, TResult>)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Map
+    path: Extensions/TaskExtensions.cs
+    startLine: 214
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Transforms the result of a task.
+  example: []
+  syntax:
+    content: public static Task<TResult> Map<T, TResult>(this Task<T> task, Func<T, TResult> mapper)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task{{T}}
+      description: The source task.
+    - id: mapper
+      type: System.Func{{T},{TResult}}
+      description: Mapper function to transform the result.
+    typeParameters:
+    - id: T
+      description: Type of the input task result.
+    - id: TResult
+      description: Type of the mapped result.
+    return:
+      type: System.Threading.Tasks.Task{{TResult}}
+      description: A task producing the transformed result.
+    content.vb: Public Shared Function Map(Of T, TResult)(task As Task(Of T), mapper As Func(Of T, TResult)) As Task(Of TResult)
+  overload: c_Tasking.Extensions.TaskExtensions.Map*
+  nameWithType.vb: TaskExtensions.Map(Of T, TResult)(Task(Of T), Func(Of T, TResult))
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.Map(Of T, TResult)(System.Threading.Tasks.Task(Of T), System.Func(Of T, TResult))
+  name.vb: Map(Of T, TResult)(Task(Of T), Func(Of T, TResult))
+- uid: c_Tasking.Extensions.TaskExtensions.MapAsync``2(System.Threading.Tasks.Task{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})
+  commentId: M:c_Tasking.Extensions.TaskExtensions.MapAsync``2(System.Threading.Tasks.Task{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})
+  id: MapAsync``2(System.Threading.Tasks.Task{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: MapAsync<T, TResult>(Task<T>, Func<T, Task<TResult>>)
+  nameWithType: TaskExtensions.MapAsync<T, TResult>(Task<T>, Func<T, Task<TResult>>)
+  fullName: c_Tasking.Extensions.TaskExtensions.MapAsync<T, TResult>(System.Threading.Tasks.Task<T>, System.Func<T, System.Threading.Tasks.Task<TResult>>)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: MapAsync
+    path: Extensions/TaskExtensions.cs
+    startLine: 228
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Transforms the result of a task asynchronously.
+  example: []
+  syntax:
+    content: public static Task<TResult> MapAsync<T, TResult>(this Task<T> task, Func<T, Task<TResult>> mapper)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task{{T}}
+      description: The source task.
+    - id: mapper
+      type: System.Func{{T},System.Threading.Tasks.Task{{TResult}}}
+      description: Async mapper function to transform the result.
+    typeParameters:
+    - id: T
+      description: Type of the input task result.
+    - id: TResult
+      description: Type of the mapped result.
+    return:
+      type: System.Threading.Tasks.Task{{TResult}}
+      description: A task producing the transformed result.
+    content.vb: Public Shared Function MapAsync(Of T, TResult)(task As Task(Of T), mapper As Func(Of T, Task(Of TResult))) As Task(Of TResult)
+  overload: c_Tasking.Extensions.TaskExtensions.MapAsync*
+  nameWithType.vb: TaskExtensions.MapAsync(Of T, TResult)(Task(Of T), Func(Of T, Task(Of TResult)))
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.MapAsync(Of T, TResult)(System.Threading.Tasks.Task(Of T), System.Func(Of T, System.Threading.Tasks.Task(Of TResult)))
+  name.vb: MapAsync(Of T, TResult)(Task(Of T), Func(Of T, Task(Of TResult)))
+- uid: c_Tasking.Extensions.TaskExtensions.Chain(System.Threading.Tasks.Task,System.Func{System.Threading.Tasks.Task})
+  commentId: M:c_Tasking.Extensions.TaskExtensions.Chain(System.Threading.Tasks.Task,System.Func{System.Threading.Tasks.Task})
+  id: Chain(System.Threading.Tasks.Task,System.Func{System.Threading.Tasks.Task})
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: Chain(Task, Func<Task>)
+  nameWithType: TaskExtensions.Chain(Task, Func<Task>)
+  fullName: c_Tasking.Extensions.TaskExtensions.Chain(System.Threading.Tasks.Task, System.Func<System.Threading.Tasks.Task>)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Chain
+    path: Extensions/TaskExtensions.cs
+    startLine: 242
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Chains multiple tasks in sequence.
+  example: []
+  syntax:
+    content: public static Task Chain(this Task task, Func<Task> nextTask)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task
+      description: The initial task whose completion triggers the next one.
+    - id: nextTask
+      type: System.Func{System.Threading.Tasks.Task}
+      description: The function that returns the next task to execute.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the chained execution.
+    content.vb: Public Shared Function Chain(task As Task, nextTask As Func(Of Task)) As Task
+  overload: c_Tasking.Extensions.TaskExtensions.Chain*
+  nameWithType.vb: TaskExtensions.Chain(Task, Func(Of Task))
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.Chain(System.Threading.Tasks.Task, System.Func(Of System.Threading.Tasks.Task))
+  name.vb: Chain(Task, Func(Of Task))
+- uid: c_Tasking.Extensions.TaskExtensions.Chain``2(System.Threading.Tasks.Task{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})
+  commentId: M:c_Tasking.Extensions.TaskExtensions.Chain``2(System.Threading.Tasks.Task{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})
+  id: Chain``2(System.Threading.Tasks.Task{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: Chain<T, TResult>(Task<T>, Func<T, Task<TResult>>)
+  nameWithType: TaskExtensions.Chain<T, TResult>(Task<T>, Func<T, Task<TResult>>)
+  fullName: c_Tasking.Extensions.TaskExtensions.Chain<T, TResult>(System.Threading.Tasks.Task<T>, System.Func<T, System.Threading.Tasks.Task<TResult>>)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Chain
+    path: Extensions/TaskExtensions.cs
+    startLine: 256
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Chains multiple tasks in sequence with result passing.
+  example: []
+  syntax:
+    content: public static Task<TResult> Chain<T, TResult>(this Task<T> task, Func<T, Task<TResult>> nextTask)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task{{T}}
+      description: The initial task.
+    - id: nextTask
+      type: System.Func{{T},System.Threading.Tasks.Task{{TResult}}}
+      description: The function to produce the next task using the input result.
+    typeParameters:
+    - id: T
+      description: Type of the input task result.
+    - id: TResult
+      description: Type of the next task result.
+    return:
+      type: System.Threading.Tasks.Task{{TResult}}
+      description: A task producing the result of the chained operation.
+    content.vb: Public Shared Function Chain(Of T, TResult)(task As Task(Of T), nextTask As Func(Of T, Task(Of TResult))) As Task(Of TResult)
+  overload: c_Tasking.Extensions.TaskExtensions.Chain*
+  nameWithType.vb: TaskExtensions.Chain(Of T, TResult)(Task(Of T), Func(Of T, Task(Of TResult)))
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.Chain(Of T, TResult)(System.Threading.Tasks.Task(Of T), System.Func(Of T, System.Threading.Tasks.Task(Of TResult)))
+  name.vb: Chain(Of T, TResult)(Task(Of T), Func(Of T, Task(Of TResult)))
+- uid: c_Tasking.Extensions.TaskExtensions.ThenAsync``2(System.Threading.Tasks.Task{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})
+  commentId: M:c_Tasking.Extensions.TaskExtensions.ThenAsync``2(System.Threading.Tasks.Task{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})
+  id: ThenAsync``2(System.Threading.Tasks.Task{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: ThenAsync<T, TResult>(Task<T>, Func<T, Task<TResult>>)
+  nameWithType: TaskExtensions.ThenAsync<T, TResult>(Task<T>, Func<T, Task<TResult>>)
+  fullName: c_Tasking.Extensions.TaskExtensions.ThenAsync<T, TResult>(System.Threading.Tasks.Task<T>, System.Func<T, System.Threading.Tasks.Task<TResult>>)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: ThenAsync
+    path: Extensions/TaskExtensions.cs
+    startLine: 270
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Chains multiple tasks in sequence, transforming the result.
+  example: []
+  syntax:
+    content: public static Task<TResult> ThenAsync<T, TResult>(this Task<T> task, Func<T, Task<TResult>> nextTask)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task{{T}}
+      description: The initial task.
+    - id: nextTask
+      type: System.Func{{T},System.Threading.Tasks.Task{{TResult}}}
+      description: The function to produce the next task using the input result.
+    typeParameters:
+    - id: T
+      description: Type of the input task result.
+    - id: TResult
+      description: Type of the chained result.
+    return:
+      type: System.Threading.Tasks.Task{{TResult}}
+      description: A task producing the final result.
+    content.vb: Public Shared Function ThenAsync(Of T, TResult)(task As Task(Of T), nextTask As Func(Of T, Task(Of TResult))) As Task(Of TResult)
+  overload: c_Tasking.Extensions.TaskExtensions.ThenAsync*
+  nameWithType.vb: TaskExtensions.ThenAsync(Of T, TResult)(Task(Of T), Func(Of T, Task(Of TResult)))
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.ThenAsync(Of T, TResult)(System.Threading.Tasks.Task(Of T), System.Func(Of T, System.Threading.Tasks.Task(Of TResult)))
+  name.vb: ThenAsync(Of T, TResult)(Task(Of T), Func(Of T, Task(Of TResult)))
+- uid: c_Tasking.Extensions.TaskExtensions.IgnoreException(System.Threading.Tasks.Task)
+  commentId: M:c_Tasking.Extensions.TaskExtensions.IgnoreException(System.Threading.Tasks.Task)
+  id: IgnoreException(System.Threading.Tasks.Task)
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: IgnoreException(Task)
+  nameWithType: TaskExtensions.IgnoreException(Task)
+  fullName: c_Tasking.Extensions.TaskExtensions.IgnoreException(System.Threading.Tasks.Task)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: IgnoreException
+    path: Extensions/TaskExtensions.cs
+    startLine: 283
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Silently catches and ignores exceptions from a task.
+  example: []
+  syntax:
+    content: public static Task IgnoreException(this Task task)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task
+      description: The task whose exception should be ignored.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task that completes when the given task has completed.
+    content.vb: Public Shared Function IgnoreException(task As Task) As Task
+  overload: c_Tasking.Extensions.TaskExtensions.IgnoreException*
+- uid: c_Tasking.Extensions.TaskExtensions.IgnoreException``1(System.Threading.Tasks.Task{``0})
+  commentId: M:c_Tasking.Extensions.TaskExtensions.IgnoreException``1(System.Threading.Tasks.Task{``0})
+  id: IgnoreException``1(System.Threading.Tasks.Task{``0})
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: IgnoreException<T>(Task<T>)
+  nameWithType: TaskExtensions.IgnoreException<T>(Task<T>)
+  fullName: c_Tasking.Extensions.TaskExtensions.IgnoreException<T>(System.Threading.Tasks.Task<T>)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: IgnoreException
+    path: Extensions/TaskExtensions.cs
+    startLine: 298
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Silently catches and ignores exceptions from a task, returns default on error.
+  example: []
+  syntax:
+    content: public static Task<T?> IgnoreException<T>(this Task<T> task)
+    parameters:
+    - id: task
+      type: System.Threading.Tasks.Task{{T}}
+      description: The input task.
+    typeParameters:
+    - id: T
+      description: Type of the task result.
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+      description: The task result if successful, otherwise default.
+    content.vb: Public Shared Function IgnoreException(Of T)(task As Task(Of T)) As Task(Of T)
+  overload: c_Tasking.Extensions.TaskExtensions.IgnoreException*
+  nameWithType.vb: TaskExtensions.IgnoreException(Of T)(Task(Of T))
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.IgnoreException(Of T)(System.Threading.Tasks.Task(Of T))
+  name.vb: IgnoreException(Of T)(Task(Of T))
+- uid: c_Tasking.Extensions.TaskExtensions.RetryOnFailure(System.Func{System.Threading.Tasks.Task},System.Int32,System.Int32)
+  commentId: M:c_Tasking.Extensions.TaskExtensions.RetryOnFailure(System.Func{System.Threading.Tasks.Task},System.Int32,System.Int32)
+  id: RetryOnFailure(System.Func{System.Threading.Tasks.Task},System.Int32,System.Int32)
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: RetryOnFailure(Func<Task>, int, int)
+  nameWithType: TaskExtensions.RetryOnFailure(Func<Task>, int, int)
+  fullName: c_Tasking.Extensions.TaskExtensions.RetryOnFailure(System.Func<System.Threading.Tasks.Task>, int, int)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RetryOnFailure
+    path: Extensions/TaskExtensions.cs
+    startLine: 317
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Retries a task if it fails, with exponential backoff.
+  example: []
+  syntax:
+    content: public static Task RetryOnFailure(this Func<Task> task, int maxAttempts = 3, int initialDelayMilliseconds = 100)
+    parameters:
+    - id: task
+      type: System.Func{System.Threading.Tasks.Task}
+      description: The task function to retry on failure.
+    - id: maxAttempts
+      type: System.Int32
+      description: 'Maximum retry attempts (default: 3).'
+    - id: initialDelayMilliseconds
+      type: System.Int32
+      description: 'Initial delay in milliseconds (default: 100).'
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the retry operation.
+    content.vb: Public Shared Function RetryOnFailure(task As Func(Of Task), maxAttempts As Integer = 3, initialDelayMilliseconds As Integer = 100) As Task
+  overload: c_Tasking.Extensions.TaskExtensions.RetryOnFailure*
+  nameWithType.vb: TaskExtensions.RetryOnFailure(Func(Of Task), Integer, Integer)
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.RetryOnFailure(System.Func(Of System.Threading.Tasks.Task), Integer, Integer)
+  name.vb: RetryOnFailure(Func(Of Task), Integer, Integer)
+- uid: c_Tasking.Extensions.TaskExtensions.RetryOnFailure(System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Boolean},System.Int32,System.Int32)
+  commentId: M:c_Tasking.Extensions.TaskExtensions.RetryOnFailure(System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Boolean},System.Int32,System.Int32)
+  id: RetryOnFailure(System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Boolean},System.Int32,System.Int32)
+  isExtensionMethod: true
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: RetryOnFailure(Func<Task>, Func<Exception, bool>, int, int)
+  nameWithType: TaskExtensions.RetryOnFailure(Func<Task>, Func<Exception, bool>, int, int)
+  fullName: c_Tasking.Extensions.TaskExtensions.RetryOnFailure(System.Func<System.Threading.Tasks.Task>, System.Func<System.Exception, bool>, int, int)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: RetryOnFailure
+    path: Extensions/TaskExtensions.cs
+    startLine: 330
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Retries a task if it fails, with exponential backoff and custom retry predicate.
+  example: []
+  syntax:
+    content: public static Task RetryOnFailure(this Func<Task> task, Func<Exception, bool> shouldRetry, int maxAttempts = 3, int initialDelayMilliseconds = 100)
+    parameters:
+    - id: task
+      type: System.Func{System.Threading.Tasks.Task}
+      description: The task function to retry on failure.
+    - id: shouldRetry
+      type: System.Func{System.Exception,System.Boolean}
+      description: Predicate to determine if a specific exception should trigger a retry.
+    - id: maxAttempts
+      type: System.Int32
+      description: 'Maximum retry attempts (default: 3).'
+    - id: initialDelayMilliseconds
+      type: System.Int32
+      description: 'Initial delay in milliseconds (default: 100).'
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the retry operation.
+    content.vb: Public Shared Function RetryOnFailure(task As Func(Of Task), shouldRetry As Func(Of Exception, Boolean), maxAttempts As Integer = 3, initialDelayMilliseconds As Integer = 100) As Task
+  overload: c_Tasking.Extensions.TaskExtensions.RetryOnFailure*
+  nameWithType.vb: TaskExtensions.RetryOnFailure(Func(Of Task), Func(Of Exception, Boolean), Integer, Integer)
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.RetryOnFailure(System.Func(Of System.Threading.Tasks.Task), System.Func(Of System.Exception, Boolean), Integer, Integer)
+  name.vb: RetryOnFailure(Func(Of Task), Func(Of Exception, Boolean), Integer, Integer)
+- uid: c_Tasking.Extensions.TaskExtensions.WaitAllInParallel(System.Threading.Tasks.Task[])
+  commentId: M:c_Tasking.Extensions.TaskExtensions.WaitAllInParallel(System.Threading.Tasks.Task[])
+  id: WaitAllInParallel(System.Threading.Tasks.Task[])
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: WaitAllInParallel(params Task[])
+  nameWithType: TaskExtensions.WaitAllInParallel(params Task[])
+  fullName: c_Tasking.Extensions.TaskExtensions.WaitAllInParallel(params System.Threading.Tasks.Task[])
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: WaitAllInParallel
+    path: Extensions/TaskExtensions.cs
+    startLine: 342
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Runs multiple tasks in parallel and waits for all to complete.
+  example: []
+  syntax:
+    content: public static Task WaitAllInParallel(params Task[] tasks)
+    parameters:
+    - id: tasks
+      type: System.Threading.Tasks.Task[]
+      description: Tasks to run in parallel.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task that completes when all tasks have completed.
+    content.vb: Public Shared Function WaitAllInParallel(ParamArray tasks As Task()) As Task
+  overload: c_Tasking.Extensions.TaskExtensions.WaitAllInParallel*
+  nameWithType.vb: TaskExtensions.WaitAllInParallel(ParamArray Task())
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.WaitAllInParallel(ParamArray System.Threading.Tasks.Task())
+  name.vb: WaitAllInParallel(ParamArray Task())
+- uid: c_Tasking.Extensions.TaskExtensions.WaitAnyToComplete(System.Threading.Tasks.Task[])
+  commentId: M:c_Tasking.Extensions.TaskExtensions.WaitAnyToComplete(System.Threading.Tasks.Task[])
+  id: WaitAnyToComplete(System.Threading.Tasks.Task[])
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: WaitAnyToComplete(params Task[])
+  nameWithType: TaskExtensions.WaitAnyToComplete(params Task[])
+  fullName: c_Tasking.Extensions.TaskExtensions.WaitAnyToComplete(params System.Threading.Tasks.Task[])
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: WaitAnyToComplete
+    path: Extensions/TaskExtensions.cs
+    startLine: 352
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Waits for the first task to complete.
+  example: []
+  syntax:
+    content: public static Task WaitAnyToComplete(params Task[] tasks)
+    parameters:
+    - id: tasks
+      type: System.Threading.Tasks.Task[]
+      description: Tasks to wait on.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task that completes when any of the tasks completes.
+    content.vb: Public Shared Function WaitAnyToComplete(ParamArray tasks As Task()) As Task
+  overload: c_Tasking.Extensions.TaskExtensions.WaitAnyToComplete*
+  nameWithType.vb: TaskExtensions.WaitAnyToComplete(ParamArray Task())
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.WaitAnyToComplete(ParamArray System.Threading.Tasks.Task())
+  name.vb: WaitAnyToComplete(ParamArray Task())
+- uid: c_Tasking.Extensions.TaskExtensions.Delay(System.Int32)
+  commentId: M:c_Tasking.Extensions.TaskExtensions.Delay(System.Int32)
+  id: Delay(System.Int32)
+  parent: c_Tasking.Extensions.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: Delay(int)
+  nameWithType: TaskExtensions.Delay(int)
+  fullName: c_Tasking.Extensions.TaskExtensions.Delay(int)
+  type: Method
+  source:
+    remote:
+      path: Extensions/TaskExtensions.cs
+      branch: main
+      repo: https://github.com/jomardyan/c-Tasking
+    id: Delay
+    path: Extensions/TaskExtensions.cs
+    startLine: 362
+  assemblies:
+  - c-Tasking
+  namespace: c_Tasking.Extensions
+  summary: Creates a task that completes after a specified delay.
+  example: []
+  syntax:
+    content: public static Task Delay(int delayMilliseconds)
+    parameters:
+    - id: delayMilliseconds
+      type: System.Int32
+      description: Delay duration in milliseconds.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the delay.
+    content.vb: Public Shared Function Delay(delayMilliseconds As Integer) As Task
+  overload: c_Tasking.Extensions.TaskExtensions.Delay*
+  nameWithType.vb: TaskExtensions.Delay(Integer)
+  fullName.vb: c_Tasking.Extensions.TaskExtensions.Delay(Integer)
+  name.vb: Delay(Integer)
+references:
+- uid: c_Tasking.Extensions
+  commentId: N:c_Tasking.Extensions
+  href: c_Tasking.html
+  name: c_Tasking.Extensions
+  nameWithType: c_Tasking.Extensions
+  fullName: c_Tasking.Extensions
+  spec.csharp:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Extensions
+    name: Extensions
+    href: c_Tasking.Extensions.html
+  spec.vb:
+  - uid: c_Tasking
+    name: c_Tasking
+    href: c_Tasking.html
+  - name: .
+  - uid: c_Tasking.Extensions
+    name: Extensions
+    href: c_Tasking.Extensions.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: c_Tasking.Extensions.TaskExtensions.FireAndForget*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.FireAndForget
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_FireAndForget_System_Threading_Tasks_Task_System_Action_System_Exception__
+  name: FireAndForget
+  nameWithType: TaskExtensions.FireAndForget
+  fullName: c_Tasking.Extensions.TaskExtensions.FireAndForget
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Action{System.Exception}
+  commentId: T:System.Action{System.Exception}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Exception>
+  nameWithType: Action<Exception>
+  fullName: System.Action<System.Exception>
+  nameWithType.vb: Action(Of Exception)
+  fullName.vb: System.Action(Of System.Exception)
+  name.vb: Action(Of Exception)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: c_Tasking.Extensions.TaskExtensions.Finally*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.Finally
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_Finally_System_Threading_Tasks_Task_System_Action_
+  name: Finally
+  nameWithType: TaskExtensions.Finally
+  fullName: c_Tasking.Extensions.TaskExtensions.Finally
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: c_Tasking.Extensions.TaskExtensions.OnSuccess*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.OnSuccess
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_OnSuccess_System_Threading_Tasks_Task_System_Action_
+  name: OnSuccess
+  nameWithType: TaskExtensions.OnSuccess
+  fullName: c_Tasking.Extensions.TaskExtensions.OnSuccess
+- uid: System.Action{{T}}
+  commentId: T:System.Action{`0}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: c_Tasking.Extensions.TaskExtensions.OnException*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.OnException
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_OnException_System_Threading_Tasks_Task_System_Action_System_Exception__
+  name: OnException
+  nameWithType: TaskExtensions.OnException
+  fullName: c_Tasking.Extensions.TaskExtensions.OnException
+- uid: c_Tasking.Extensions.TaskExtensions.OnCancelled*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.OnCancelled
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_OnCancelled_System_Threading_Tasks_Task_System_Action_
+  name: OnCancelled
+  nameWithType: TaskExtensions.OnCancelled
+  fullName: c_Tasking.Extensions.TaskExtensions.OnCancelled
+- uid: c_Tasking.Extensions.TaskExtensions.TryWait*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.TryWait
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_TryWait_System_Threading_Tasks_Task_System_Int32_
+  name: TryWait
+  nameWithType: TaskExtensions.TryWait
+  fullName: c_Tasking.Extensions.TaskExtensions.TryWait
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.ValueTuple{System.Boolean,{T}}
+  commentId: T:System.ValueTuple{System.Boolean,``0}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: (bool completed, T result)
+  nameWithType: (bool completed, T result)
+  fullName: (bool completed, T result)
+  nameWithType.vb: (completed As Boolean, result As T)
+  fullName.vb: (completed As Boolean, result As T)
+  name.vb: (completed As Boolean, result As T)
+  spec.csharp:
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,``0}.completed
+    name: completed
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,--0-.completed
+  - name: ','
+  - name: " "
+  - name: T
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,``0}.result
+    name: result
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,--0-.result
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Boolean,``0}.completed
+    name: completed
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,--0-.completed
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,``0}.result
+    name: result
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,--0-.result
+  - name: " "
+  - name: As
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: c_Tasking.Extensions.TaskExtensions.WithTimeout*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.WithTimeout
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_WithTimeout_System_Threading_Tasks_Task_System_Int32_
+  name: WithTimeout
+  nameWithType: TaskExtensions.WithTimeout
+  fullName: c_Tasking.Extensions.TaskExtensions.WithTimeout
+- uid: c_Tasking.Extensions.TaskExtensions.Map*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.Map
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_Map__2_System_Threading_Tasks_Task___0__System_Func___0___1__
+  name: Map
+  nameWithType: TaskExtensions.Map
+  fullName: c_Tasking.Extensions.TaskExtensions.Map
+- uid: System.Func{{T},{TResult}}
+  commentId: T:System.Func{``0,``1}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks.Task{{TResult}}
+  commentId: T:System.Threading.Tasks.Task{``1}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: c_Tasking.Extensions.TaskExtensions.MapAsync*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.MapAsync
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_MapAsync__2_System_Threading_Tasks_Task___0__System_Func___0_System_Threading_Tasks_Task___1___
+  name: MapAsync
+  nameWithType: TaskExtensions.MapAsync
+  fullName: c_Tasking.Extensions.TaskExtensions.MapAsync
+- uid: System.Func{{T},System.Threading.Tasks.Task{{TResult}}}
+  commentId: T:System.Func{``0,System.Threading.Tasks.Task{``1}}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, Task<TResult>>
+  nameWithType: Func<T, Task<TResult>>
+  fullName: System.Func<T, System.Threading.Tasks.Task<TResult>>
+  nameWithType.vb: Func(Of T, Task(Of TResult))
+  fullName.vb: System.Func(Of T, System.Threading.Tasks.Task(Of TResult))
+  name.vb: Func(Of T, Task(Of TResult))
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+  - name: )
+- uid: c_Tasking.Extensions.TaskExtensions.Chain*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.Chain
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_Chain_System_Threading_Tasks_Task_System_Func_System_Threading_Tasks_Task__
+  name: Chain
+  nameWithType: TaskExtensions.Chain
+  fullName: c_Tasking.Extensions.TaskExtensions.Chain
+- uid: System.Func{System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task>
+  nameWithType: Func<Task>
+  fullName: System.Func<System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Task)
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task)
+  name.vb: Func(Of Task)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: c_Tasking.Extensions.TaskExtensions.ThenAsync*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.ThenAsync
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_ThenAsync__2_System_Threading_Tasks_Task___0__System_Func___0_System_Threading_Tasks_Task___1___
+  name: ThenAsync
+  nameWithType: TaskExtensions.ThenAsync
+  fullName: c_Tasking.Extensions.TaskExtensions.ThenAsync
+- uid: c_Tasking.Extensions.TaskExtensions.IgnoreException*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.IgnoreException
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_IgnoreException_System_Threading_Tasks_Task_
+  name: IgnoreException
+  nameWithType: TaskExtensions.IgnoreException
+  fullName: c_Tasking.Extensions.TaskExtensions.IgnoreException
+- uid: c_Tasking.Extensions.TaskExtensions.RetryOnFailure*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.RetryOnFailure
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_RetryOnFailure_System_Func_System_Threading_Tasks_Task__System_Int32_System_Int32_
+  name: RetryOnFailure
+  nameWithType: TaskExtensions.RetryOnFailure
+  fullName: c_Tasking.Extensions.TaskExtensions.RetryOnFailure
+- uid: System.Func{System.Exception,System.Boolean}
+  commentId: T:System.Func{System.Exception,System.Boolean}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<Exception, bool>
+  nameWithType: Func<Exception, bool>
+  fullName: System.Func<System.Exception, bool>
+  nameWithType.vb: Func(Of Exception, Boolean)
+  fullName.vb: System.Func(Of System.Exception, Boolean)
+  name.vb: Func(Of Exception, Boolean)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: c_Tasking.Extensions.TaskExtensions.WaitAllInParallel*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.WaitAllInParallel
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_WaitAllInParallel_System_Threading_Tasks_Task___
+  name: WaitAllInParallel
+  nameWithType: TaskExtensions.WaitAllInParallel
+  fullName: c_Tasking.Extensions.TaskExtensions.WaitAllInParallel
+- uid: System.Threading.Tasks.Task[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task[]
+  nameWithType: Task[]
+  fullName: System.Threading.Tasks.Task[]
+  nameWithType.vb: Task()
+  fullName.vb: System.Threading.Tasks.Task()
+  name.vb: Task()
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: (
+  - name: )
+- uid: c_Tasking.Extensions.TaskExtensions.WaitAnyToComplete*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.WaitAnyToComplete
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_WaitAnyToComplete_System_Threading_Tasks_Task___
+  name: WaitAnyToComplete
+  nameWithType: TaskExtensions.WaitAnyToComplete
+  fullName: c_Tasking.Extensions.TaskExtensions.WaitAnyToComplete
+- uid: c_Tasking.Extensions.TaskExtensions.Delay*
+  commentId: Overload:c_Tasking.Extensions.TaskExtensions.Delay
+  href: c_Tasking.Extensions.TaskExtensions.html#c_Tasking_Extensions_TaskExtensions_Delay_System_Int32_
+  name: Delay
+  nameWithType: TaskExtensions.Delay
+  fullName: c_Tasking.Extensions.TaskExtensions.Delay
