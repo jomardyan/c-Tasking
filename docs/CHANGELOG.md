@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ConcurrentBatcher**: Concurrent batch processing with configurable concurrency
 - **TaskExtensions**: LINQ-like extensions for cleaner async code
 - Comprehensive XML documentation for all public APIs
-- Full .NET 8.0 support with nullable reference types
+- Full .NET 10.0 support with nullable reference types
 - Zero external dependencies
 - Complete example implementations
 - Quick reference guide

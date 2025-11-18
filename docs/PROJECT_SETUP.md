@@ -42,7 +42,7 @@ c-Tasking/
 ## 🛠️ Development Setup
 
 ### Requirements
-- .NET 8.0 SDK or later
+- .NET 10.0 SDK or later
 - Visual Studio 2022 / VS Code with C# extension
 - Git
 
@@ -87,7 +87,7 @@ The NuGet package includes:
 ```
 c-Tasking.1.0.0.nupkg
 ├── lib/
-│   └── net8.0/
+│   └── net10.0/
 │       ├── c-Tasking.dll
 │       └── c-Tasking.xml (documentation)
 ├── README.md
@@ -262,7 +262,7 @@ gh release create v1.0.0 --generate-notes
 ### Documentation Generation
 ```bash
 # The project generates XML documentation automatically
-# Located at: bin/Release/net8.0/c-Tasking.xml
+# Located at: bin/Release/net10.0/c-Tasking.xml
 ```
 
 ## 🔗 Important Links

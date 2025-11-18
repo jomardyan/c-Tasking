@@ -31,6 +31,8 @@ bld/
 *.snupkg
 .nuget/
 nuget.config
+nupkg/
+nupkgs/
 
 # Test Results
 TestResults/

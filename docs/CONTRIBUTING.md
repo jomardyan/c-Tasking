@@ -20,7 +20,7 @@ Please be respectful and professional in all interactions with other contributor
 ## Development Setup
 
 ### Requirements
-- .NET 8.0 SDK or later
+- .NET 10.0 SDK or later
 - Visual Studio 2022 or VS Code with C# extension
 
 ### Building

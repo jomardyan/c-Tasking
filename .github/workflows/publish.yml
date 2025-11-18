@@ -28,6 +28,9 @@ jobs:
     
     - name: Build
       run: dotnet build --configuration Release --no-restore
+
+    - name: Run tests
+      run: dotnet test --no-build --configuration Release --verbosity minimal
     
     - name: Pack
       run: dotnet pack --configuration Release --no-build --output ./nupkg

@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- .NET 8.0 SDK or later
+- .NET 10.0 SDK or later
 - NuGet account at https://www.nuget.org/
 - NuGet API key from your account settings
 
