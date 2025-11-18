@@ -68,6 +68,21 @@ var result = await TaskWrapper.RunAsync(async () =>
     await Task.Delay(1000);
     return 42;
 });
+## VS Code - Test Explorer Setup
+
+If you use VS Code, install the recommended extensions and open the Tests tab to run and debug xUnit tests:
+
+- Install the *C#* extension: `ms-dotnettools.csharp`
+- Install the *Test Explorer UI* extension: `hbenl.test-explorer`
+- Install the *Dotnet Test Explorer* extension: `formulahendry.dotnet-test-explorer`
+
+The workspace includes recommended extensions and a settings file - after installation, build the solution and the tests should appear in the Test Explorer panel:
+
+```bash
+dotnet restore
+dotnet build
+# open Tests panel in VS Code — the Test Explorer will discover xUnit tests
+```
 ```
 
 ### Simple Threading
